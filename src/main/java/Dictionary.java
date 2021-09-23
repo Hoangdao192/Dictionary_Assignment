@@ -20,7 +20,7 @@ public class Dictionary {
             }
 
             // Tach 2 tu
-            String[] arr = line.split("\\p{Punct}");
+            String[] arr = line.split("\t");
             String wordTarget = arr[0];
             String wordExplain = arr[1];
             Word newWord = new Word(wordTarget, wordExplain);

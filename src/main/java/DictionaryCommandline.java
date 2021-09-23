@@ -13,6 +13,8 @@ public class DictionaryCommandline {
         final int EXIT = 3;
         int input = 0;
         while (input != EXIT) {
+            System.out.print("\n\n\n\n\n");
+
             System.out.println("1. Chèn từ vựng vào từ điển.");
             System.out.println("2. Hiển thị tất cả các từ.");
             System.out.println("3. Thoát.");
@@ -20,8 +22,6 @@ public class DictionaryCommandline {
             System.out.print("Nhập lệnh: ");
             Scanner sc = new Scanner(System.in);
             input = sc.nextInt();
-
-            System.out.print("\n\n\n\n\n");
 
             switch (input) {
                 case 1: this.dictionaryManagement.insertFromCommandline(); break;

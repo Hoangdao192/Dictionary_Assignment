@@ -16,7 +16,9 @@ public class DictionaryManagement {
         String explainVietnamese;
 
         Scanner sc = new Scanner(System.in);
+        System.out.print("Nhập từ tiếng Anh: ");
         wordEnglish = sc.nextLine();
+        System.out.print("Nhập nghĩa tiếng Việt: ");
         explainVietnamese = sc.nextLine();
 
         this.dictionary.add(wordEnglish, explainVietnamese);
@@ -25,7 +27,7 @@ public class DictionaryManagement {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("Dictionary.txt", true));
             writer.write(wordEnglish);
-            writer.write(".");
+            writer.write("\t");
             writer.write(explainVietnamese);
             writer.write("\n");
             writer.close();
