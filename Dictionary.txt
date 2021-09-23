@@ -2,6 +2,5 @@ Hello.Xin chào
 Array.Mảng
 Agriculture.Nông nghiệp
 Book.Sách
-
 Pen.Cái bút
 Computer.Máy tính
