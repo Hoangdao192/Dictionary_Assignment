@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class Dictionary {
     ArrayList<Word> words;
@@ -15,7 +16,7 @@ public class Dictionary {
     public String getThisWordExplain(String wordTarget) {
         for (int i = 0; i < this.words.size(); ++i) {
             Word currentWord = this.words.get(i);
-            if (wordTarget.equals(currentWord.getWordTarget())) {
+            if (wordTarget.equalsIgnoreCase(currentWord.getWordTarget())) {
                 return currentWord.getWordExplain();
             }
         }
@@ -29,8 +30,8 @@ public class Dictionary {
 
     public Word get(int position) {
         if (position >= this.words.size()) {
-            Word error = new Word("NULL", "NULL");
-            return error;
+            //Word error = new Word("NULL", "NULL");
+            return null;
         }
 
         return this.words.get(position);

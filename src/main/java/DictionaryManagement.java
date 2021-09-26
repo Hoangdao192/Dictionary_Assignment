@@ -57,6 +57,17 @@ public class DictionaryManagement {
         }
     }
 
+    public void dictionaryLookup() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Nhập từ: ");
+        String lookupWord = sc.nextLine();
+
+        String explainWord = dictionary.getThisWordExplain(lookupWord);
+        if (!explainWord.equals("NULL")) {
+            System.out.println("Nghĩa tiếng Việt: " + explainWord);
+        }
+    }
+
     public void showAllWords() {
         int numberOfWords = this.dictionary.size();
 
