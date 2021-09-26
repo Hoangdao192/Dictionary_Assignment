@@ -1,3 +1,4 @@
 Hello	Xin chào
 Agriculture	Nông nghiệp
 Book	Sách
+Phone	Điện thoại

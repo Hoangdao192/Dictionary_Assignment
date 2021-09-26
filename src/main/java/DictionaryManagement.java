@@ -1,7 +1,8 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Writer;
 import java.util.Scanner;
 
 public class DictionaryManagement {
@@ -25,7 +26,7 @@ public class DictionaryManagement {
 
         //  Viet ra file
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter("Dictionary.txt", true));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(ResourcesPath.DICTIONARY_TXT, true));
             writer.write(wordEnglish);
             writer.write("\t");
             writer.write(explainVietnamese);
@@ -36,8 +37,28 @@ public class DictionaryManagement {
         }
     }
 
+    public void insertFromFile(String path) throws FileNotFoundException {
+        File file = new File(path);
+        Scanner sc = new Scanner(file);
+
+        while (sc.hasNextLine()) {
+            String line = sc.nextLine();
+
+            if (line.length() == 0 || !((line.charAt(0) >= 'A' && line.charAt(0) <= 'Z')
+                    || (line.charAt(0) >= 'a' && line.charAt(0) <= 'z'))) {
+                continue;
+            }
+
+            // Tách 2 từ
+            String[] arr = line.split("\t");
+            String wordTarget = arr[0];
+            String wordExplain = arr[1];
+            this.dictionary.add(wordTarget, wordExplain);
+        }
+    }
+
     public void showAllWords() {
-        int numberOfWords = this.dictionary.getDictionarySize();
+        int numberOfWords = this.dictionary.size();
 
         // Định dạng phần đề mục
         String headingFormat = String.format("%-7s %c %-30s %c %s", "No", '|', "English", '|', "Vietnamese");
