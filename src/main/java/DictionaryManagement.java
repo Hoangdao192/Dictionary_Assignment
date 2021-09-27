@@ -25,7 +25,7 @@ public class DictionaryManagement {
         this.dictionary.add(wordEnglish, explainVietnamese);
 
         //  Viet ra file
-        try {
+        /*try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(ResourcesPath.DICTIONARY_TXT, true));
             writer.write(wordEnglish);
             writer.write("\t");
@@ -34,7 +34,7 @@ public class DictionaryManagement {
             writer.close();
         } catch (IOException e) {
             System.out.println("Cannot find Dictionary.txt");
-        }
+        }*/
     }
 
     public void insertFromFile(String path) throws FileNotFoundException {
@@ -50,7 +50,7 @@ public class DictionaryManagement {
             }
 
             // Tách 2 từ
-            String[] arr = line.split("\t");
+            String[] arr = line.split("\\.");
             String wordTarget = arr[0];
             String wordExplain = arr[1];
             this.dictionary.add(wordTarget, wordExplain);
@@ -66,6 +66,48 @@ public class DictionaryManagement {
         if (!explainWord.equals("NULL")) {
             System.out.println("Nghĩa tiếng Việt: " + explainWord);
         }
+    }
+
+    public void dictionaryExportToFile(String path) {
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(path));
+            for (int i = 0; i < dictionary.size(); ++i) {
+                writer.write("\n");
+                writer.write(dictionary.get(i).getWordTarget());
+                writer.write(".");
+                writer.write(dictionary.get(i).getWordExplain());
+            }
+            writer.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void dictionarySearcher() {
+        System.out.print("Nhập các kí tự đầu: ");
+        Scanner sc = new Scanner(System.in);
+        String startString = sc.nextLine();
+
+        for (int i = 0; i < dictionary.size(); ++i) {
+            Word currentWord = dictionary.get(i);
+            if (currentWord.getWordTarget().startsWith(startString)) {
+                System.out.println(currentWord.getWordTarget());
+            }
+        }
+    }
+
+    public void dictionaryDeleteWord() {
+        System.out.println("Nhập từ cần xóa: ");
+        Scanner sc = new Scanner(System.in);
+        String wordTarget = sc.nextLine();
+        dictionary.erase(wordTarget);
+    }
+
+    public void dictionaryDeleteWordIndex() {
+        System.out.println("Xóa tại vị trí: ");
+        Scanner sc = new Scanner(System.in);
+        int index = sc.nextInt();
+        dictionary.erase(index);
     }
 
     public void showAllWords() {

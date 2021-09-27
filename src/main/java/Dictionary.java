@@ -36,4 +36,23 @@ public class Dictionary {
 
         return this.words.get(position);
     }
+
+    public boolean erase(String wordTarget) {
+        for (int i = 0; i < words.size(); ++i) {
+            if (wordTarget.equalsIgnoreCase(words.get(i).getWordTarget())) {
+                words.remove(i);
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public boolean erase(int index) {
+        if (index >= words.size()) {
+            return false;
+        }
+        words.remove(index);
+        return true;
+    }
 }
