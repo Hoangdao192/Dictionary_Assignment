@@ -2,7 +2,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.util.Scanner;
 
 public class DictionaryManagement {
@@ -23,18 +22,6 @@ public class DictionaryManagement {
         explainVietnamese = sc.nextLine();
 
         this.dictionary.add(wordEnglish, explainVietnamese);
-
-        //  Viet ra file
-        /*try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(ResourcesPath.DICTIONARY_TXT, true));
-            writer.write(wordEnglish);
-            writer.write("\t");
-            writer.write(explainVietnamese);
-            writer.write("\n");
-            writer.close();
-        } catch (IOException e) {
-            System.out.println("Cannot find Dictionary.txt");
-        }*/
     }
 
     public void insertFromFile(String path) throws FileNotFoundException {
