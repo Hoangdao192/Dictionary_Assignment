@@ -1,14 +1,12 @@
+import java.io.FileNotFoundException;
+
 public class DictionaryCommandLine extends DictionaryManagement {
     /**
-     * Hàm dictionaryBasic() có chức năng gọi hàm insertFromCommandline() và showAllWords()
+     * hàm dictionaryAdvanced() có chức năng gọi hàm insertFromFile(), showAllWords() và dictionaryLookup()
      */
-    public void dictionnaryBasic(){
-        try {
-            insertFromCommandLine();
-        }
-        catch (Exception e) {
-            System.out.println(e.getCause().toString());
-        }
+    public void dictionaryAdvanced() throws FileNotFoundException {
+        insertFromFile();
         showAllWorlds();
+        dictionaryLookup();
     }
 }

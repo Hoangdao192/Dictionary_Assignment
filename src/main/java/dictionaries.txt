@@ -1,0 +1,3 @@
+house	ngôi nhà
+school	trường học
+name	tên

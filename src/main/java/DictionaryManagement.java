@@ -4,33 +4,49 @@ import java.util.Scanner;
 
 public class DictionaryManagement extends Dictionary {
     /**
-     *Hàm insertFromCommandline() có chức năng nhập liệu.
      * Hàm showAllWords() có chức năng hiển thị kết quả danh sách dữ liệu từ điển
      * trên màn hình.
      */
-    public void insertFromCommandLine() throws FileNotFoundException {
-        String file_input = "E:\\Java\\Dictonary_Assignment\\src\\main\\java\\input.txt";
-        String file_output = "E:\\Java\\Dictonary_Assignment\\src\\main\\java\\output.txt";
-        FileInputStream input = new FileInputStream(file_input);
-        Scanner scan_in = new Scanner(input);
-        FileInputStream output = new FileInputStream(file_output);
-        Scanner scan_out = new Scanner(output);
-        while (scan_in.hasNext()) {
-            Word word = new Word();
-            String a = scan_in.nextLine();
-            String b = scan_out.nextLine();
-            word.setWord_target(a);
-            word.setWord_explain(b);
-            arrWorld.add(word);
-        }
-        scan_in.close();
-        scan_out.close();
-    }
-
     public void showAllWorlds(){
         System.out.printf("Number%20s%20s\n","English","Vietnamese");
         for(int i = 0; i < arrWorld.size(); i++) {
             System.out.printf("%5d%20s%20s\n",i,arrWorld.get(i).getWord_target(),arrWorld.get(i).getWord_explain());
+        }
+    }
+
+    /**
+     * Hàm insertFromFile() nhập dữ liệu từ điển từ tệp dictionaries.txt.
+     */
+    public void insertFromFile() throws FileNotFoundException {
+        String file = "E:\\Java\\Dictonary_Assignment\\src\\main\\java\\dictionaries.txt";
+        FileInputStream fs = new FileInputStream(file);
+        Scanner scanner = new Scanner(fs);
+        while (scanner.hasNextLine()) {
+            Word word = new Word();
+            String a = scanner.next();
+            String b = scanner.nextLine();
+            word.setWord_target(a);
+            word.setWord_explain(b);
+            arrWorld.add(word);
+        }
+        scanner.close();
+    }
+
+    /**
+     * hàm dictionaryLookup() có chức năng tra cứu từ điển bằng dòng lệnh.
+     */
+    public void dictionaryLookup() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.printf("%20s%20s\n","English","Vietnamese");
+        System.out.print("Enter in word: ");
+        while(scanner.hasNext()) {
+            String search_word = scanner.nextLine();
+            for (Word w : arrWorld) {
+                if (w.getWord_target().equals(search_word)) {
+                    System.out.printf("%20s:%20s\n", w.getWord_target(), w.getWord_explain());
+                }
+            }
+            System.out.print("Enter in word: ");
         }
     }
 }
