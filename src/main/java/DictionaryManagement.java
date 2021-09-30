@@ -6,6 +6,7 @@ public class DictionaryManagement extends Dictionary {
      *Hàm insertFromCommandline() có chức năng nhập liệu.
      * trên màn hình.
      */
+
     public void insertFromCommandLine() throws IOException {
         String file = "E:\\Java\\Dictonary_Assignment\\src\\main\\java\\output.txt";
         FileWriter fs = new FileWriter(file);
@@ -38,6 +39,7 @@ public class DictionaryManagement extends Dictionary {
     }
 
 
+
     /**
      * Hàm insertFromFile() nhập dữ liệu từ điển từ tệp dictionaries.txt.
      */
@@ -56,6 +58,7 @@ public class DictionaryManagement extends Dictionary {
         scanner.close();
     }
 
+
     /**
      * hàm dictionaryLookup() có chức năng tra cứu từ điển bằng dòng lệnh.
      */
@@ -63,10 +66,15 @@ public class DictionaryManagement extends Dictionary {
         Scanner scanner = new Scanner(System.in);
         System.out.printf("%-30s%-50s\n","English","Vietnamese");
         System.out.print("Enter in word: ");
-        String search_word = scanner.nextLine();
-        while(!search_word.equals("")) {
-            for (Word w : arrWorld) {
-                if (w.getWord_target().length() < search_word.length()) {
+        String search_word = "";
+        search_word = scanner.nextLine();
+        while(true) {
+            if (search_word.equals("")) {
+                break;
+            }
+            for (int i = 0; i < arrWorld.size(); i++) {
+                Word w = arrWorld.get(i);
+                if(w.getWord_target().length() < search_word.length()) {
                     continue;
                 }
                 if (w.getWord_target().substring(0,search_word.length()).equals(search_word)) {
@@ -87,36 +95,51 @@ public class DictionaryManagement extends Dictionary {
         String target = "";
         String explain = "";
         int i = 0;
-        boolean setUp = false;
 
         do {
-            setUp = false;
             i++;
             System.out.printf("Sửa dữ liệu: \n");
-            System.out.printf("Tìm dữ liệu: \n");
-//            System.out.printf("%d\n Englis: ", i);
+            System.out.printf("Tìm phạm vi dữ liệu (từ khóa): \n");
             dictionaryLookup();
-            target = scanner.nextLine();
             System.out.printf("Nhập dữ liệu cần sửa: \n");
-            System.out.printf("%d\n Englis: ", i);
+            System.out.printf("%d\n English: ", i);
+            String targetF = scanner.nextLine();
+            if (targetF.equals("")) {
+                break;
+            }
+
+            System.out.printf("Nhập dữ liệu mới: \n");
+            System.out.printf("%d\n English: ", i);
             target = scanner.nextLine();
+            if (target.equals("")) {
+                break;
+            }
+
             System.out.printf("Vietnamese: ");
             explain = scanner.nextLine();
-            if(!target.equals("") && !explain.equals("")) {
-                setUp = true;
-                for (Word w : arrWorld) {
-                    if (w.getWord_target().equals(target)) {
-                        Word word = new Word();
-                        word.setWord_target(target);
-                        word.setWord_explain(explain);
-                        w.setWord(word);
-                        System.out.println(w.getWord_target() + ": " + w.getWord_explain());
-                    }
+            if (explain.equals("")) {
+                break;
+            }
+
+            int num = 0;
+            boolean checkSet = false;
+            for (Word w : arrWorld) {
+                num++;
+                if (w.getWord_target().equals(targetF)) {
+                    checkSet = true;
+                    Word word = new Word();
+                    word.setWord_target(target);
+                    word.setWord_explain(explain);
+                    w.setWord(word);
+                    System.out.println(w.getWord_target() + ": " + w.getWord_explain());
+                }
+                if (num == arrWorld.size() && !checkSet) {
+                    System.out.println("The world is invalid");
                 }
             }
             target = "";
             explain = "";
-        } while (setUp);
+        } while (true);
 
         String file = "E:\\Java\\Dictonary_Assignment\\src\\main\\java\\dictionaries.txt";
         FileWriter fs = new FileWriter(file);
@@ -124,7 +147,6 @@ public class DictionaryManagement extends Dictionary {
         for (Word w : arrWorld) {
             System.out.printf("%-20s:%-50s\n", w.getWord_target(), w.getWord_explain());
             String s = w.getWord_target() + "  " + w.getWord_explain() + "\n";
-            System.out.println(s);
             fs.write(s);
         }
 

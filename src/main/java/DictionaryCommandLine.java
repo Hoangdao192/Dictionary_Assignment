@@ -5,10 +5,10 @@ public class DictionaryCommandLine extends DictionaryManagement {
     /**
      * Hàm showAllWords() có chức năng hiển thị kết quả danh sách dữ liệu từ điển trên màn hình.
      */
-    public void showAllWorlds() {
-        System.out.printf("Number%-20s%-50s\n", "English", "Vietnamese");
-        for (int i = 0; i < arrWorld.size(); i++) {
-            System.out.printf("%-5d%-20s%-50s\n", i, arrWorld.get(i).getWord_target(), arrWorld.get(i).getWord_explain());
+    public void showAllWorlds(){
+        System.out.printf("Number %-20s%-50s\n","English","Vietnamese");
+        for(int i = 0; i < arrWorld.size(); i++) {
+            System.out.printf("%-7d%-20s%-50s\n",i,arrWorld.get(i).getWord_target(),arrWorld.get(i).getWord_explain());
         }
     }
 
@@ -46,4 +46,5 @@ public class DictionaryCommandLine extends DictionaryManagement {
         }
         dictionaryLookup();
     }
+
 }
