@@ -1,3 +1,104 @@
-house	ngôi nhà
-school	trường học
-name	tên
+accomplish       (v) hoàn thành, thực hiện
+accurately       = correctly (adv) chính xác	ˈakyərətlē
+achieve       (v) hoàn thành, thi hành, đắc thắng
+achieved       (v) đạt được
+advantage       (n) lợi thế, ưu điểm
+Aggregation       (n) sự tụ hợp, tổng hợp
+Anagrams       (n) đảo ngữ	ˈanəˌɡram
+analyzing       (v) phân tích
+appear       (v) xuất hiện
+Appearance       (n) sự xuất hiện
+append       (v) minh họa, phụ họa
+Appliance       (n) thiết bị điện	əˈplīəns
+around       matches  : xung quanh kết quả
+aspects       (n) các khía cạnh;
+Assemble       (a) tập hợp
+Assembling       (v) lắp ráp
+Association       (n) sự kết hợp, đoàn thể
+avatar  anh dai dien
+Balance       (n) tiền dư, thăng bằng, cái cân; (a) so sánh
+Bravo       (n) hoan hô
+capture       (v) bắt lấy, lưu lại	ˈkapCHər
+collaboration       (n) sự cộng tác	kəˌlabəˈrāSH(ə)n
+Collection       (n) tập hợp; collection of method : tập hợp các phương pháp
+Combine       (v) phối hợp, liên minh
+Combines       (v) kết hợp
+commit       (v) giao phó, ủy thác, cam kết, tống giam
+composed       of : bao gồm
+Composition       (n) hợp thành, thành phần
+Computation       (n) sự tính toán
+ConcreteClass       (n) lớp con cụ thể
+configure       (v) định dạng, định hình
+conflict       (v) xung đột
+confronted       (v) đối mặt
+confused       (n) bối rối, lúng túng	kənˈfyo͞ozd
+Confusingly       (adv) bối rối, khó hiểu
+consecutive       (a) liên tiếp
+consistent       (a) thích hợp
+Context       (n) ngữ cảnh
+Contract       (n) hợp đồng, đấu giá; (v) ký kết, đính ước
+contrast       (v) tương phản, (n) đối chiếu
+contributors       (n) người đóng góp
+corner       (n) góc
+creatively       (adv) sáng tạo
+currency       (n) đơn vị tiền tệ
+dashboard       (n) bảng điều khiển
+Decisions       (n) quyết định
+Decompiler       (n) trình dịch ngược
+demo       (n) bản giới thiệu
+dependencies        (n) các thư viện phụ thuộc, vật phụ thuộc
+deposit       (v) gửi tiền, đặt cọc
+desired       (a) mong muốn
+despondent       (v) thất vọng
+detective       (n) thám tử, cảnh sát chìm
+Dialog       (n) hộp thoại
+disadvantage       (n) điều bất lợi, khuyết điểm
+DoorBell       (n) chuông cửa
+ElectricFan       (n ) quạt điện
+embarrassed       (a) xấu hổ
+emoji       (n) biểu tượng cảm xúc		ēˈmōjē
+engine       (n) Động cơ
+Engineering       (n) kỹ thuật
+Enhances       (v) nâng cao	in'hɑ:ns
+Entire       (a) trọn, toàn bộ;	ənˈtī(ə)r
+essential       (a) cơ bản, thiết yếu	əˈsen(t)SHəl
+Evaluating       (v) đánh giá
+evolved       to (v) phát triển thành
+Executable       (a) có thể thực thi
+execute       (v) thực hiện
+explore       (v) khám phá
+Express       = describe (n) diễn tả
+familiar       (a) quen thuộc, quen dùng >< unfamiliar
+feature       (n) tính năng, đặc tính; (v) đóng phim, miêu tả
+feedback       (n) sự phản hồi, sự nối tiếp
+Finite       (a) hữu hạn
+Finite       sum (n) tổng hữu hạn
+form       hypotheses : thi hành các giả thiết
+formulate       problem : khả năng hình thành vấn đề
+frustrating       (a) làm nản lòng	ˈfrəstrādiNG
+harder       (a) khó hơn
+Heart       (n) trái tim ;collaboration (n) sự cộng tác	kəˌlabəˈrāSH(ə)n
+hesitate       (v) do dự
+hosting       (v) lưu trữ
+hourglass       (n) đồng hồ cát
+hypotheses       (n) giả thiết
+identicon       (n) danh tính
+indenting       (v) thụt lề
+indicate       (v) biểu thị
+infer       (v) suy ra
+Infinite       (a) vô hạn
+Interactions       (n) tương tác
+interpretation       (n) sự giải thích
+intersections       (n) giao lộ; intersections visited (n) giao lộ truy cập
+invocation       (n) lệnh gọi
+invoking       (v) gọi, cầu khẩn
+isolate       (v) phân cách
+journey       (n) cuộc hành trình, quá trình
+Lexicographical       (n) từ vựng
+Lexicographical       Order (n) thứ tự từ vựng, sắp xếp từ vựng
+lexicographically        (n) về mặt từ vựng
+license       (n) giấy phép         license file (n) tệp giấy phép
+likely       to be : có khả năng; likely to be correct : có khả năng chính xác
+line       breaks : xuống dòng
+literal       (a) nghĩa đen, trực nghĩa
+maintain       (v) duy trì

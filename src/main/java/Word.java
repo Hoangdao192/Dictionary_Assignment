@@ -18,4 +18,14 @@ public class Word {
     public String getWord_explain() {
         return word_explain;
     }
+
+    Word() {
+        word_explain = "";
+        word_target = "";
+    }
+
+    public void setWord(Word w) {
+        word_target = w.getWord_target();
+        word_explain = w.getWord_explain();
+    }
 }
