@@ -37,19 +37,22 @@ public class DictionaryCommandline {
             File fileeng = new File("E:\\OOP_intellij\\BTL\\src\\word_eng.txt");
             FileReader fileReader1 = new FileReader(fileeng);
             BufferedReader reader1 = new BufferedReader(fileReader1);
-            File filevi = new File("E:\\OOP_intellij\\BTL\\src\\word_vi.txt");
-            FileReader fileReader2 = new FileReader(filevi);
-            BufferedReader reader2 = new BufferedReader(fileReader2);
+            //File filevi = new File("E:\\OOP_intellij\\BTL\\src\\word_vi.txt");
+            //FileReader fileReader2 = new FileReader(filevi);
+            //BufferedReader reader2 = new BufferedReader(fileReader2);
             String line1=null;
-            String line2=null;
+            //String line2=null;
             while(true){
                 line1 = reader1.readLine();
-                line2 = reader2.readLine();
-                if(line1==null||line1==null) break;
-                else AddDic(line1, line2);
+                //line2 = reader2.readLine();
+                String[] part = line1.split("\\t");
+                String part1 = part[0];
+                String part2 = part[1];
+                if(line1==null) break;
+                else AddDic(part1, part2);
             }
             reader1.close();
-            reader2.close();
+            //reader2.close();
         }
         catch(Exception e) {
             e.printStackTrace();

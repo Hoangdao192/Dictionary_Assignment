@@ -1,10 +1,10 @@
-Hello
-House
-One
-Two
-Three
-Four
-Five
-Six
-Seven
+Hello	Xin chao
+House	Ngoi nha
+One	Mot
+Two	Hai
+Three	Ba
+Four	Bon
+Five	Nam
+Six	Sau
+Seven	Bay
 
