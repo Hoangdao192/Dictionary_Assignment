@@ -1,5 +1,6 @@
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Play {
@@ -7,6 +8,8 @@ public class Play {
         DictionaryCommandLine dictionary = new DictionaryCommandLine();
         boolean check = true;
         Scanner scanner = new Scanner(System.in);
+        dictionary.start();
+
         while(check) {
             System.out.printf("" +
                     "0. Exit\n" +
@@ -23,16 +26,14 @@ public class Play {
                     dictionary.dictionarySearcher();
                     break;
                 case 3:
-                    try {
-                        dictionary.dictionarySetWord();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                        dictionary.insertFromCommandline();
                     break;
                 default:
                     check = false;
                     break;
             }
         }
+
+        dictionary.end();
     }
 }

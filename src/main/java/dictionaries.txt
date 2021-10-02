@@ -1,804 +1,150 @@
-accomplish   (v) hoàn thành, thực hiện
-accurately   = correctly (adv) chính xác	ˈakyərətlē
-achieve   (v) hoàn thành, thi hành, đắc thắng
-achieved   (v) đạt được
-advantage   (n) lợi thế, ưu điểm
-aggregation   (n) sự tụ hợp, tổng hợp
-anagrams   (n) đảo ngữ	ˈanəˌɡram
-analyzing   (v) phân tích
-appear   (v) xuất hiện
-appearance   (n) sự xuất hiện
-append   (v) minh họa, phụ họa
-appliance   (n) thiết bị điện	əˈplīəns
-aspects   (n) các khía cạnh; 
-assemble   (a) tập hợp
-assembling   (v) lắp ráp
-association   (n) sự kết hợp, đoàn thể
-avartar  avartar
-balance   (n) tiền dư, thăng bằng, cái cân; (a) so sánh
-bravo   (n) hoan hô
-capture   (v) bắt lấy, lưu lại	ˈkapchər
-collaboration   (n) sự cộng tác	kəˌlabəˈrāsh(ə)n
-collection   (n) tập hợp; collection of method : tập hợp các phương pháp
-combine   (v) phối hợp, liên minh
-combines   (v) kết hợp
-commit   (v) giao phó, ủy thác, cam kết, tống giam
-composed   of : bao gồm
-composition   (n) hợp thành, thành phần
-computation   (n) sự tính toán
-concreteclass   (n) lớp con cụ thể
-configure   (v) định dạng, định hình 
-conflict   (v) xung đột
-confronted   (v) đối mặt
-confused   (n) bối rối, lúng túng	kənˈfyo͞ozd
-confusingly   (adv) bối rối, khó hiểu
-consecutive   (a) liên tiếp  
-consistent   (a) thích hợp
-context   (n) ngữ cảnh
-contract   (n) hợp đồng, đấu giá; (v) ký kết, đính ước
-contrast   (v) tương phản, (n) đối chiếu
-contributors   (n) người đóng góp
-corner   (n) góc 
-creatively   (adv) sáng tạo
-currency   (n) đơn vị tiền tệ
-dashboard   (n) bảng điều khiển
-decisions   (n) quyết định
-decompiler   (n) trình dịch ngược
-demo   (n) bản giới thiệu
-dependencies    (n) các thư viện phụ thuộc, vật phụ thuộc
-deposit   (v) gửi tiền, đặt cọc
-desired   (a) mong muốn
-despondent   (v) thất vọng 
-detective   (n) thám tử, cảnh sát chìm
-dialog   (n) hộp thoại
-disadvantage   (n) điều bất lợi, khuyết điểm
-doorbell   (n) chuông cửa
-electricfan   (n ) quạt điện
-embarrassed   (a) xấu hổ
-emoji   (n) biểu tượng cảm xúc		ēˈmōjē
-engine   (n) động cơ
-engineering   (n) kỹ thuật
-enhances   (v) nâng cao	in'hɑ:ns
-entire   (a) trọn, toàn bộ;	ənˈtī(ə)r
-essential   (a) cơ bản, thiết yếu	əˈsen(t)shəl
-evaluating   (v) đánh giá
-evolved   to (v) phát triển thành
-executable   (a) có thể thực thi
-execute   (v) thực hiện
-explore   (v) khám phá
-express   = describe (n) diễn tả
-familiar   (a) quen thuộc, quen dùng >< unfamiliar
-feature   (n) tính năng, đặc tính; (v) đóng phim, miêu tả
-feedback   (n) sự phản hồi, sự nối tiếp
-finite   (a) hữu hạn
-finite   sum (n) tổng hữu hạn
-form   hypotheses : thi hành các giả thiết
-formulate   problem : khả năng hình thành vấn đề
-frustrating   (a) làm nản lòng	ˈfrəstrāding
-harder   (a) khó hơn
-heart   (n) trái tim ;collaboration (n) sự cộng tác	kəˌlabəˈrāsh(ə)n
-hesitate   (v) do dự
-hosting   (v) lưu trữ
-hourglass   (n) đồng hồ cát
-hypotheses   (n) giả thiết
-identicon   (n) danh tính
-indenting   (v) thụt lề
-indicate   (v) biểu thị
-infer   (v) suy ra
-infinite   (a) vô hạn
-interactions   (n) tương tác
-interpretation   (n) sự giải thích
-intersections   (n) giao lộ; intersections visited (n) giao lộ truy cập
-invocation   (n) lệnh gọi
-invoking   (v) gọi, cầu khẩn
-isolate   (v) phân cách
-journey   (n) cuộc hành trình, quá trình
-lexicographical   (n) từ vựng
-lexicographical   order (n) thứ tự từ vựng, sắp xếp từ vựng
-lexicographically    (n) về mặt từ vựng
-license   (n) giấy phép         license file (n) tệp giấy phép
-likely   to be : có khả năng; likely to be correct : có khả năng chính xác
-line   breaks : xuống dòng
-literal   (a) nghĩa đen, trực nghĩa
-maintain   (v) duy trì
-manual   page (n) trang hướng dẫn
-match   (n) trận đấu, kết quả
-match   (n) trận đấu, kết quả, 
-migratory   (v) di cư
-modification   (n) sự sửa đổi
-navigate   (v) điều hướng ; navigate to the location of your git repository : điều hướng tới vị trí lưu trữ git của bạn			ˈnavəˌɡāt
-need   to do is of course : việc cần làm tất nhiên 
-no   matter how complicated : cho dù phức tạp đến đâu\
-numerous   ways (n) nhiều cách
-observe   (v) quan sát
-official   list (n) danh sách chính thức
-on   the other hand = however : mặt khác, tuy nhiên
-opportunity   = chance (n) cơ hội	ˌäpərˈt(y)o͞onədē
-options   (n) sự lựa chọn
-outermost   braces (n) dấu ngoặc nhọn ngoài cùng ({ )
-pattern   (n) kiểu mẫu
-perform   trial : thực hiện thử nghiệm
-periodically   (adv) định kỳ	refer back to them periodically 
-permission   (n) quyền, cho phép; permission is granted to copy ; quyền được cho phép để copy
-phrases   (n) cụm từ
-platform   (n) nền tảng, nền đất, đế giày, sân ga xe lửa, chương trình chính trị
-policy   (n) chính sách 	ˈpäləsē
-polynomial   (n) đa thức
-portfolio   (n) bìa giấy đựng, danh mục đầu tư	pôrtˈfōlēˌō
-precision   (n) độ chính xác
-predictions   (n) sự dự đoán
-press   (v) nhấp
-press   a button : nhấn 1 nút
-prime   (n) số nguyên tố
-primitiveoperation   (n) phương thức nguyên thủy
-principle   (n) nguyên tắc
-propose   (v) đề nghị, đề xuất, cầu hôn
-prototype   (n) nguyên mẫu
-publishes   (v) xuất bản
-pull   request (n) kéo yêu cầu  : open a pull request
-punctuation   marks (n) dấu chấm câu
-reach   out to (v) liên hệ tới
-recommended   (v) giới thiệu, tiến cử, khuyên, đề xuất
-refer   (v) tham khảo
-relative   (a) tương đối, họ hàng, liên quan
-relative   error tolerance : khả năng chịu lỗi tương đối
-relevant   (a) liên quan, thích hợp
-remote   repository (n) kho lưu trữ từ xa
-repeatedly   (a) liên lục, nhắc lại
-repetition   (n) lặp lại
-repository   = storage = archives (n) kho lưu trữ	ˈärˌkīvs
-rules   (n) quy tắc
-saving   account (n) tài khoản tiết kiệm
-scroll   to (v) cuộn đến
-seem   (v) có vẻ
-self   -avoiding walks (n) tự đi bộ
-sensor   (n) cảm biến
-sighted   (v) có thể nhìn thấy
-sign   up (v) đăng ký
-similar   (a) tương tự
-simulate   (v) mô phỏng
-singleton   (n) có một, duy nhất.
-sink   (n) bồn rửa bát , (v) chìm
-snapshot   (n) ảnh chụp nhanh
-socket   (n) ổ cắm
-some   well-defined syntax (n) một số cú pháp xác định rõ ràng.
-spotted   (v) được phát hiện	ˈspädəd
-spreadsheets   (n) bảng tính
-squiggly   braces (n) dấu ngoặc nhọn
-stove   (n) bếp
-strangely   enough : kỳ lạ thay
-strict   (a) nghiêm ngặt, chính xác; strict guideline : hướng dẫn nghiêm ngặt
-substring   (n) chuỗi con
-synchronized   with (v) đồng bộ hóa với	ˈsingkrəˌnīzd
-take   a look (v) hãy xem
-techniques   = engineering (n) kỹ thuật	tekˈnēk
-the   compare archives feature (n) tính năng so sánh lưu trữ
-the   details (n) các chi tiết
-the   diamond problem (n) vấn đề hình thoi
-the   given regular expression (n) biểu thức chính quy đã cho
-the   process of learning to program (n) quá trình học lập trình
-the   square root of : căn bậc 2
-the   string’s literal interpretation : giải thích theo nghĩa đen của chuỗi
-through   a commit : thông qua một cam kết
-tolerance   (n) khả năng, sự chịu đựng	täl(ə)rəns
-tốt   hơn là mắc lỗi bây giờ và có chủ đích hơn là sau này vô tình
-track   (v) theo giõi ;        		track your file and changes in git
-trade-offs   (a) thay đổi
-trade-offs   among alternatives : thay đổi giữa các lựa chọn thay thế
-trial   = experiment (n) thử nghiệm
-unless   you've already escaped : trừ khi bạn trốn thoát
-username   policy  (n) chính sách tên người dùng
-validate   (n) xác thực; validate an ip address: xác định địa chỉ ip
-variations   (n) các biến thể
-vehicle   (n) phương tiện giao thông
-verify   (v) xác minh :      ask you verify
-via   (pre) thông qua ; via text command : thông qua lệnh văn bản
-visually   (adv) trực quan; organizing your program visually
-weappon   (n) vũ khí
-wildcard   (n) ký tự đại diện
-with   draw (v) rút (tiền)
-without   further translation : không cần dịch thêm
-wondering   (a) tự hỏi
-accomplish   (v) hoàn thành, thực hiện
-accurately   = correctly (adv) chính xác	ˈakyərətlē
-achieve   (v) hoàn thành, thi hành, đắc thắng
-achieved   (v) đạt được
-advantage   (n) lợi thế, ưu điểm
-aggregation   (n) sự tụ hợp, tổng hợp
-anagrams   (n) đảo ngữ	ˈanəˌɡram
-analyzing   (v) phân tích
-appear   (v) xuất hiện
-appearance   (n) sự xuất hiện
-append   (v) minh họa, phụ họa
-appliance   (n) thiết bị điện	əˈplīəns
-aspects   (n) các khía cạnh; 
-assemble   (a) tập hợp
-assembling   (v) lắp ráp
-association   (n) sự kết hợp, đoàn thể
-avartar  avartar
-balance   (n) tiền dư, thăng bằng, cái cân; (a) so sánh
-bravo   (n) hoan hô
-capture   (v) bắt lấy, lưu lại	ˈkapchər
-collaboration   (n) sự cộng tác	kəˌlabəˈrāsh(ə)n
-collection   (n) tập hợp; collection of method : tập hợp các phương pháp
-combine   (v) phối hợp, liên minh
-combines   (v) kết hợp
-commit   (v) giao phó, ủy thác, cam kết, tống giam
-composed   of : bao gồm
-composition   (n) hợp thành, thành phần
-computation   (n) sự tính toán
-concreteclass   (n) lớp con cụ thể
-configure   (v) định dạng, định hình 
-conflict   (v) xung đột
-confronted   (v) đối mặt
-confused   (n) bối rối, lúng túng	kənˈfyo͞ozd
-confusingly   (adv) bối rối, khó hiểu
-consecutive   (a) liên tiếp  
-consistent   (a) thích hợp
-context   (n) ngữ cảnh
-contract   (n) hợp đồng, đấu giá; (v) ký kết, đính ước
-contrast   (v) tương phản, (n) đối chiếu
-contributors   (n) người đóng góp
-corner   (n) góc 
-creatively   (adv) sáng tạo
-currency   (n) đơn vị tiền tệ
-dashboard   (n) bảng điều khiển
-decisions   (n) quyết định
-decompiler   (n) trình dịch ngược
-demo   (n) bản giới thiệu
-dependencies    (n) các thư viện phụ thuộc, vật phụ thuộc
-deposit   (v) gửi tiền, đặt cọc
-desired   (a) mong muốn
-despondent   (v) thất vọng 
-detective   (n) thám tử, cảnh sát chìm
-dialog   (n) hộp thoại
-disadvantage   (n) điều bất lợi, khuyết điểm
-doorbell   (n) chuông cửa
-electricfan   (n ) quạt điện
-embarrassed   (a) xấu hổ
-emoji   (n) biểu tượng cảm xúc		ēˈmōjē
-engine   (n) động cơ
-engineering   (n) kỹ thuật
-enhances   (v) nâng cao	in'hɑ:ns
-entire   (a) trọn, toàn bộ;	ənˈtī(ə)r
-essential   (a) cơ bản, thiết yếu	əˈsen(t)shəl
-evaluating   (v) đánh giá
-evolved   to (v) phát triển thành
-executable   (a) có thể thực thi
-execute   (v) thực hiện
-explore   (v) khám phá
-express   = describe (n) diễn tả
-familiar   (a) quen thuộc, quen dùng >< unfamiliar
-feature   (n) tính năng, đặc tính; (v) đóng phim, miêu tả
-feedback   (n) sự phản hồi, sự nối tiếp
-finite   (a) hữu hạn
-finite   sum (n) tổng hữu hạn
-form   hypotheses : thi hành các giả thiết
-formulate   problem : khả năng hình thành vấn đề
-frustrating   (a) làm nản lòng	ˈfrəstrāding
-harder   (a) khó hơn
-heart   (n) trái tim ;collaboration (n) sự cộng tác	kəˌlabəˈrāsh(ə)n
-hesitate   (v) do dự
-hosting   (v) lưu trữ
-hourglass   (n) đồng hồ cát
-hypotheses   (n) giả thiết
-identicon   (n) danh tính
-indenting   (v) thụt lề
-indicate   (v) biểu thị
-infer   (v) suy ra
-infinite   (a) vô hạn
-interactions   (n) tương tác
-interpretation   (n) sự giải thích
-intersections   (n) giao lộ; intersections visited (n) giao lộ truy cập
-invocation   (n) lệnh gọi
-invoking   (v) gọi, cầu khẩn
-isolate   (v) phân cách
-journey   (n) cuộc hành trình, quá trình
-lexicographical   (n) từ vựng
-lexicographical   order (n) thứ tự từ vựng, sắp xếp từ vựng
-lexicographically    (n) về mặt từ vựng
-license   (n) giấy phép         license file (n) tệp giấy phép
-likely   to be : có khả năng; likely to be correct : có khả năng chính xác
-line   breaks : xuống dòng
-literal   (a) nghĩa đen, trực nghĩa
-maintain   (v) duy trì
-manual   page (n) trang hướng dẫn
-match   (n) trận đấu, kết quả
-match   (n) trận đấu, kết quả, 
-migratory   (v) di cư
-modification   (n) sự sửa đổi
-navigate   (v) điều hướng ; navigate to the location of your git repository : điều hướng tới vị trí lưu trữ git của bạn			ˈnavəˌɡāt
-need   to do is of course : việc cần làm tất nhiên 
-no   matter how complicated : cho dù phức tạp đến đâu\
-numerous   ways (n) nhiều cách
-observe   (v) quan sát
-official   list (n) danh sách chính thức
-on   the other hand = however : mặt khác, tuy nhiên
-opportunity   = chance (n) cơ hội	ˌäpərˈt(y)o͞onədē
-options   (n) sự lựa chọn
-outermost   braces (n) dấu ngoặc nhọn ngoài cùng ({ )
-pattern   (n) kiểu mẫu
-perform   trial : thực hiện thử nghiệm
-periodically   (adv) định kỳ	refer back to them periodically 
-permission   (n) quyền, cho phép; permission is granted to copy ; quyền được cho phép để copy
-phrases   (n) cụm từ
-platform   (n) nền tảng, nền đất, đế giày, sân ga xe lửa, chương trình chính trị
-policy   (n) chính sách 	ˈpäləsē
-polynomial   (n) đa thức
-portfolio   (n) bìa giấy đựng, danh mục đầu tư	pôrtˈfōlēˌō
-precision   (n) độ chính xác
-predictions   (n) sự dự đoán
-press   (v) nhấp
-press   a button : nhấn 1 nút
-prime   (n) số nguyên tố
-primitiveoperation   (n) phương thức nguyên thủy
-principle   (n) nguyên tắc
-propose   (v) đề nghị, đề xuất, cầu hôn
-prototype   (n) nguyên mẫu
-publishes   (v) xuất bản
-pull   request (n) kéo yêu cầu  : open a pull request
-punctuation   marks (n) dấu chấm câu
-reach   out to (v) liên hệ tới
-recommended   (v) giới thiệu, tiến cử, khuyên, đề xuất
-refer   (v) tham khảo
-relative   (a) tương đối, họ hàng, liên quan
-relative   error tolerance : khả năng chịu lỗi tương đối
-relevant   (a) liên quan, thích hợp
-remote   repository (n) kho lưu trữ từ xa
-repeatedly   (a) liên lục, nhắc lại
-repetition   (n) lặp lại
-repository   = storage = archives (n) kho lưu trữ	ˈärˌkīvs
-rules   (n) quy tắc
-saving   account (n) tài khoản tiết kiệm
-scroll   to (v) cuộn đến
-seem   (v) có vẻ
-self   -avoiding walks (n) tự đi bộ
-sensor   (n) cảm biến
-sighted   (v) có thể nhìn thấy
-sign   up (v) đăng ký
-similar   (a) tương tự
-simulate   (v) mô phỏng
-singleton   (n) có một, duy nhất.
-sink   (n) bồn rửa bát , (v) chìm
-snapshot   (n) ảnh chụp nhanh
-socket   (n) ổ cắm
-some   well-defined syntax (n) một số cú pháp xác định rõ ràng.
-spotted   (v) được phát hiện	ˈspädəd
-spreadsheets   (n) bảng tính
-squiggly   braces (n) dấu ngoặc nhọn
-stove   (n) bếp
-strangely   enough : kỳ lạ thay
-strict   (a) nghiêm ngặt, chính xác; strict guideline : hướng dẫn nghiêm ngặt
-substring   (n) chuỗi con
-synchronized   with (v) đồng bộ hóa với	ˈsingkrəˌnīzd
-take   a look (v) hãy xem
-techniques   = engineering (n) kỹ thuật	tekˈnēk
-the   compare archives feature (n) tính năng so sánh lưu trữ
-the   details (n) các chi tiết
-the   diamond problem (n) vấn đề hình thoi
-the   given regular expression (n) biểu thức chính quy đã cho
-the   process of learning to program (n) quá trình học lập trình
-the   square root of : căn bậc 2
-the   string’s literal interpretation : giải thích theo nghĩa đen của chuỗi
-through   a commit : thông qua một cam kết
-tolerance   (n) khả năng, sự chịu đựng	täl(ə)rəns
-tốt   hơn là mắc lỗi bây giờ và có chủ đích hơn là sau này vô tình
-track   (v) theo giõi ;        		track your file and changes in git
-trade-offs   (a) thay đổi
-trade-offs   among alternatives : thay đổi giữa các lựa chọn thay thế
-trial   = experiment (n) thử nghiệm
-unless   you've already escaped : trừ khi bạn trốn thoát
-username   policy  (n) chính sách tên người dùng
-validate   (n) xác thực; validate an ip address: xác định địa chỉ ip
-variations   (n) các biến thể
-vehicle   (n) phương tiện giao thông
-verify   (v) xác minh :      ask you verify
-via   (pre) thông qua ; via text command : thông qua lệnh văn bản
-visually   (adv) trực quan; organizing your program visually
-weappon   (n) vũ khí
-wildcard   (n) ký tự đại diện
-with   draw (v) rút (tiền)
-without   further translation : không cần dịch thêm
-wondering   (a) tự hỏi
-accomplish     (v) hoàn thành, thực hiện
-accurately     = correctly (adv) chính xác	ˈakyərətlē
-achieve     (v) hoàn thành, thi hành, đắc thắng
-achieved     (v) đạt được
-advantage     (n) lợi thế, ưu điểm
-aggregation     (n) sự tụ hợp, tổng hợp
-anagrams     (n) đảo ngữ	ˈanəˌɡram
-analyzing     (v) phân tích
-appear     (v) xuất hiện
-appearance     (n) sự xuất hiện
-append     (v) minh họa, phụ họa
-appliance     (n) thiết bị điện	əˈplīəns
-aspects     (n) các khía cạnh; 
-assemble     (a) tập hợp
-assembling     (v) lắp ráp
-association     (n) sự kết hợp, đoàn thể
-avartar  avartar
-balance     (n) tiền dư, thăng bằng, cái cân; (a) so sánh
-bravo     (n) hoan hô
-capture     (v) bắt lấy, lưu lại	ˈkapchər
-collaboration     (n) sự cộng tác	kəˌlabəˈrāsh(ə)n
-collection     (n) tập hợp; collection of method : tập hợp các phương pháp
-combine     (v) phối hợp, liên minh
-combines     (v) kết hợp
-commit     (v) giao phó, ủy thác, cam kết, tống giam
-composed     of : bao gồm
-composition     (n) hợp thành, thành phần
-computation     (n) sự tính toán
-concreteclass     (n) lớp con cụ thể
-configure     (v) định dạng, định hình 
-conflict     (v) xung đột
-confronted     (v) đối mặt
-confused     (n) bối rối, lúng túng	kənˈfyo͞ozd
-confusingly     (adv) bối rối, khó hiểu
-consecutive     (a) liên tiếp  
-consistent     (a) thích hợp
-context     (n) ngữ cảnh
-contract     (n) hợp đồng, đấu giá; (v) ký kết, đính ước
-contrast     (v) tương phản, (n) đối chiếu
-contributors     (n) người đóng góp
-corner     (n) góc 
-creatively     (adv) sáng tạo
-currency     (n) đơn vị tiền tệ
-dashboard     (n) bảng điều khiển
-decisions     (n) quyết định
-decompiler     (n) trình dịch ngược
-demo     (n) bản giới thiệu
-dependencies      (n) các thư viện phụ thuộc, vật phụ thuộc
-deposit     (v) gửi tiền, đặt cọc
-desired     (a) mong muốn
-despondent     (v) thất vọng 
-detective     (n) thám tử, cảnh sát chìm
-dialog     (n) hộp thoại
-disadvantage     (n) điều bất lợi, khuyết điểm
-doorbell     (n) chuông cửa
-electricfan     (n ) quạt điện
-embarrassed     (a) xấu hổ
-emoji     (n) biểu tượng cảm xúc		ēˈmōjē
-engine     (n) động cơ
-engineering     (n) kỹ thuật
-enhances     (v) nâng cao	in'hɑ:ns
-entire     (a) trọn, toàn bộ;	ənˈtī(ə)r
-essential     (a) cơ bản, thiết yếu	əˈsen(t)shəl
-evaluating     (v) đánh giá
-evolved     to (v) phát triển thành
-executable     (a) có thể thực thi
-execute     (v) thực hiện
-explore     (v) khám phá
-express     = describe (n) diễn tả
-familiar     (a) quen thuộc, quen dùng >< unfamiliar
-feature     (n) tính năng, đặc tính; (v) đóng phim, miêu tả
-feedback     (n) sự phản hồi, sự nối tiếp
-finite     (a) hữu hạn
-finite     sum (n) tổng hữu hạn
-form     hypotheses : thi hành các giả thiết
-formulate     problem : khả năng hình thành vấn đề
-frustrating     (a) làm nản lòng	ˈfrəstrāding
-harder     (a) khó hơn
-heart     (n) trái tim ;collaboration (n) sự cộng tác	kəˌlabəˈrāsh(ə)n
-hesitate     (v) do dự
-hosting     (v) lưu trữ
-hourglass     (n) đồng hồ cát
-hypotheses     (n) giả thiết
-identicon     (n) danh tính
-indenting     (v) thụt lề
-indicate     (v) biểu thị
-infer     (v) suy ra
-infinite     (a) vô hạn
-interactions     (n) tương tác
-interpretation     (n) sự giải thích
-intersections     (n) giao lộ; intersections visited (n) giao lộ truy cập
-invocation     (n) lệnh gọi
-invoking     (v) gọi, cầu khẩn
-isolate     (v) phân cách
-journey     (n) cuộc hành trình, quá trình
-lexicographical     (n) từ vựng
-lexicographical     order (n) thứ tự từ vựng, sắp xếp từ vựng
-lexicographically      (n) về mặt từ vựng
-license     (n) giấy phép         license file (n) tệp giấy phép
-likely     to be : có khả năng; likely to be correct : có khả năng chính xác
-line     breaks : xuống dòng
-literal     (a) nghĩa đen, trực nghĩa
-maintain     (v) duy trì
-manual     page (n) trang hướng dẫn
-match     (n) trận đấu, kết quả
-match     (n) trận đấu, kết quả, 
-migratory     (v) di cư
-modification     (n) sự sửa đổi
-navigate     (v) điều hướng ; navigate to the location of your git repository : điều hướng tới vị trí lưu trữ git của bạn			ˈnavəˌɡāt
-need     to do is of course : việc cần làm tất nhiên 
-no     matter how complicated : cho dù phức tạp đến đâu\
-numerous     ways (n) nhiều cách
-observe     (v) quan sát
-official     list (n) danh sách chính thức
-on     the other hand = however : mặt khác, tuy nhiên
-opportunity     = chance (n) cơ hội	ˌäpərˈt(y)o͞onədē
-options     (n) sự lựa chọn
-outermost     braces (n) dấu ngoặc nhọn ngoài cùng ({ )
-pattern     (n) kiểu mẫu
-perform     trial : thực hiện thử nghiệm
-periodically     (adv) định kỳ	refer back to them periodically 
-permission     (n) quyền, cho phép; permission is granted to copy ; quyền được cho phép để copy
-phrases     (n) cụm từ
-platform     (n) nền tảng, nền đất, đế giày, sân ga xe lửa, chương trình chính trị
-policy     (n) chính sách 	ˈpäləsē
-polynomial     (n) đa thức
-portfolio     (n) bìa giấy đựng, danh mục đầu tư	pôrtˈfōlēˌō
-precision     (n) độ chính xác
-predictions     (n) sự dự đoán
-press     (v) nhấp
-press     a button : nhấn 1 nút
-prime     (n) số nguyên tố
-primitiveoperation     (n) phương thức nguyên thủy
-principle     (n) nguyên tắc
-propose     (v) đề nghị, đề xuất, cầu hôn
-prototype     (n) nguyên mẫu
-publishes     (v) xuất bản
-pull     request (n) kéo yêu cầu  : open a pull request
-punctuation     marks (n) dấu chấm câu
-reach     out to (v) liên hệ tới
-recommended     (v) giới thiệu, tiến cử, khuyên, đề xuất
-refer     (v) tham khảo
-relative     (a) tương đối, họ hàng, liên quan
-relative     error tolerance : khả năng chịu lỗi tương đối
-relevant     (a) liên quan, thích hợp
-remote     repository (n) kho lưu trữ từ xa
-repeatedly     (a) liên lục, nhắc lại
-repetition     (n) lặp lại
-repository     = storage = archives (n) kho lưu trữ	ˈärˌkīvs
-rules     (n) quy tắc
-saving     account (n) tài khoản tiết kiệm
-scroll     to (v) cuộn đến
-seem     (v) có vẻ
-self     -avoiding walks (n) tự đi bộ
-sensor     (n) cảm biến
-sighted     (v) có thể nhìn thấy
-sign     up (v) đăng ký
-similar     (a) tương tự
-simulate     (v) mô phỏng
-singleton     (n) có một, duy nhất.
-sink     (n) bồn rửa bát , (v) chìm
-snapshot     (n) ảnh chụp nhanh
-socket     (n) ổ cắm
-some     well-defined syntax (n) một số cú pháp xác định rõ ràng.
-spotted     (v) được phát hiện	ˈspädəd
-spreadsheets     (n) bảng tính
-squiggly     braces (n) dấu ngoặc nhọn
-stove     (n) bếp
-strangely     enough : kỳ lạ thay
-strict     (a) nghiêm ngặt, chính xác; strict guideline : hướng dẫn nghiêm ngặt
-substring     (n) chuỗi con
-synchronized     with (v) đồng bộ hóa với	ˈsingkrəˌnīzd
-take     a look (v) hãy xem
-techniques     = engineering (n) kỹ thuật	tekˈnēk
-the     compare archives feature (n) tính năng so sánh lưu trữ
-the     details (n) các chi tiết
-the     diamond problem (n) vấn đề hình thoi
-the     given regular expression (n) biểu thức chính quy đã cho
-the     process of learning to program (n) quá trình học lập trình
-the     square root of : căn bậc 2
-the     string’s literal interpretation : giải thích theo nghĩa đen của chuỗi
-through     a commit : thông qua một cam kết
-tolerance     (n) khả năng, sự chịu đựng	täl(ə)rəns
-tốt     hơn là mắc lỗi bây giờ và có chủ đích hơn là sau này vô tình
-track     (v) theo giõi ;        		track your file and changes in git
-trade-offs     (a) thay đổi
-trade-offs     among alternatives : thay đổi giữa các lựa chọn thay thế
-trial     = experiment (n) thử nghiệm
-unless     you've already escaped : trừ khi bạn trốn thoát
-username     policy  (n) chính sách tên người dùng
-validate     (n) xác thực; validate an ip address: xác định địa chỉ ip
-variations     (n) các biến thể
-vehicle     (n) phương tiện giao thông
-verify     (v) xác minh :      ask you verify
-via     (pre) thông qua ; via text command : thông qua lệnh văn bản
-visually     (adv) trực quan; organizing your program visually
-weappon     (n) vũ khí
-wildcard     (n) ký tự đại diện
-with     draw (v) rút (tiền)
-without     further translation : không cần dịch thêm
-wondering     (a) tự hỏi
-accomplish     (v) hoàn thành, thực hiện
-accurately     = correctly (adv) chính xác	ˈakyərətlē
-achieve     (v) hoàn thành, thi hành, đắc thắng
-achieved     (v) đạt được
-advantage     (n) lợi thế, ưu điểm
-aggregation     (n) sự tụ hợp, tổng hợp
-anagrams     (n) đảo ngữ	ˈanəˌɡram
-analyzing     (v) phân tích
-appear     (v) xuất hiện
-appearance     (n) sự xuất hiện
-append     (v) minh họa, phụ họa
-appliance     (n) thiết bị điện	əˈplīəns
-aspects     (n) các khía cạnh; 
-assemble     (a) tập hợp
-assembling     (v) lắp ráp
-association     (n) sự kết hợp, đoàn thể
-avartar  avartar
-balance     (n) tiền dư, thăng bằng, cái cân; (a) so sánh
-bravo     (n) hoan hô
-capture     (v) bắt lấy, lưu lại	ˈkapchər
-collaboration     (n) sự cộng tác	kəˌlabəˈrāsh(ə)n
-collection     (n) tập hợp; collection of method : tập hợp các phương pháp
-combine     (v) phối hợp, liên minh
-combines     (v) kết hợp
-commit     (v) giao phó, ủy thác, cam kết, tống giam
-composed     of : bao gồm
-composition     (n) hợp thành, thành phần
-computation     (n) sự tính toán
-concreteclass     (n) lớp con cụ thể
-configure     (v) định dạng, định hình 
-conflict     (v) xung đột
-confronted     (v) đối mặt
-confused     (n) bối rối, lúng túng	kənˈfyo͞ozd
-confusingly     (adv) bối rối, khó hiểu
-consecutive     (a) liên tiếp  
-consistent     (a) thích hợp
-context     (n) ngữ cảnh
-contract     (n) hợp đồng, đấu giá; (v) ký kết, đính ước
-contrast     (v) tương phản, (n) đối chiếu
-contributors     (n) người đóng góp
-corner     (n) góc 
-creatively     (adv) sáng tạo
-currency     (n) đơn vị tiền tệ
-dashboard     (n) bảng điều khiển
-decisions     (n) quyết định
-decompiler     (n) trình dịch ngược
-demo     (n) bản giới thiệu
-dependencies      (n) các thư viện phụ thuộc, vật phụ thuộc
-deposit     (v) gửi tiền, đặt cọc
-desired     (a) mong muốn
-despondent     (v) thất vọng 
-detective     (n) thám tử, cảnh sát chìm
-dialog     (n) hộp thoại
-disadvantage     (n) điều bất lợi, khuyết điểm
-doorbell     (n) chuông cửa
-electricfan     (n ) quạt điện
-embarrassed     (a) xấu hổ
-emoji     (n) biểu tượng cảm xúc		ēˈmōjē
-engine     (n) động cơ
-engineering     (n) kỹ thuật
-enhances     (v) nâng cao	in'hɑ:ns
-entire     (a) trọn, toàn bộ;	ənˈtī(ə)r
-essential     (a) cơ bản, thiết yếu	əˈsen(t)shəl
-evaluating     (v) đánh giá
-evolved     to (v) phát triển thành
-executable     (a) có thể thực thi
-execute     (v) thực hiện
-explore     (v) khám phá
-express     = describe (n) diễn tả
-familiar     (a) quen thuộc, quen dùng >< unfamiliar
-feature     (n) tính năng, đặc tính; (v) đóng phim, miêu tả
-feedback     (n) sự phản hồi, sự nối tiếp
-finite     (a) hữu hạn
-finite     sum (n) tổng hữu hạn
-form     hypotheses : thi hành các giả thiết
-formulate     problem : khả năng hình thành vấn đề
-frustrating     (a) làm nản lòng	ˈfrəstrāding
-harder     (a) khó hơn
-heart     (n) trái tim ;collaboration (n) sự cộng tác	kəˌlabəˈrāsh(ə)n
-hesitate     (v) do dự
-hosting     (v) lưu trữ
-hourglass     (n) đồng hồ cát
-hypotheses     (n) giả thiết
-identicon     (n) danh tính
-indenting     (v) thụt lề
-indicate     (v) biểu thị
-infer     (v) suy ra
-infinite     (a) vô hạn
-interactions     (n) tương tác
-interpretation     (n) sự giải thích
-intersections     (n) giao lộ; intersections visited (n) giao lộ truy cập
-invocation     (n) lệnh gọi
-invoking     (v) gọi, cầu khẩn
-isolate     (v) phân cách
-journey     (n) cuộc hành trình, quá trình
-lexicographical     (n) từ vựng
-lexicographical     order (n) thứ tự từ vựng, sắp xếp từ vựng
-lexicographically      (n) về mặt từ vựng
-license     (n) giấy phép         license file (n) tệp giấy phép
-likely     to be : có khả năng; likely to be correct : có khả năng chính xác
-line     breaks : xuống dòng
-literal     (a) nghĩa đen, trực nghĩa
-maintain     (v) duy trì
-manual     page (n) trang hướng dẫn
-match     (n) trận đấu, kết quả
-match     (n) trận đấu, kết quả, 
-migratory     (v) di cư
-modification     (n) sự sửa đổi
-navigate     (v) điều hướng ; navigate to the location of your git repository : điều hướng tới vị trí lưu trữ git của bạn			ˈnavəˌɡāt
-need     to do is of course : việc cần làm tất nhiên 
-no     matter how complicated : cho dù phức tạp đến đâu\
-numerous     ways (n) nhiều cách
-observe     (v) quan sát
-official     list (n) danh sách chính thức
-on     the other hand = however : mặt khác, tuy nhiên
-opportunity     = chance (n) cơ hội	ˌäpərˈt(y)o͞onədē
-options     (n) sự lựa chọn
-outermost     braces (n) dấu ngoặc nhọn ngoài cùng ({ )
-pattern     (n) kiểu mẫu
-perform     trial : thực hiện thử nghiệm
-periodically     (adv) định kỳ	refer back to them periodically 
-permission     (n) quyền, cho phép; permission is granted to copy ; quyền được cho phép để copy
-phrases     (n) cụm từ
-platform     (n) nền tảng, nền đất, đế giày, sân ga xe lửa, chương trình chính trị
-policy     (n) chính sách 	ˈpäləsē
-polynomial     (n) đa thức
-portfolio     (n) bìa giấy đựng, danh mục đầu tư	pôrtˈfōlēˌō
-precision     (n) độ chính xác
-predictions     (n) sự dự đoán
-press     (v) nhấp
-press     a button : nhấn 1 nút
-prime     (n) số nguyên tố
-primitiveoperation     (n) phương thức nguyên thủy
-principle     (n) nguyên tắc
-propose     (v) đề nghị, đề xuất, cầu hôn
-prototype     (n) nguyên mẫu
-publishes     (v) xuất bản
-pull     request (n) kéo yêu cầu  : open a pull request
-punctuation     marks (n) dấu chấm câu
-reach     out to (v) liên hệ tới
-recommended     (v) giới thiệu, tiến cử, khuyên, đề xuất
-refer     (v) tham khảo
-relative     (a) tương đối, họ hàng, liên quan
-relative     error tolerance : khả năng chịu lỗi tương đối
-relevant     (a) liên quan, thích hợp
-remote     repository (n) kho lưu trữ từ xa
-repeatedly     (a) liên lục, nhắc lại
-repetition     (n) lặp lại
-repository     = storage = archives (n) kho lưu trữ	ˈärˌkīvs
-rules     (n) quy tắc
-saving     account (n) tài khoản tiết kiệm
-scroll     to (v) cuộn đến
-seem     (v) có vẻ
-self     -avoiding walks (n) tự đi bộ
-sensor     (n) cảm biến
-sighted     (v) có thể nhìn thấy
-sign     up (v) đăng ký
-similar     (a) tương tự
-simulate     (v) mô phỏng
-singleton     (n) có một, duy nhất.
-sink     (n) bồn rửa bát , (v) chìm
-snapshot     (n) ảnh chụp nhanh
-socket     (n) ổ cắm
-some     well-defined syntax (n) một số cú pháp xác định rõ ràng.
-spotted     (v) được phát hiện	ˈspädəd
-spreadsheets     (n) bảng tính
-squiggly     braces (n) dấu ngoặc nhọn
-stove     (n) bếp
-strangely     enough : kỳ lạ thay
-strict     (a) nghiêm ngặt, chính xác; strict guideline : hướng dẫn nghiêm ngặt
-substring     (n) chuỗi con
-synchronized     with (v) đồng bộ hóa với	ˈsingkrəˌnīzd
-take     a look (v) hãy xem
-techniques     = engineering (n) kỹ thuật	tekˈnēk
-the     compare archives feature (n) tính năng so sánh lưu trữ
-the     details (n) các chi tiết
-the     diamond problem (n) vấn đề hình thoi
-the     given regular expression (n) biểu thức chính quy đã cho
-the     process of learning to program (n) quá trình học lập trình
-the     square root of : căn bậc 2
-the     string’s literal interpretation : giải thích theo nghĩa đen của chuỗi
-through     a commit : thông qua một cam kết
-tolerance     (n) khả năng, sự chịu đựng	täl(ə)rəns
-tốt     hơn là mắc lỗi bây giờ và có chủ đích hơn là sau này vô tình
-track     (v) theo giõi ;        		track your file and changes in git
-trade-offs     (a) thay đổi
-trade-offs     among alternatives : thay đổi giữa các lựa chọn thay thế
-trial     = experiment (n) thử nghiệm
-unless     you've already escaped : trừ khi bạn trốn thoát
-username     policy  (n) chính sách tên người dùng
-validate     (n) xác thực; validate an ip address: xác định địa chỉ ip
-variations     (n) các biến thể
-vehicle     (n) phương tiện giao thông
-verify     (v) xác minh :      ask you verify
-via     (pre) thông qua ; via text command : thông qua lệnh văn bản
-visually     (adv) trực quan; organizing your program visually
-weappon     (n) vũ khí
-wildcard     (n) ký tự đại diện
-with     draw (v) rút (tiền)
-without     further translation : không cần dịch thêm
-wondering     (a) tự hỏi
+accomplish		 (v) hoàn thành, thực hiện
+achieve		 (v) hoàn thành, thi hành, đắc thắng
+achieved		 (v) đạt được
+advantage		 (n) lợi thế, ưu điểm
+aggregation		 (n) sự tụ hợp, tổng hợp
+anagrams		 (n) đảo ngữ	ˈanəˌɡram
+analyzing		 (v) phân tích
+appear		 (v) xuất hiện
+appearance		 (n) sự xuất hiện
+append		 (v) minh họa, phụ họa
+appliance		 (n) thiết bị điện	əˈplīəns
+aspects		 (n) các khía cạnh;
+assemble		 (a) tập hợp
+assembling		 (v) lắp ráp
+association		 (n) sự kết hợp, đoàn thể
+avatar		 (n) hình đại diện
+balance		 (n) tiền dư, thăng bằng, cái cân; (a) so sánh
+bravo		 (n) hoan hô
+capture		 (v) bắt lấy, lưu lại	ˈkapchər
+collaboration		 (n) sự cộng tác	kəˌlabəˈrāsh(ə)n
+collection		 (n) tập hợp; collection of method : tập hợp các phương pháp
+combine		 (v) phối hợp, liên minh
+combines		 (v) kết hợp
+commit		 (v) giao phó, ủy thác, cam kết, tống giam
+composition		 (n) hợp thành, thành phần
+computation		 (n) sự tính toán
+concreteclass		 (n) lớp con cụ thể
+configure		 (v) định dạng, định hình
+conflict		 (v) xung đột
+confronted		 (v) đối mặt
+confused		 (n) bối rối, lúng túng	kənˈfyo͞ozd
+confusingly		 (adv) bối rối, khó hiểu
+consecutive		 (a) liên tiếp
+consistent		 (a) thích hợp
+context		 (n) ngữ cảnh
+contract		 (n) hợp đồng, đấu giá; (v) ký kết, đính ước
+contrast		 (v) tương phản, (n) đối chiếu
+contributors		 (n) người đóng góp
+corner		 (n) góc
+creatively		 (adv) sáng tạo
+currency		 (n) đơn vị tiền tệ
+dashboard		 (n) bảng điều khiển
+decisions		 (n) quyết định
+decompiler		 (n) trình dịch ngược
+demo		 (n) bản giới thiệu
+dependencies		  (n) các thư viện phụ thuộc, vật phụ thuộc
+deposit		 (v) gửi tiền, đặt cọc
+desired		 (a) mong muốn
+despondent		 (v) thất vọng
+detective		 (n) thám tử, cảnh sát chìm
+dialog		 (n) hộp thoại
+disadvantage		 (n) điều bất lợi, khuyết điểm
+doorbell		 (n) chuông cửa
+electricfan		 (n ) quạt điện
+embarrassed		 (a) xấu hổ
+emoji		 (n) biểu tượng cảm xúc		ēˈmōjē
+engine		 (n) động cơ
+engineering		 (n) kỹ thuật
+enhances		 (v) nâng cao	in'hɑ:ns
+entire		 (a) trọn, toàn bộ;	ənˈtī(ə)r
+essential		 (a) cơ bản, thiết yếu	əˈsen(t)shəl
+evaluating		 (v) đánh giá
+evolved		 to (v) phát triển thành
+executable		 (a) có thể thực thi
+execute		 (v) thực hiện
+explore		 (v) khám phá
+familiar		 (a) quen thuộc, quen dùng >< unfamiliar
+feature		 (n) tính năng, đặc tính; (v) đóng phim, miêu tả
+feedback		 (n) sự phản hồi, sự nối tiếp
+finite		 (a) hữu hạn
+frustrating		 (a) làm nản lòng	ˈfrəstrāding
+harder		 (a) khó hơn
+heart		 (n) trái tim ;collaboration (n) sự cộng tác	kəˌlabəˈrāsh(ə)n
+hesitate		 (v) do dự
+hosting		 (v) lưu trữ
+hourglass		 (n) đồng hồ cát
+hypotheses		 (n) giả thiết
+identicon		 (n) danh tính
+indenting		 (v) thụt lề
+indicate		 (v) biểu thị
+infer		 (v) suy ra
+infinite		 (a) vô hạn
+interactions		 (n) tương tác
+interpretation		 (n) sự giải thích
+intersections		 (n) giao lộ; intersections visited (n) giao lộ truy cập
+invocation		 (n) lệnh gọi
+invoking		 (v) gọi, cầu khẩn
+isolate		 (v) phân cách
+journey		 (n) cuộc hành trình, quá trình
+lexicographical		 (n) từ vựng
+lexicographically		  (n) về mặt từ vựng
+license		 (n) giấy phép         license file (n) tệp giấy phép
+literal		 (a) nghĩa đen, trực nghĩa
+maintain		 (v) duy trì
+match		 (n) trận đấu, kết quả
+match		 (n) trận đấu, kết quả,
+migratory		 (v) di cư
+modification		 (n) sự sửa đổi
+observe		 (v) quan sát
+opportunity		 (n) cơ hội	ˌäpərˈt(y)o͞onədē
+options		 (n) sự lựa chọn
+pattern		 (n) kiểu mẫu
+periodically		 (adv) định kỳ	refer back to them periodically
+permission		 (n) quyền, cho phép; permission is granted to copy ; quyền được cho phép để copy
+phrases		 (n) cụm từ
+platform		 (n) nền tảng, nền đất, đế giày, sân ga xe lửa, chương trình chính trị
+policy		 (n) chính sách 	ˈpäləsē
+polynomial		 (n) đa thức
+portfolio		 (n) bìa giấy đựng, danh mục đầu tư	pôrtˈfōlēˌō
+precision		 (n) độ chính xác
+predictions		 (n) sự dự đoán
+press		 (v) nhấp
+prime		 (n) số nguyên tố
+primitiveoperation		 (n) phương thức nguyên thủy
+principle		 (n) nguyên tắc
+propose		 (v) đề nghị, đề xuất, cầu hôn
+prototype		 (n) nguyên mẫu
+publishes		 (v) xuất bản
+recommended		 (v) giới thiệu, tiến cử, khuyên, đề xuất
+refer		 (v) tham khảo
+relative		 (a) tương đối, họ hàng, liên quan
+relevant		 (a) liên quan, thích hợp
+repeatedly		 (a) liên lục, nhắc lại
+repetition		 (n) lặp lại	ˈärˌkīvs
+rules		 (n) quy tắc
+seem		 (v) có vẻ
+sensor		 (n) cảm biến
+sighted		 (v) có thể nhìn thấy
+similar		 (a) tương tự
+simulate		 (v) mô phỏng
+singleton		 (n) có một, duy nhất.
+sink		 (n) bồn rửa bát , (v) chìm
+snapshot		 (n) ảnh chụp nhanh
+socket		 (n) ổ cắm
+spotted		 (v) được phát hiện	ˈspädəd
+spreadsheets		 (n) bảng tính
+stove		 (n) bếp
+strict		 (a) nghiêm ngặt, chính xác; strict guideline : hướng dẫn nghiêm ngặt
+substring		 (n) chuỗi con
+techniques		 (n) kỹ thuật	tekˈnēk
+tolerance		 (n) khả năng, sự chịu đựng	täl(ə)rəns
+track		 (v) theo giõi ;        		track your file and changes in git
+validate		 (n) xác thực; validate an ip address: xác định địa chỉ ip
+variations		 (n) các biến thể
+vehicle		 (n) phương tiện giao thông
+verify		 (v) xác minh :      ask you verify
+visually		 (adv) trực quan; organizing your program visually
+weappon		 (n) vũ khí
+wildcard		 (n) ký tự đại diện
+wondering		 (a) tự hỏi
