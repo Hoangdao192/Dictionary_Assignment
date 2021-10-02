@@ -1,0 +1,9 @@
+Hello.Xin chào
+Agriculture.Nông nghiệp
+Book.Sách
+Phone.Điện thoại
+habit.Thói quen
+hacker.Tin tặc
+handwriting.viết tay
+handicapped.khuyết tật
+medicine.Thuốc
