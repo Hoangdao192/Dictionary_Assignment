@@ -22,8 +22,24 @@ import java.util.ResourceBundle;
 public class SearchPaneController implements Initializable {
     @FXML
     TextField searchBox;
-    final String SEARCHBOX_STYLE_NORMAL = "NORMAL";
-    final String SEARCHBOX_STYLE_FOCUS = "FOCUS";
+    final String SEARCH_BOX_STYLE_NORMAL =
+            "-fx-background-radius: 30;" +
+            "-fx-background-color: #3c4a7d;" +
+            "-fx-padding: 0 0 0 30;" +
+            "-fx-font-size: 20;" +
+            "-fx-text-fill: white;" +
+            "-fx-font-family: Arial;" +
+            "-fx-font-weight: bold;" +
+            "-fx-background-insets: 0;";
+    final String SEARCH_BOX_STYLE_FOCUS =
+            "-fx-background-radius: 28 28 0 0;" +
+            "-fx-background-color: #3c4a7d;" +
+            "-fx-padding: 0 0 0 30;" +
+            "-fx-font-size: 20;" +
+            "-fx-text-fill: white;" +
+            "-fx-font-family: Arial;" +
+            "-fx-font-weight: bold;" +
+            "-fx-background-insets: 0";
     @FXML
     ComboBox<String> comboBox;
     @FXML
@@ -44,7 +60,7 @@ public class SearchPaneController implements Initializable {
     public void reset() {
         searchBox.clear();
         listView.getItems().clear();
-        listView.setVisible(false);
+        hideListView();
         webView.getEngine().loadContent("");
     }
 
@@ -67,75 +83,69 @@ public class SearchPaneController implements Initializable {
         listView.getItems().clear();
         listView.getItems().addAll(suggestedWords);
         listView.setPrefHeight(listCellHeight * suggestedWords.length);
-        listView.setVisible(true);
+        showListView();
     }
 
     public void showFoundWord(String wordTarget) {
         searchBox.clear();
         listView.setVisible(false);
-        webView.setVisible(true);
+        showListView();
         webView.setFontScale(1.5);
         webView.getEngine().loadContent("<i>abacist</i><br/><ul><li><b><i> danh từ</i></b><ul><li><font color='#cc0000'><b> người gãy bàn phím</b></font></li></ul><ul><li><font color='#cc0000'><b> người kế toán</b></font></li></ul></li></ul>");
     }
 
-    public void searchBoxSetStyle(String style) {
-        final String STYLE_NORMAL =
-                "-fx-background-radius: 30;" +
-                        "    -fx-background-color: #3c4a7d;" +
-                        "    -fx-padding: 0 0 0 30;" +
-                        "    -fx-font-size: 20;" +
-                        "    -fx-text-fill: white;" +
-                        "    -fx-font-family: Arial;" +
-                        "    -fx-font-weight: bold;" +
-                        "-fx-background-insets: 0";
-        final String STYLE_FOCUS =
-                "-fx-background-radius: 28 28 0 0;" +
-                        "    -fx-background-color: #3c4a7d;" +
-                        "    -fx-padding: 0 0 0 30;" +
-                        "    -fx-font-size: 20;" +
-                        "    -fx-text-fill: white;" +
-                        "    -fx-font-family: Arial;" +
-                        "    -fx-font-weight: bold;" +
-                        "-fx-background-insets: 0";
-        if (style.equals(SEARCHBOX_STYLE_NORMAL)) {
-            line.setVisible(false);
-            searchBox.setStyle(STYLE_NORMAL);
-        }
-        if (style.equals(SEARCHBOX_STYLE_FOCUS)) {
-            searchBox.setStyle(STYLE_FOCUS);
-            line.setVisible(true);
-        }
+    /**
+     * Reset thanh search về trạng thái ban đầu.
+     */
+    public void resetSearchField() {
+        listView.getItems().clear();
+        hideListView();
+        searchBox.clear();
+    }
+
+    /**
+     * Sự kiện người dùng click chuột chọn 1 từ trong danh sách gợi ý.
+     * @param mouseEvent
+     */
+    public void listViewOnMouseClick(MouseEvent mouseEvent) {
+        String wordTarget = listView.getSelectionModel().getSelectedItem();
+        System.out.println(wordTarget);
+        webView.getEngine().loadContent(wordTarget);
+
+        resetSearchField();
     }
 
     public void searchBoxOnCharacterTyped(KeyEvent event) {
         final char ENTER_CODE = (char) 13;
         final char BACKSPACE_CODE = (char) 8;
+
         String hasTyped = "";
-        searchBoxSetStyle(SEARCHBOX_STYLE_NORMAL);
+
         if (event.getCharacter().charAt(0) == ENTER_CODE) {
             hasTyped = searchBox.getText();
             String[] suggestedWords = getSuggestedWord(hasTyped);
             if (suggestedWords.length > 0) {
                 showFoundWord(suggestedWords[0]);
             }
-        } else if (event.getCharacter().charAt(0) == BACKSPACE_CODE) {
-            if (searchBox.getText().isEmpty()) {
-                listView.setVisible(false);
-            } else {
-                searchBoxSetStyle(SEARCHBOX_STYLE_FOCUS);
-            }
-        } else //if (Character.isLetterOrDigit(event.getCharacter().charAt(0))
-                //|| Character.is)
-            {
+        } else if (event.getCharacter().charAt(0) == BACKSPACE_CODE && searchBox.getText().isEmpty()) {
+               hideListView();
+        } else {
             hasTyped = searchBox.getText() + event.getCharacter();
-            searchBoxSetStyle(SEARCHBOX_STYLE_FOCUS);
+            System.out.println(hasTyped);
             showSuggestedWords(getSuggestedWord(hasTyped));
         }
     }
 
-    private void initComboBox() {
-        comboBox.getItems().addAll(dictionaryList);
-        comboBox.setValue(dictionaryList[0]);
+    private void showListView() {
+        listView.setVisible(true);
+        searchBox.setStyle(SEARCH_BOX_STYLE_FOCUS);
+        line.setVisible(true);
+    }
+
+    private void hideListView() {
+        listView.setVisible(false);
+        searchBox.setStyle(SEARCH_BOX_STYLE_NORMAL);
+        line.setVisible(false);
     }
 
     private void setRecentWordStyle(Label label) {
@@ -172,8 +182,15 @@ public class SearchPaneController implements Initializable {
         });
     }
 
+    private void initComboBox() {
+        comboBox.getItems().addAll(dictionaryList);
+        comboBox.setValue(dictionaryList[0]);
+    }
+
+    /**
+     * Khởi tạo thanh gridPane(recentWordPane).
+     */
     private void initGridPane() {
-        int gridRow = gridPane.getRowConstraints().size();
         int gridCol = gridPane.getColumnConstraints().size();
         for (int i = 0; i < recentWords.length; ++i) {
             int currentRow = i / gridCol;
@@ -191,7 +208,6 @@ public class SearchPaneController implements Initializable {
         initComboBox();
         initGridPane();
         listView.setFixedCellSize(listCellHeight);
-        line.setVisible(false);
-        webView.setVisible(false);
+        webView.setFontScale(1.5);
     }
 }
