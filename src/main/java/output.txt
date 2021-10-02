@@ -1,2 +1,2 @@
-house  nhà
-play  chơi
+house		  nhà
+play		  chơi
