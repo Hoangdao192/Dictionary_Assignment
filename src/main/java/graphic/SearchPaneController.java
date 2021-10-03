@@ -14,7 +14,6 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.shape.Line;
 import javafx.scene.web.WebView;
 
-import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -22,7 +21,6 @@ import data.Dictionary;
 import javafx.util.Callback;
 
 public class SearchPaneController implements Initializable {
-    Dictionary dictionary = new Dictionary();
     @FXML
     TextField searchBox;
     final String SEARCH_BOX_STYLE_NORMAL =
@@ -42,15 +40,14 @@ public class SearchPaneController implements Initializable {
     @FXML
     ListView<Word> listView;
     final double listCellHeight = 40;
-
     @FXML
     Line line;
-
     @FXML
     WebView webView;
     @FXML
     GridPane gridPane;
 
+    Dictionary localDictionary = new Dictionary();
     String[] dictionaryList = {"Từ điển trên máy", "Google dịch"};
     String[] recentWords = {"Hello", "Hi", "How", "Why"};
 
@@ -62,8 +59,7 @@ public class SearchPaneController implements Initializable {
     }
 
     public ArrayList<Word> getSuggestedWord(String hasTyped) {
-        ArrayList<Word> words = dictionary.searchWord(hasTyped);
-
+        ArrayList<Word> words = localDictionary.searchWord(hasTyped);
         while (words.size() >= 10) {
             words.remove(words.size() - 1);
         }
@@ -75,12 +71,10 @@ public class SearchPaneController implements Initializable {
             showFoundWord("Không tìm thấy từ này");
             return;
         }
-
         if (suggestedWords.size() == 1) {
             showFoundWord(suggestedWords.get(0).getWord_explain());
             return;
         }
-
         listView.getItems().clear();
         listView.getItems().addAll(suggestedWords);
         listView.setPrefHeight(listCellHeight * suggestedWords.size());
