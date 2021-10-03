@@ -10,7 +10,8 @@ public class DictionaryManagement extends Dictionary {
     ArrayList<Word> arrWordMain = new ArrayList<Word>(14000);
 
     public void start() {
-        String fileMain = "E:\\Java\\Dictonary_Assignment\\src\\main\\java\\dictionaries.txt";
+        String fileMain = "C:\\Users\\linhl\\Documents\\GitHub\\Dictonary_Assignment\\src\\main\\resources\\data\\English-Vietnamese.txt";
+        // cho nay chay nho sua duong dan
         String fileSup = "E:\\Java\\Dictonary_Assignment\\src\\main\\java\\output.txt";
         DataFile data = new DataFile();
         arrWordMain = data.insertFromFile(fileMain);
