@@ -1,5 +1,6 @@
 package graphic;
 
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -88,8 +89,7 @@ public class SearchPaneController implements Initializable {
 
     public void showFoundWord(String wordTarget) {
         searchBox.clear();
-        listView.setVisible(false);
-        showListView();
+        hideListView();
         webView.setFontScale(1.5);
         webView.getEngine().loadContent("<i>abacist</i><br/><ul><li><b><i> danh từ</i></b><ul><li><font color='#cc0000'><b> người gãy bàn phím</b></font></li></ul><ul><li><font color='#cc0000'><b> người kế toán</b></font></li></ul></li></ul>");
     }
@@ -134,6 +134,12 @@ public class SearchPaneController implements Initializable {
             System.out.println(hasTyped);
             showSuggestedWords(getSuggestedWord(hasTyped));
         }
+    }
+
+    public void searchButtonOnMouseClick(ActionEvent actionEvent) {
+        String hasTyped = searchBox.getText();
+        hideListView();
+        showFoundWord(getSuggestedWord(hasTyped)[0]);
     }
 
     private void showListView() {
