@@ -33,14 +33,8 @@ public class SearchPaneController implements Initializable {
             "-fx-font-weight: bold;" +
             "-fx-background-insets: 0;";
     final String SEARCH_BOX_STYLE_FOCUS =
-            "-fx-background-radius: 28 28 0 0;" +
-            "-fx-background-color: #3c4a7d;" +
-            "-fx-padding: 0 0 0 30;" +
-            "-fx-font-size: 20;" +
-            "-fx-text-fill: white;" +
-            "-fx-font-family: Arial;" +
-            "-fx-font-weight: bold;" +
-            "-fx-background-insets: 0";
+            SEARCH_BOX_STYLE_NORMAL +
+            "-fx-background-radius: 28 28 0 0;";
     @FXML
     ComboBox<String> comboBox;
     @FXML

@@ -1,3 +1,5 @@
+package data;
+
 import java.util.ArrayList;
 
 public class Dictionary {
@@ -18,7 +20,6 @@ public class Dictionary {
             return mid;
         }
     }
-
 
     public int findIndext(String target) {
         return findIndext(0, arrWord.size()-1, target);

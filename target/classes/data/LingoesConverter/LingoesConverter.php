@@ -426,7 +426,7 @@ class LingoesConverter
                     # Remove image tags
                     $xml = preg_replace("/<img .+?\/>/i", "", $xml);
 
-                    # Dictionary cross-reference
+                    # data.Dictionary cross-reference
                     $xml = str_replace('dict://key.[$DictID]/', "", $xml);                    
                 } else
                 {
@@ -441,7 +441,7 @@ class LingoesConverter
                     //$xml = str_replace('<x K="', '<font color="', $xml); 
                     //$xml = str_replace('</x>', '</font>', $xml);
 
-                    # Dictionary cross-reference
+                    # data.Dictionary cross-reference
                     //$xml = str_replace('<Y O="', '<a href="', $xml);
                     //$xml = str_replace('</Y>', '</a>', $xml);
 
