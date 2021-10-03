@@ -1,5 +1,4 @@
 package data;
-
 public class Word implements Comparable {
     //word_target (từ mới), word_explain (giải nghĩa)
     private String word_target;

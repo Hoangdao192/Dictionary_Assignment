@@ -21,6 +21,7 @@ public class Dictionary {
         }
     }
 
+
     public int findIndext(String target) {
         return findIndext(0, arrWord.size()-1, target);
     }

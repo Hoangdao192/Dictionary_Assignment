@@ -13,7 +13,7 @@ public class DataFile {
     /**
     public ArrayList<Word> insertFromFile(String file) {
         ArrayList<Word> arrWord = new ArrayList<Word>(13000);
-        // String file = "E:\\Java\\Dictonary_Assignment\\src\\main\\java\\dictionaries.txt";
+//        String file = "E:\\Java\\Dictonary_Assignment\\src\\main\\java\\dictionaries.txt";
         try (FileInputStream fs = new FileInputStream(file)) {
             Scanner scanner = new Scanner(fs);
             while (scanner.hasNextLine()) {
