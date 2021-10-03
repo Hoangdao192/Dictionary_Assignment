@@ -155,15 +155,8 @@ public class SearchPaneController implements Initializable {
                 "-fx-font-size: 20;" +
                 "-fx-font-family: Arial;" +
                 "-fx-alignment: center;" +
-                "-fx-padding: 0 0 0 50";
-        final String HOVER =
-                "-fx-text-fill: white;" +
-                "-fx-font-weight: bold;" +
-                "-fx-font-size: 20;" +
-                "-fx-font-family: Arial;" +
-                "-fx-underline: true;" +
-                "-fx-alignment: center;" +
-                "-fx-padding: 0 0 0 50";
+                "-fx-padding: 0 0 0 50;";
+        final String HOVER = NORMAL + "-fx-underline: true;";
 
         label.setStyle(NORMAL);
         label.setOnMouseEntered(new EventHandler<MouseEvent>() {
@@ -202,12 +195,29 @@ public class SearchPaneController implements Initializable {
         }
     }
 
+    private void initListView() {
+        listView.setFixedCellSize(listCellHeight);
+        listView.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                ((Node)event.getSource()).getScene().setCursor(Cursor.HAND);
+            }
+        });
+        listView.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                ((Node)event.getSource()).getScene().setCursor(Cursor.DEFAULT);
+            }
+        });
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         reset();
         initComboBox();
         initGridPane();
-        listView.setFixedCellSize(listCellHeight);
+        initListView();
+
         webView.setFontScale(1.5);
     }
 }
