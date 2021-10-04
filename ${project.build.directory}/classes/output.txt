@@ -1,2 +1,15 @@
-house		  nhà
-play		  chơi
+cuong00*----
+cuong01*----
+cuong02*----
+cuong03*----
+cuong04*----
+cuong05*----
+cuong06*----
+cuong07*----
+cuong08*----
+cuong09*----
+cuong10*----
+cuong11*----
+cuong12*----
+house*nhà
+play*chơi

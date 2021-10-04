@@ -1,4 +1,5 @@
 import java.io.*;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -15,10 +16,17 @@ public class DataFile {
             Scanner scanner = new Scanner(fs);
             while (scanner.hasNextLine()) {
                 Word word = new Word();
-                String a = scanner.next();
-                String b = scanner.nextLine();
-                word.setWord_target(a);
-                word.setWord_explain(b);
+                String a = scanner.nextLine();
+                String[] arr = a.split("\\*");
+                int i = 0;
+                for (String s : arr) {
+                    if (i == 0) {
+                        word.setWord_target(s);
+                    } else {
+                        word.setWord_explain(s);
+                    }
+                    i++;
+                }
                 arrWord.add(word);
             }
             scanner.close();
@@ -47,7 +55,7 @@ public class DataFile {
 
         try (FileWriter fw = new FileWriter(file)) {
             for(Word w : arrWorld) {
-                fw.write(w.getWord_target() + "\t" + w.getWord_explain() + "\n");
+                fw.write(w.getWord_target() + "*" + w.getWord_explain() + "\n");
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
