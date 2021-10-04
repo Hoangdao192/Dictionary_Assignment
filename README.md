@@ -8,6 +8,6 @@
 - Convert file .ld2 sang .txt bằng tool LingoesConverter
   https://github.com/nviet/lingoes-converter
 
-### Phiên bản sử dụng
+### Sử dụng
 - JDK 1.8.0_301
 - Javafx Scene Builder 8.5.0 của Gluon

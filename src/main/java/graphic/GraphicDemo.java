@@ -7,7 +7,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class GraphicDemo extends Application {
-
     public static void main(String[] args) {
         launch(args);
     }
