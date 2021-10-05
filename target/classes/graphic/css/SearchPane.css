@@ -98,3 +98,7 @@
 #suggested-word-list .list-cell:filled:hover {
     -fx-text-fill: yellow;
 }
+
+#web-view {
+    -fx-padding: 50 50 50 50;
+}

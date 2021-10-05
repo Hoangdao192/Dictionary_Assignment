@@ -1,42 +1,44 @@
 package data.FreeDictionaryAPI;
 
 import java.io.BufferedReader;
-import java.io.InputStream;
+import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 
 import data.FreeDictionaryAPI.word.Definition;
 import data.FreeDictionaryAPI.word.Phonetic;
-import data.FreeDictionaryAPI.word.Word;
+import data.FreeDictionaryAPI.word.FreeDictionaryWord;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-
-class Language {
-    public final String VIETNAMESE = "vn";
-    public final String ENGLISH = "en";
-}
 
 public class FreeDictionaryAPI {
     public URL generateAPIURL(String wordTarget) throws Exception{
         return new URL("https://api.dictionaryapi.dev/api/v2/entries/en/" + wordTarget);
     }
 
-    public String getJSONFromURL(URL url) throws Exception{
-        URLConnection urlConnection = (HttpURLConnection) url.openConnection();
-        InputStreamReader inputStream = new InputStreamReader(urlConnection.getInputStream(), "UTF-8");
+    public String getJSONFromURL(URL url){
+        try {
+            HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+            urlConnection.setRequestMethod("GET");
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream(), "UTF-8"));
 
-        int read = 0;
-        StringBuilder content = new StringBuilder();
-        while ((read = inputStream.read()) != -1) {
-            content.append((char) read);
+            String read;
+            StringBuilder content = new StringBuilder();
+            while ((read = bufferedReader.readLine()) != null) {
+                content.append(read);
+            }
+            return content.toString();
+        } catch (FileNotFoundException e) {
+            return null;
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
-        return content.toString();
+       return null;
     }
 
     /**
@@ -45,18 +47,22 @@ public class FreeDictionaryAPI {
      * @return
      * @throws Exception
      */
-    public ArrayList<Word> getDataFromJSON(String json) throws Exception{
-        ArrayList<Word> words = new ArrayList<Word>();
+    public ArrayList<FreeDictionaryWord> getDataFromJSON(String json) throws Exception{
+        ArrayList<FreeDictionaryWord> freeDictionaryWords = new ArrayList<FreeDictionaryWord>(0);
+
+        if (json == null) {
+            return freeDictionaryWords;
+        }
 
         JSONArray jsonArray = (JSONArray) new JSONParser().parse(json);
         for (int i = 0; i < jsonArray.size(); ++i) {
             JSONObject jsonObject = (JSONObject) jsonArray.get(i);
 
-            Word newWord = new Word();
+            FreeDictionaryWord newFreeDictionaryWord = new FreeDictionaryWord();
 
             //  Từ vựng
             String word = (String) jsonObject.get("word");
-            newWord.setWord_target(word);
+            newFreeDictionaryWord.setWord_target(word);
 
             //  Các cách phát âm
             JSONArray sounds = (JSONArray) jsonObject.get("phonetics");
@@ -66,7 +72,7 @@ public class FreeDictionaryAPI {
                 String pronounce = (String) sound.get("text");
                 //  Link Âm thanh
                 String mp3 = (String) sound.get("audio");
-                newWord.getPhonetics().add(new Phonetic(pronounce, mp3));
+                newFreeDictionaryWord.getPhonetics().add(new Phonetic(pronounce, mp3));
             }
 
             //  Các nghĩa của từ
@@ -100,47 +106,50 @@ public class FreeDictionaryAPI {
                     Definition newDefinition = new Definition(mean, kind);
                     newDefinition.getSynonyms().addAll(synonymsSave);
                     newDefinition.getAntonyms().addAll(antonymsSave);
-                    newWord.getDefinitions().add(newDefinition);
+                    newFreeDictionaryWord.getDefinitions().add(newDefinition);
                 }
             }
-            words.add(newWord);
+            freeDictionaryWords.add(newFreeDictionaryWord);
         }
 
-        return words;
+        return freeDictionaryWords;
     }
 
     /**
      * Kết quả mà getDataFromJSON có thể chứa các từ giống nhau nhưng khác nghĩa.
      * Hàm này sẽ hợp nhất các từ đó thành 1 từ với nhiều nghĩa khác nhau.
-     * @param words
+     * @param freeDictionaryWords
      * @return
      */
-    private ArrayList<Word> filterWord(ArrayList<Word> words) {
+    private ArrayList<FreeDictionaryWord> filterWord(ArrayList<FreeDictionaryWord> freeDictionaryWords) {
         int i = 0;
-        while (i < words.size() - 1) {
+        while (i < freeDictionaryWords.size() - 1) {
             int j = i + 1;
-            while (j < words.size()) {
-                if (words.get(i).sameWordTarget(words.get(j))) {
-                    Word mergeWord = words.get(i);
-                    mergeWord.getPhonetics().addAll(words.get(j).getPhonetics());
-                    mergeWord.getDefinitions().addAll(words.get(j).getDefinitions());
-                    words.remove(j);
+            while (j < freeDictionaryWords.size()) {
+                if (freeDictionaryWords.get(i).sameWordTarget(freeDictionaryWords.get(j))) {
+                    FreeDictionaryWord mergeFreeDictionaryWord = freeDictionaryWords.get(i);
+                    mergeFreeDictionaryWord.getPhonetics().addAll(freeDictionaryWords.get(j).getPhonetics());
+                    mergeFreeDictionaryWord.getDefinitions().addAll(freeDictionaryWords.get(j).getDefinitions());
+                    freeDictionaryWords.remove(j);
                 } else {
                     ++j;
                 }
             }
             ++i;
         }
-        return words;
+        return freeDictionaryWords;
     }
 
-    public ArrayList<Word> getSuggestedWord(String word) {
-        ArrayList<Word> suggestedWord = new ArrayList<Word>();
+    public ArrayList<FreeDictionaryWord> getSuggestedWord(String word) {
+        ArrayList<FreeDictionaryWord> suggestedWord = new ArrayList<FreeDictionaryWord>();
         try {
             URL dictionaryURL = generateAPIURL(word);
             String json = getJSONFromURL(dictionaryURL);
             suggestedWord = getDataFromJSON(json);
             suggestedWord = filterWord(suggestedWord);
+            for (int i = 0; i < suggestedWord.size(); ++i) {
+                suggestedWord.get(i).setWord_explain(suggestedWord.get(i).generateWordExplain());
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

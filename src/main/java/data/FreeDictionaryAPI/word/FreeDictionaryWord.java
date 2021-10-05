@@ -9,15 +9,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-public class Word extends data.Word{
+public class FreeDictionaryWord extends data.Word{
     HashSet<Phonetic> phonetics = new HashSet<Phonetic>();
     ArrayList<Definition> definitions = new ArrayList<Definition>();
 
-    public Word() {
-
+    public FreeDictionaryWord() {
+        this.setWord_explain("hello");
     }
 
-    public Word(String wordTarget) {
+    public FreeDictionaryWord(String wordTarget) {
         this.setWord_target(wordTarget);
     }
 
@@ -29,8 +29,43 @@ public class Word extends data.Word{
         return this.definitions;
     }
 
-    public boolean sameWordTarget(Word other) {
+    public boolean sameWordTarget(FreeDictionaryWord other) {
         return this.getWord_target().equals(other.getWord_target());
+    }
+
+    public String generateWordExplain() {
+        /*  Định dạng
+        <ul>
+            <i><b>noun</b></i>
+            <li>
+                <font color='#cc0000'><b>Dịch nghĩa</b></font>
+                <ul>
+                    <li>
+                        Từ đồng nghĩa
+                        <ul>
+                            <li>1</li>
+                            <li>2</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Từ trái nghĩa
+                        <ul>
+                            <li>1</li>
+                            <li>2</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+         */
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("<ul>");
+        for (int i = 0; i < definitions.size(); ++i) {
+            Definition definition = definitions.get(i);
+            stringBuilder.append(definition.toHTML());
+        }
+        stringBuilder.append("</ul>");
+        return stringBuilder.toString();
     }
 
     public void pronounce(int phoneticIndex) {
