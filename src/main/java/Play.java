@@ -1,6 +1,8 @@
 import data.DictionaryCommandLine;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Play {
@@ -15,7 +17,8 @@ public class Play {
                     "0. Exit\n" +
                     "1. View dictionary and Find word\n" +
                     "2. Find word\n" +
-                    "3. Set word\n");
+                    "3. Set new word\n" +
+                    "4. Show recent world\n");
             int select = 1;
             select = scanner.nextInt();
             switch (select) {
@@ -26,7 +29,10 @@ public class Play {
                     dictionary.dictionarySearcher();
                     break;
                 case 3:
-                        dictionary.insertFromCommandline();
+                    dictionary.insertFromCommandline();
+                    break;
+                case 4:
+                    dictionary.showRecentWorld();
                     break;
                 default:
                     check = false;

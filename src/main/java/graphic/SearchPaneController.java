@@ -67,10 +67,14 @@ public class SearchPaneController implements Initializable {
     }
 
     public ArrayList<Word> getSuggestedWord(String hasTyped) {
+<<<<<<< HEAD
         ArrayList<Word> words = new ArrayList<Word>();
         if (comboBox.getValue().equals(dictionaryList[0])) {
             words = localDictionary.searchWord(hasTyped);
         }
+=======
+        ArrayList<Word> words = new ArrayList<Word>();//localDictionary.searchWord(hasTyped);
+>>>>>>> master
         while (words.size() >= 10) {
             words.remove(words.size() - 1);
         }

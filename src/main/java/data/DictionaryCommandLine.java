@@ -4,24 +4,23 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
 public class DictionaryCommandLine {
 
-    DictionaryManagement dictionaryManagement = new DictionaryManagement();
+    Dictionary dictionary = new Dictionary();
 
     public void start() {
-        dictionaryManagement.start();
+        dictionary.start();
     }
 
     public void end() {
-        dictionaryManagement.end();
+        dictionary.end();
     }
 
     /**
      * Hàm showAllWords() có chức năng hiển thị kết quả danh sách dữ liệu từ điển trên màn hình.
      */
     public void showAllWorlds(){
-        ArrayList<Word> arrWord = dictionaryManagement.arrWord;
+        ArrayList<Word> arrWord = dictionary.arrWord;
         System.out.printf("Number %-20s%-50s\n","English","Vietnamese");
         for(int i = 0; i < arrWord.size(); i++) {
             System.out.printf("%-7d%-20s%-50s\n",i, arrWord.get(i).getWord_target(), arrWord.get(i).getWord_explain());
@@ -31,7 +30,16 @@ public class DictionaryCommandLine {
 
     public void dictionaryAdvanced() throws FileNotFoundException {
         showAllWorlds();
-        dictionaryManagement.dictionaryLookup();
+        String target = "---";
+        Scanner scanner = new Scanner(System.in);
+        while(true) {
+            System.out.println("Enter world you want: ");
+            target = scanner.nextLine();
+            if(target.equals("")) {
+                break;
+            }
+            dictionary.dictionarySearcher(target);
+        }
     }
 
     /**
@@ -46,7 +54,7 @@ public class DictionaryCommandLine {
             if(target.equals("")) {
                 break;
             }
-            dictionaryManagement.dictionarySearcher(target);
+            dictionary.dictionarySearcher(target);
         }
     }
 
@@ -54,6 +62,13 @@ public class DictionaryCommandLine {
      *
      */
     public void insertFromCommandline() {
-        dictionaryManagement.insertFromCommandline();
+        dictionary.insertFromCommandline();
+    }
+
+    /**
+     *
+     */
+    public void showRecentWorld() {
+        dictionary.showRecentWorld();
     }
 }

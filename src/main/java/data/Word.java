@@ -1,8 +1,10 @@
 package data;
+
 public class Word implements Comparable {
     //word_target (từ mới), word_explain (giải nghĩa)
     private String word_target;
     private String word_explain;
+    private boolean sound = false;
 
     public void setWord_target(String w) {
         word_target = w;
@@ -20,6 +22,22 @@ public class Word implements Comparable {
         return word_explain;
     }
 
+<<<<<<< HEAD
+=======
+    public boolean getSound() {
+        return sound;
+    }
+
+    public void setSound(boolean sound) {
+        this.sound = sound;
+    }
+
+    Word() {
+        word_explain = "";
+        word_target = "";
+    }
+
+>>>>>>> master
     public void setWord(Word w) {
         word_target = w.getWord_target();
         word_explain = w.getWord_explain();
