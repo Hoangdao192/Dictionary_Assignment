@@ -102,3 +102,31 @@
 #web-view {
     -fx-padding: 50 50 50 50;
 }
+
+#audio-list {
+    -fx-background-color: none;
+    -fx-background-radius: 0 0 28 28;
+    -fx-background-insets: 0;
+}
+
+#audio-list .list-cell {
+    -fx-background-color: none;
+    -fx-font-size: 25;
+    -fx-text-fill: blue;
+    -fx-font-style: italic;
+    -fx-font-family: "Times New Roman";
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 10 30;
+}
+
+#audio-list .list-cell:filled:hover {
+    -fx-underline: true;
+}
+
+#audio-list-label {
+    -fx-font-style: italic;
+    -fx-font-weight: bold;
+    -fx-font-family: "Times New Roman";
+    -fx-text-fill: black;
+    -fx-font-size: 25;
+}
