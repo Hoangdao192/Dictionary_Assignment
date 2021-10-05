@@ -34,7 +34,7 @@ class LingoesConverter
     public $logs;
 
     /*
-     * Encoding for the entry words in the dictionary. Currently the class 
+     * Encoding for the entry freeDictionaryWords in the dictionary. Currently the class
      * itself can't determine the encoding of the dictionary so this property 
      * is needed. Default is "UTF-8"
      *
@@ -230,13 +230,13 @@ class LingoesConverter
         $this->prop["offsetCompressedDataBegin"] = current(unpack("I", fread($this->inputHandle, 4)));
 
         /*
-         * Gets offset of the dictionary words in the inflated file
+         * Gets offset of the dictionary freeDictionaryWords in the inflated file
          */
         fseek($this->inputHandle, $this->prop["offsetStart"] + 12);
         $this->prop["offsetWord"] = current(unpack("I", fread($this->inputHandle, 4)));
 
         /*
-         * Gets total length of the words and offset of the dictionary XML 
+         * Gets total length of the freeDictionaryWords and offset of the dictionary XML
          * strings in the inflated file
          */
         fseek($this->inputHandle, $this->prop["offsetStart"] + 16);

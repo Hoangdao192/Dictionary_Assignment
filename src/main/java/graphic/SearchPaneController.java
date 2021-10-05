@@ -1,5 +1,8 @@
 package graphic;
 
+import data.FreeDictionaryAPI.FreeDictionaryAPI;
+import data.FreeDictionaryAPI.word.FreeDictionaryWord;
+import data.FreeDictionaryAPI.word.Phonetic;
 import data.Word;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -36,6 +39,10 @@ public class SearchPaneController implements Initializable {
             SEARCH_BOX_STYLE_NORMAL +
             "-fx-background-radius: 28 28 0 0;";
     @FXML
+    ListView<Phonetic> audioList;
+    @FXML
+    Label audioLabel;
+    @FXML
     ComboBox<String> comboBox;
     @FXML
     ListView<Word> listView;
@@ -47,8 +54,9 @@ public class SearchPaneController implements Initializable {
     @FXML
     GridPane gridPane;
 
+    FreeDictionaryAPI freeDictionaryAPI = new FreeDictionaryAPI();
     Dictionary localDictionary = new Dictionary();
-    String[] dictionaryList = {"Từ điển trên máy", "Google dịch"};
+    String[] dictionaryList = {"Từ điển trên máy", "Từ điển online"};
     String[] recentWords = {"Hello", "Hi", "How", "Why"};
 
     public void reset() {
@@ -59,20 +67,48 @@ public class SearchPaneController implements Initializable {
     }
 
     public ArrayList<Word> getSuggestedWord(String hasTyped) {
+<<<<<<< HEAD
+        ArrayList<Word> words = new ArrayList<Word>();
+        if (comboBox.getValue().equals(dictionaryList[0])) {
+            words = localDictionary.searchWord(hasTyped);
+        }
+=======
         ArrayList<Word> words = new ArrayList<Word>();//localDictionary.searchWord(hasTyped);
+>>>>>>> master
         while (words.size() >= 10) {
             words.remove(words.size() - 1);
         }
         return words;
     }
 
+    public Word getExactlyWord(String hasTyped) {
+        if (comboBox.getValue().equals(dictionaryList[0])) {
+            ArrayList<Word> words = getSuggestedWord(hasTyped);
+            if (words.size() > 0) {
+                return getSuggestedWord(hasTyped).get(0);
+            }
+        } else if (comboBox.getValue().equals(dictionaryList[1])) {
+            ArrayList<FreeDictionaryWord> words = freeDictionaryAPI.getSuggestedWord(hasTyped);
+            if (words.size() > 0) {
+                updateAudioList(words.get(0));
+                return words.get(0);
+            }
+        }
+        Word word = new Word();
+        word.setWord_target("Không tìm thấy từ này");
+        word.setWord_explain("Không tìm thấy từ này");
+        return word;
+    }
+
     public void showSuggestedWords(ArrayList<Word> suggestedWords) {
         if (suggestedWords.size() == 0) {
-            showFoundWord("Không tìm thấy từ này");
+            Word word = new Word();
+            word.setWord_explain("Không tìm thấy từ này");
+            showFoundWord(word);
             return;
         }
         if (suggestedWords.size() == 1) {
-            showFoundWord(suggestedWords.get(0).getWord_explain());
+            showFoundWord(suggestedWords.get(0));
             return;
         }
         listView.getItems().clear();
@@ -81,10 +117,27 @@ public class SearchPaneController implements Initializable {
         showListView();
     }
 
-    public void showFoundWord(String wordTarget) {
+    public void updateAudioList(FreeDictionaryWord word) {
+        audioList.getItems().clear();
+        ArrayList<Phonetic> phonetics = word.getPhonetics();
+        for (int i = 0; i < phonetics.size(); ++i) {
+            System.out.println(phonetics.get(i).getPronounce());
+            System.out.println(phonetics.get(i).getAudio());
+        }
+        audioList.getItems().addAll(phonetics);
+    }
+
+    public void showFoundWord(Word word) {
         hideListView();
         webView.setFontScale(1.5);
-        webView.getEngine().loadContent(wordTarget);
+        webView.getEngine().loadContent(word.getWord_explain());
+        if (word.getWord_explain().equals("Không tìm thấy từ này")) {
+            audioLabel.setVisible(false);
+            audioList.setVisible(false);
+        } else {
+            audioLabel.setVisible(true);
+            audioList.setVisible(true);
+        }
     }
 
     /**
@@ -108,6 +161,10 @@ public class SearchPaneController implements Initializable {
         resetSearchField();
     }
 
+    public void audioListOnMouseClick(MouseEvent mouseEvent) {
+        audioList.getSelectionModel().getSelectedItem().playSound();
+    }
+
     public void searchBoxOnCharacterTyped(KeyEvent event) {
         final char ENTER_CODE = (char) 13;
         final char BACKSPACE_CODE = (char) 8;
@@ -116,10 +173,8 @@ public class SearchPaneController implements Initializable {
 
         if (event.getCharacter().charAt(0) == ENTER_CODE) {
             hasTyped = searchBox.getText();
-            ArrayList<Word> suggestedWords = getSuggestedWord(hasTyped);
-            if (suggestedWords.size() > 0) {
-                showFoundWord(suggestedWords.get(0).getWord_explain());
-            }
+            Word word = getExactlyWord(hasTyped);
+            showFoundWord(word);
         } else if (event.getCharacter().charAt(0) == BACKSPACE_CODE && searchBox.getText().isEmpty()) {
             hideListView();
         } else if (event.getCharacter().charAt(0) == BACKSPACE_CODE) {
@@ -136,7 +191,8 @@ public class SearchPaneController implements Initializable {
     public void searchButtonOnMouseClick(ActionEvent actionEvent) {
         String hasTyped = searchBox.getText();
         hideListView();
-        showFoundWord(getSuggestedWord(hasTyped).get(0).getWord_explain());
+        Word word = getExactlyWord(hasTyped);
+        showFoundWord(word);
     }
 
     private void showListView() {
@@ -198,6 +254,23 @@ public class SearchPaneController implements Initializable {
         }
     }
 
+    private void initAudioList() {
+        audioLabel.setVisible(false);
+        audioList.setVisible(false);
+        audioList.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                ((Node) event.getSource()).getScene().setCursor(Cursor.HAND);
+            }
+        });
+        audioList.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                ((Node) event.getSource()).getScene().setCursor(Cursor.DEFAULT);
+            }
+        });
+    }
+
     private void initListView() {
         listView.setFixedCellSize(listCellHeight);
         listView.setOnMouseEntered(new EventHandler<MouseEvent>() {
@@ -237,6 +310,7 @@ public class SearchPaneController implements Initializable {
         initComboBox();
         initGridPane();
         initListView();
+        initAudioList();
 
         //dictionary.loadFromFile("src/main/resources/data/English-Vietnamese.txt");
         webView.setFontScale(1.5);

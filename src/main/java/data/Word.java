@@ -22,6 +22,8 @@ public class Word implements Comparable {
         return word_explain;
     }
 
+<<<<<<< HEAD
+=======
     public boolean getSound() {
         return sound;
     }
@@ -35,6 +37,7 @@ public class Word implements Comparable {
         word_target = "";
     }
 
+>>>>>>> master
     public void setWord(Word w) {
         word_target = w.getWord_target();
         word_explain = w.getWord_explain();
