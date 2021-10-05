@@ -10,7 +10,6 @@ public class Dictionary {
     ArrayList<Word> arrWordMain = new ArrayList<Word>(140000);
     ArrayList<Word> recentWorld = new ArrayList<Word>(10);
 
-
     /**
      * Các hàm xử lý recentWorld.
      */
