@@ -1,6 +1,7 @@
 package data;
 
 import java.io.*;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -10,7 +11,6 @@ public class DataFile {
     /**
      * Scan data from file.
      */
-    /**
     public ArrayList<Word> insertFromFile(String file) {
         ArrayList<Word> arrWord = new ArrayList<Word>(13000);
 //        String file = "E:\\Java\\Dictonary_Assignment\\src\\main\\java\\dictionaries.txt";
@@ -18,10 +18,17 @@ public class DataFile {
             Scanner scanner = new Scanner(fs);
             while (scanner.hasNextLine()) {
                 Word word = new Word();
-                String a = scanner.next();
-                String b = scanner.nextLine();
-                word.setWord_target(a);
-                word.setWord_explain(b);
+                String a = scanner.nextLine();
+                String[] arr = a.split("\\*");
+                int i = 0;
+                for (String s : arr) {
+                    if (i == 0) {
+                        word.setWord_target(s);
+                    } else {
+                        word.setWord_explain(s);
+                    }
+                    i++;
+                }
                 arrWord.add(word);
             }
             scanner.close();
@@ -33,32 +40,6 @@ public class DataFile {
         Collections.sort(arrWord);
         return arrWord;
     }
-     */
-
-    public ArrayList<Word> insertFromFile(String file){
-        ArrayList<Word> arrWord = new ArrayList<Word>();
-        //String file = "C:\Users\linhl\Documents\GitHub\Dictonary_Assignment\src\main\resources\data\English-Vietnamese.txt"
-        try {
-            FileReader fileReader = new FileReader(file);
-            BufferedReader reader = new BufferedReader(fileReader);
-            String s = null;
-            while ((s = reader.readLine()) != null) {
-                Word word = new Word();
-                String[] part = s.split("\\*");
-                String part1 = part[0];
-                String part2 = part[1];
-                word.setWord_target(part1);
-                word.setWord_explain(part2);
-                arrWord.add(word);
-            }
-            reader.close();
-        }
-        catch(Exception e) {
-            e.printStackTrace();
-        }
-        return arrWord;
-    }
-
 
     /**
      * Save data to file.
@@ -76,7 +57,7 @@ public class DataFile {
 
         try (FileWriter fw = new FileWriter(file)) {
             for(Word w : arrWorld) {
-                fw.write(w.getWord_target() + "\t" + w.getWord_explain() + "\n");
+                fw.write(w.getWord_target() + "*" + w.getWord_explain() + "\n");
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
