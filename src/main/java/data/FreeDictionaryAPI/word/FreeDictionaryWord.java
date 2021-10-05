@@ -14,6 +14,7 @@ public class FreeDictionaryWord extends data.Word{
     ArrayList<Definition> definitions = new ArrayList<Definition>();
 
     public FreeDictionaryWord() {
+        this.setWord_target("hello");
         this.setWord_explain("hello");
     }
 
@@ -21,8 +22,17 @@ public class FreeDictionaryWord extends data.Word{
         this.setWord_target(wordTarget);
     }
 
-    public HashSet<Phonetic> getPhonetics() {
+    public HashSet<Phonetic> getPhoneticsOrigin() {
         return this.phonetics;
+    }
+
+    public ArrayList<Phonetic> getPhonetics() {
+        ArrayList<Phonetic> ret = new ArrayList<Phonetic>();
+        Phonetic[] phoneticArr = phonetics.toArray(new Phonetic[phonetics.size()]);
+        for (int i = 0; i < phoneticArr.length; ++i) {
+            ret.add(phoneticArr[i]);
+        }
+        return ret;
     }
 
     public ArrayList<Definition> getDefinitions() {
@@ -34,30 +44,6 @@ public class FreeDictionaryWord extends data.Word{
     }
 
     public String generateWordExplain() {
-        /*  Định dạng
-        <ul>
-            <i><b>noun</b></i>
-            <li>
-                <font color='#cc0000'><b>Dịch nghĩa</b></font>
-                <ul>
-                    <li>
-                        Từ đồng nghĩa
-                        <ul>
-                            <li>1</li>
-                            <li>2</li>
-                        </ul>
-                    </li>
-                    <li>
-                        Từ trái nghĩa
-                        <ul>
-                            <li>1</li>
-                            <li>2</li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-         */
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("<ul>");
         for (int i = 0; i < definitions.size(); ++i) {
@@ -85,30 +71,5 @@ public class FreeDictionaryWord extends data.Word{
         Media media = new Media(audioFile.toURI().toString());
         MediaPlayer mediaPlayer = new MediaPlayer(media);
         mediaPlayer.play();
-    }
-
-    public void print() {
-        System.out.println("Word: " + getWord_target());
-        for (Phonetic a : phonetics) {
-            System.out.println("Pronounce: " + a.getPronounce());
-            System.out.println("Audio: " + a.getAudio());
-        }
-
-        for (Definition d: definitions) {
-            System.out.println("Definition: " + d.getDefinition());
-            System.out.println("PartOfSpeech: " + d.getPartOfSpeech());
-            System.out.println("SYNONYMS");
-            HashSet<String> synonyms = d.getSynonyms();
-            String[] strarr = synonyms.toArray(new String[synonyms.size()]);
-            for (int i = 0; i < strarr.length; ++i) {
-                System.out.println(strarr[i]);
-            }
-            System.out.println("ANTONYMS");
-            HashSet<String> antonyms = d.getAntonyms();
-            strarr = antonyms.toArray(new String[antonyms.size()]);
-            for (int i = 0; i < strarr.length; ++i) {
-                System.out.println(strarr[i]);
-            }
-        }
     }
 }

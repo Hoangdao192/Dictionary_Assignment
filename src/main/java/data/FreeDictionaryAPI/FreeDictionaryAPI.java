@@ -72,7 +72,7 @@ public class FreeDictionaryAPI {
                 String pronounce = (String) sound.get("text");
                 //  Link Âm thanh
                 String mp3 = (String) sound.get("audio");
-                newFreeDictionaryWord.getPhonetics().add(new Phonetic(pronounce, mp3));
+                newFreeDictionaryWord.getPhoneticsOrigin().add(new Phonetic(pronounce, mp3));
             }
 
             //  Các nghĩa của từ
@@ -104,8 +104,8 @@ public class FreeDictionaryAPI {
                     }
 
                     Definition newDefinition = new Definition(mean, kind);
-                    newDefinition.getSynonyms().addAll(synonymsSave);
-                    newDefinition.getAntonyms().addAll(antonymsSave);
+                    newDefinition.getSynonymsOrigin().addAll(synonymsSave);
+                    newDefinition.getAntonymsOrigin().addAll(antonymsSave);
                     newFreeDictionaryWord.getDefinitions().add(newDefinition);
                 }
             }
@@ -128,7 +128,7 @@ public class FreeDictionaryAPI {
             while (j < freeDictionaryWords.size()) {
                 if (freeDictionaryWords.get(i).sameWordTarget(freeDictionaryWords.get(j))) {
                     FreeDictionaryWord mergeFreeDictionaryWord = freeDictionaryWords.get(i);
-                    mergeFreeDictionaryWord.getPhonetics().addAll(freeDictionaryWords.get(j).getPhonetics());
+                    mergeFreeDictionaryWord.getPhoneticsOrigin().addAll(freeDictionaryWords.get(j).getPhonetics());
                     mergeFreeDictionaryWord.getDefinitions().addAll(freeDictionaryWords.get(j).getDefinitions());
                     freeDictionaryWords.remove(j);
                 } else {
