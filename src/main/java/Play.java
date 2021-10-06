@@ -18,7 +18,8 @@ public class Play {
                     "1. View dictionary and Find word\n" +
                     "2. Find word\n" +
                     "3. Set new word\n" +
-                    "4. Show recent world\n");
+                    "4. View new word\n" +
+                    "5. Show recent world\n");
             int select = 1;
             select = scanner.nextInt();
             switch (select) {
@@ -32,6 +33,9 @@ public class Play {
                     dictionary.insertFromCommandline();
                     break;
                 case 4:
+                    dictionary.showNewWorlds();
+                    break;
+                case 5:
                     dictionary.showRecentWorld();
                     break;
                 default:
