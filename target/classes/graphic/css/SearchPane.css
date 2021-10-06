@@ -1,0 +1,132 @@
+#container {
+    -fx-background-color: white;
+}
+
+#search-box {
+    -fx-background-radius: 30;
+    -fx-background-color: #3c4a7d;
+    -fx-padding: 0 0 0 30;
+    -fx-font-size: 20;
+    -fx-text-fill: white;
+    -fx-font-family: Arial;
+    -fx-font-weight: bold;
+}
+
+#search-button {
+    -fx-background-radius: 100%;
+    -fx-background-color: #fec407;
+}
+
+#search-button:hover {
+    -fx-background-color: rgb(254,100,50);
+}
+
+#recentword-pane {
+    -fx-background-color: #062450;
+}
+
+#recentword-label {
+    -fx-font-family: Arial;
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-background-color: rgba(255,255,255,0.1);
+    -fx-background-radius: 30;
+    -fx-alignment: center;
+}
+
+#dictionary-list {
+    -fx-background-color: #3c4a7d;
+    -fx-background-radius: 30;
+}
+
+#dictionary-list.combo-box-base {
+    -fx-alignment: center;
+    -fx-font-weight: bold;
+    -fx-font-family: Arial;
+    -fx-background-color: #3c4a7d;
+    -fx-background-radius: 30;
+
+}
+
+#dictionary-list.combo-box-base>.list-cell {
+    -fx-background-radius: 30;
+    -fx-text-fill: white;
+}
+
+#dictionary-list .list-cell{
+    -fx-background-color: #3c4a7d;
+    -fx-text-fill: white;
+    -fx-padding: 0 0 0 20;
+    -fx-cell-size: 1.66667em;
+    -fx-background-radius: 30;
+}
+
+#dictionary-list .list-cell:filled:hover {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+}
+
+#dictionary-list .list-view {
+    -fx-background-radius: 0 0 15 15;
+    -fx-background-color: #3c4a7d;
+}
+
+#dictionary-list.combo-box-base:showing {
+    -fx-background-radius: 15 15 0 0;
+}
+
+#suggested-word-list {
+    -fx-background-color: #3c4a7d;
+    -fx-background-radius: 0 0 28 28;
+    -fx-background-insets: 0;
+}
+
+#suggested-word-list .scroll-bar {
+    -fx-opacity: 0;
+}
+
+#suggested-word-list .list-cell {
+    -fx-background-color: none;
+    -fx-font-size: 18;
+    -fx-text-fill: white;
+    -fx-font-family: Arial;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 10 30;
+}
+
+#suggested-word-list .list-cell:filled:hover {
+    -fx-text-fill: yellow;
+}
+
+#web-view {
+    -fx-padding: 50 50 50 50;
+}
+
+#audio-list {
+    -fx-background-color: none;
+    -fx-background-radius: 0 0 28 28;
+    -fx-background-insets: 0;
+}
+
+#audio-list .list-cell {
+    -fx-background-color: none;
+    -fx-font-size: 25;
+    -fx-text-fill: blue;
+    -fx-font-style: italic;
+    -fx-font-family: "Times New Roman";
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 10 30;
+}
+
+#audio-list .list-cell:filled:hover {
+    -fx-underline: true;
+}
+
+#audio-list-label {
+    -fx-font-style: italic;
+    -fx-font-weight: bold;
+    -fx-font-family: "Times New Roman";
+    -fx-text-fill: black;
+    -fx-font-size: 25;
+}
