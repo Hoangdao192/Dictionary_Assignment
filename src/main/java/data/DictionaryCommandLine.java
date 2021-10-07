@@ -1,6 +1,5 @@
 package data;
 
-import javax.xml.crypto.Data;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,10 +21,10 @@ public class DictionaryCommandLine {
         dictionarySup.setArrWorld(data.insertFromFile(fileSup));
         dictionaryRecent.setArrWorld(data.insertFromFile(fileRecent));
         ArrayList<Word> arr = new ArrayList<Word>();
-        for(Word w: dictionaryMain.getArrWorld()) {
+        for(Word w: dictionaryMain.getArrWord()) {
             arr.add(w);
         }
-        for(Word w: dictionarySup.getArrWorld()) {
+        for(Word w: dictionarySup.getArrWord()) {
             arr.add(w);
         }
         Collections.sort(arr);
@@ -37,9 +36,9 @@ public class DictionaryCommandLine {
         String fileSup = "E:\\Java\\program\\Dictonary_Assignment\\src\\main\\java\\Sup.txt";
         String fileRecent = "E:\\Java\\program\\Dictonary_Assignment\\src\\main\\java\\Recent.txt";
         DataFile data = new DataFile();
-        data.saveToFile(fileMain, dictionaryMain.getArrWorld());
-        data.saveToFile(fileSup, dictionarySup.getArrWorld());
-        data.saveToFile(fileRecent, dictionaryRecent.getArrWorld());
+        data.saveToFile(fileMain, dictionaryMain.getArrWord());
+        data.saveToFile(fileSup, dictionarySup.getArrWord());
+        data.saveToFile(fileRecent, dictionaryRecent.getArrWord());
     }
 
     /**
@@ -120,16 +119,16 @@ public class DictionaryCommandLine {
             w.setWord_target(target);
             w.setWord_explain(explain);
             int id = dictionarySup.findIndext(target);
-            if (id < dictionarySup.getArrWorld().size()) {
-                dictionarySup.getArrWorld().get(id).setWord(w);
+            if (id < dictionarySup.getArrWord().size()) {
+                dictionarySup.getArrWord().get(id).setWord(w);
             } else {
-                dictionarySup.getArrWorld().add(w);
-                Collections.sort(dictionarySup.getArrWorld());
+                dictionarySup.getArrWord().add(w);
+                Collections.sort(dictionarySup.getArrWord());
             }
             id = dictionary.findIndext(target);
-            if(id == dictionary.getArrWorld().size()) {
-                dictionary.getArrWorld().add(w);
-                Collections.sort(dictionary.getArrWorld());
+            if(id == dictionary.getArrWord().size()) {
+                dictionary.getArrWord().add(w);
+                Collections.sort(dictionary.getArrWord());
             }
         }
     }

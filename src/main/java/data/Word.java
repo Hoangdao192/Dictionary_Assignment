@@ -35,6 +35,11 @@ public class Word implements Comparable {
         word_target = "";
     }
 
+    public Word(String wordTarget, String wordExplain) {
+        this.word_target = wordTarget;
+        this.word_explain = wordExplain;
+    }
+
     public void setWord(Word w) {
         word_target = w.getWord_target();
         word_explain = w.getWord_explain();
@@ -48,5 +53,18 @@ public class Word implements Comparable {
     public int compareTo(Object o) {
         Word w = (Word) o;
         return word_target.compareTo(w.getWord_target());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null) {
+            return false;
+        }
+        Word other = (Word) o;
+        if (this.word_target.equals(other.word_target)
+            && this.word_explain.equals(other.word_explain)) {
+            return true;
+        }
+        return false;
     }
 }

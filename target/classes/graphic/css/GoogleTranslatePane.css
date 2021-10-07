@@ -1,0 +1,11 @@
+#en-input-area {
+    -fx-background-radius: 30;
+    -fx-background-color: #3c4a7d;
+    -fx-padding: 50 50 50 50;
+    -fx-border-color: none;
+    text-area-background: none
+}
+
+#en-input-area {
+    -fx-background-color: none;
+}

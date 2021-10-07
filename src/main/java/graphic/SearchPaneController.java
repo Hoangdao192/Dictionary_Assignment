@@ -3,6 +3,7 @@ package graphic;
 import data.FreeDictionaryAPI.FreeDictionaryAPI;
 import data.FreeDictionaryAPI.word.FreeDictionaryWord;
 import data.FreeDictionaryAPI.word.Phonetic;
+import data.RecentWord;
 import data.Word;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -56,8 +57,8 @@ public class SearchPaneController implements Initializable {
 
     FreeDictionaryAPI freeDictionaryAPI = new FreeDictionaryAPI();
     Dictionary localDictionary = new Dictionary();
+    RecentWord recentWords = new RecentWord();
     String[] dictionaryList = {"Từ điển trên máy", "Từ điển online"};
-    String[] recentWords = {"Hello", "Hi", "How", "Why"};
 
     public void reset() {
         searchBox.clear();
@@ -69,7 +70,7 @@ public class SearchPaneController implements Initializable {
     public ArrayList<Word> getSuggestedWord(String hasTyped) {
         ArrayList<Word> words = new ArrayList<Word>();
         if (comboBox.getValue().equals(dictionaryList[0])) {
-            //words = localDictionary.searchWord(hasTyped);
+            words = localDictionary.searchWord(hasTyped);
         }
 
         //ArrayList<Word> words = new ArrayList<Word>();//localDictionary.searchWord(hasTyped);
@@ -136,6 +137,8 @@ public class SearchPaneController implements Initializable {
         } else {
             audioLabel.setVisible(true);
             audioList.setVisible(true);
+            recentWords.add(word);
+            updateGridPane();
         }
     }
 
@@ -154,9 +157,7 @@ public class SearchPaneController implements Initializable {
      */
     public void listViewOnMouseClick(MouseEvent mouseEvent) {
         Word wordTarget = listView.getSelectionModel().getSelectedItem();
-        System.out.println(wordTarget);
-        webView.getEngine().loadContent(wordTarget.getWord_explain());
-
+        showFoundWord(wordTarget);
         resetSearchField();
     }
 
@@ -206,7 +207,7 @@ public class SearchPaneController implements Initializable {
         line.setVisible(false);
     }
 
-    private void setRecentWordStyle(Label label) {
+    private void initRecentWordLabel(Label label) {
         final String NORMAL =
                 "-fx-text-fill: white;" +
                 "-fx-font-weight: bold;" +
@@ -217,6 +218,12 @@ public class SearchPaneController implements Initializable {
         final String HOVER = NORMAL + "-fx-underline: true;";
 
         label.setStyle(NORMAL);
+        label.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                showFoundWord(recentWords.getWord(label.getText()));
+            }
+        });
         label.setOnMouseEntered(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -243,11 +250,12 @@ public class SearchPaneController implements Initializable {
      */
     private void initGridPane() {
         int gridCol = gridPane.getColumnConstraints().size();
-        for (int i = 0; i < recentWords.length; ++i) {
+        ArrayList<Word> words = recentWords.getArrWord();
+        for (int i = 0; i < words.size(); ++i) {
             int currentRow = i / gridCol;
             int currentCol = i % gridCol;
-            Label label = new Label(recentWords[i]);
-            setRecentWordStyle(label);
+            Label label = new Label(words.get(i).getWord_target());
+            initRecentWordLabel(label);
 
             gridPane.add(label, currentCol, currentRow);
         }
@@ -303,15 +311,22 @@ public class SearchPaneController implements Initializable {
         });
     }
 
+    private void updateGridPane() {
+        gridPane.getChildren().clear();
+        initGridPane();
+        recentWords.saveToFile(Dictionary.RECENT_WORD);
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        localDictionary.insertFromFile(Dictionary.MAIN_DICTIONARY);
+        recentWords.loadFromFile(Dictionary.RECENT_WORD);
+
         reset();
         initComboBox();
         initGridPane();
         initListView();
         initAudioList();
-
-        //dictionary.loadFromFile("src/main/resources/data/English-Vietnamese.txt");
         webView.setFontScale(1.5);
     }
 }
