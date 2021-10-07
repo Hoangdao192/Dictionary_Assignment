@@ -1,18 +1,30 @@
 package graphic;
 
+import data.GoogleTranslateAPI.GoogleTranslateAPI;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 
-import java.net.URL;
-import java.util.ResourceBundle;
 
-public class GoogleTranslateController implements Initializable {
+public class GoogleTranslateController{
     @FXML
-    TextArea englishInput;
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        englishInput.setWrapText(true);
+    TextArea vietnameseTextArea;
+    @FXML
+    TextArea englishTextArea;
+
+    GoogleTranslateAPI googleTranslateAPI = new GoogleTranslateAPI();
+
+    public void englishTextAreaOnInput(KeyEvent event) {
+        final char ENTER_CODE = (char) 13;
+        if (event.getCharacter().charAt(0) != ENTER_CODE) {
+            return;
+        }
+        String text = englishTextArea.getText();
+        try {
+            String translatedText = googleTranslateAPI.translate(text);
+            vietnameseTextArea.setText(translatedText);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
