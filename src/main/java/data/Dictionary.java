@@ -1,10 +1,13 @@
 package data;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
 public class Dictionary {
+    public static final String MAIN_DICTIONARY = "src/main/resources/data/English-Vietnamese.txt";
+    public static final String RECENT_WORD = "src/main/resources/data/recent-word.txt";
     ArrayList<Word> arrWord = new ArrayList<Word>(140000);
 
     /**
@@ -135,8 +138,55 @@ public class Dictionary {
         arrWord = arr;
     }
 
-    public ArrayList<Word> getArrWorld() {
+    public ArrayList<Word> getArrWord() {
         return arrWord;
+    }
+
+    public void insertFromFile(String file) {
+        //  String file = "E:\\Java\\Dictonary_Assignment\\src\\main\\java\\dictionaries.txt";
+        try (FileInputStream fs = new FileInputStream(file)) {
+            Scanner scanner = new Scanner(fs);
+            while (scanner.hasNextLine()) {
+                Word word = new Word();
+                String a = scanner.nextLine();
+                String[] arr = a.split("\\*");
+                int i = 0;
+                for (String s : arr) {
+                    if (i == 0) {
+                        word.setWord_target(s);
+                    } else {
+                        word.setWord_explain(s);
+                    }
+                    i++;
+                }
+                arrWord.add(word);
+            }
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Collections.sort(arrWord);
+    }
+
+    public void saveToFile(String file) {
+        File f = new File(file);
+        f.delete();
+        boolean newFile;
+        try{
+            newFile = f.createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try (FileWriter fw = new FileWriter(file)) {
+            for(Word w : arrWord) {
+                fw.write(w.getWord_target() + "*" + w.getWord_explain() + "\n");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
 

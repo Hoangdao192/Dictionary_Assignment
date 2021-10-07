@@ -15,11 +15,19 @@ public class MainController implements Initializable {
     AnchorPane currentPane;
 
     AnchorPane searchPane;
+    AnchorPane googleTranslatePane;
     SearchPaneController searchPaneController;
 
     public void onSearchButtonClick() {
+        if (currentPane == searchPane) {
+            return;
+        }
         searchPaneController.reset();
         setMainPane(searchPane);
+    }
+
+    public void onGoogleTranslateButtonClick() {
+        setMainPane(googleTranslatePane);
     }
 
     public void setMainPane(AnchorPane pane) {
@@ -36,6 +44,9 @@ public class MainController implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/SearchPane.fxml"));
             searchPane = loader.load();
             searchPaneController = loader.getController();
+
+            loader = new FXMLLoader(getClass().getResource("fxml/GoogleTranslatePane.fxml"));
+            googleTranslatePane = loader.load();
         } catch (Exception e) {
             e.printStackTrace();
         }

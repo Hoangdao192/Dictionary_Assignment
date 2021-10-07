@@ -1,7 +1,6 @@
 package data;
 
 import java.io.*;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -13,7 +12,6 @@ public class DataFile {
      */
     public ArrayList<Word> insertFromFile(String file) {
         ArrayList<Word> arrWord = new ArrayList<Word>(13000);
-//        String file = "E:\\Java\\Dictonary_Assignment\\src\\main\\java\\dictionaries.txt";
         try (FileInputStream fs = new FileInputStream(file)) {
             Scanner scanner = new Scanner(fs);
             while (scanner.hasNextLine()) {
@@ -45,7 +43,6 @@ public class DataFile {
      * Save data to file.
      */
     public void saveToFile(String file, ArrayList<Word> arrWorld) {
-
         File f = new File(file);
         f.delete();
         boolean newFile;

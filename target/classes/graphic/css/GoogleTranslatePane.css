@@ -1,0 +1,26 @@
+
+.text-area {
+    -fx-background-color: #3c4a7d;
+    -fx-background-radius: 30;
+    -fx-padding: 15;
+    -fx-font-weight: bold;
+    -fx-font-family: Arial;
+    -fx-font-size: 20;
+    -fx-text-fill: white;
+    -fx-wrap-text: true;
+}
+
+.text-area .viewport {
+    -fx-background-color: transparent;
+}
+
+.text-area .scroll-pane .content{
+    -fx-background-color: transparent;
+}
+
+.label {
+    -fx-font-weight: bold;
+    -fx-font-family: Arial;
+    -fx-font-size: 20;
+    -fx-text-fill: #3c4a7d;
+}
