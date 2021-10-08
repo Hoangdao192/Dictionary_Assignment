@@ -24,3 +24,21 @@
     -fx-font-size: 20;
     -fx-text-fill: #3c4a7d;
 }
+
+#translate-button {
+    -fx-background-radius: 30;
+    -fx-background-color: #3c4a7d;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-family: Arial;
+    -fx-font-size: 20;
+}
+
+#translate-button:hover {
+    -fx-background-color: white;
+    -fx-border-color: #3c4a7d;
+    -fx-text-fill: #3c4a7d;
+    -fx-background-insets: 1;
+    -fx-border-width: 3;
+    -fx-border-radius: 30;
+}

@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -16,17 +17,16 @@ public class MainController implements Initializable {
 
     AnchorPane searchPane;
     AnchorPane googleTranslatePane;
+    GoogleTranslateController googleTranslateController;
     SearchPaneController searchPaneController;
 
     public void onSearchButtonClick() {
-        if (currentPane == searchPane) {
-            return;
-        }
         searchPaneController.reset();
         setMainPane(searchPane);
     }
 
     public void onGoogleTranslateButtonClick() {
+        googleTranslateController.reset();
         setMainPane(googleTranslatePane);
     }
 
@@ -34,6 +34,7 @@ public class MainController implements Initializable {
         if (currentPane == pane) {
             return;
         }
+        currentPane = pane;
         mainPane.getChildren().clear();
         mainPane.getChildren().add(pane);
     }
@@ -47,8 +48,10 @@ public class MainController implements Initializable {
 
             loader = new FXMLLoader(getClass().getResource("fxml/GoogleTranslatePane.fxml"));
             googleTranslatePane = loader.load();
-        } catch (Exception e) {
-            e.printStackTrace();
+            googleTranslateController = loader.getController();
+        } catch (IOException ioException) {
+            System.out.println("Lỗi load file fxml.");
+            ioException.printStackTrace();
         }
 
         setMainPane(searchPane);
