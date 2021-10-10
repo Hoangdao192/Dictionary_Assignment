@@ -2,12 +2,16 @@ package graphic;
 
 import data.GoogleTranslateAPI.GoogleTranslateAPI;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class GoogleTranslateController{
+
+public class GoogleTranslateController implements Initializable {
     @FXML
     TextArea vietnameseTextArea;
     @FXML
@@ -18,8 +22,7 @@ public class GoogleTranslateController{
     private void translate() {
         String text = englishTextArea.getText();
         try {
-            String translatedText = googleTranslateAPI.translate(text);
-            vietnameseTextArea.setText(translatedText);
+            googleTranslateAPI.translate(text);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -31,14 +34,15 @@ public class GoogleTranslateController{
 
     public void englishTextAreaOnInput(KeyEvent event) {
         final char ENTER_CODE = (char) 13;
-        if (event.getCharacter().charAt(0) != ENTER_CODE) {
-            return;
-        }
-        translate();
     }
 
     public void reset() {
         vietnameseTextArea.clear();
         englishTextArea.clear();
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        vietnameseTextArea.textProperty().bind(googleTranslateAPI.getStringProperty());
     }
 }
