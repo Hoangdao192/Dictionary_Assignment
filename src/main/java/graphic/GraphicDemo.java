@@ -17,7 +17,7 @@ public class GraphicDemo extends Application {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("fxml/ParentPane.fxml"));
             Scene scene = new Scene(root);
-            scene.getStylesheets().add(getClass().getResource("css/ParentPane.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("css/ModifyDictionary.css").toExternalForm());
             primaryStage.setResizable(false);
             primaryStage.setScene(scene);
             primaryStage.show();
