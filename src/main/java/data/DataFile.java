@@ -27,6 +27,9 @@ public class DataFile {
                     }
                     i++;
                 }
+                String[] m = word.getWord_explain().split("/");
+                String sound = m[1];
+                word.setSound(sound);
                 arrWord.add(word);
             }
             scanner.close();

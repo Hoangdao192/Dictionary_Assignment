@@ -4,7 +4,7 @@ public class Word implements Comparable {
     //word_target (từ mới), word_explain (giải nghĩa)
     private String word_target;
     private String word_explain;
-    private boolean sound = false;
+    private String sound = "";
 
     public void setWord_target(String w) {
         word_target = w;
@@ -22,11 +22,11 @@ public class Word implements Comparable {
         return word_explain;
     }
 
-    public boolean getSound() {
+    public String getSound() {
         return sound;
     }
 
-    public void setSound(boolean sound) {
+    public void setSound(String sound) {
         this.sound = sound;
     }
 
