@@ -11,6 +11,34 @@ public class Dictionary {
     ArrayList<Word> arrWord = new ArrayList<Word>(140000);
 
     /**
+     *
+     */
+    public void insertFromFile(String file) {
+        DataFile data = new DataFile();
+        arrWord = data.insertFromFile(file);
+    }
+
+    public void saveToFile(String file) {
+        DataFile data = new DataFile();
+        data.saveToFile(file, arrWord);
+    }
+
+    public void addWord(Word w) {
+        int id = this.findIndext(w.getWord_target());
+        if (id != arrWord.size()) {
+            arrWord.get(id).setWord(w);
+        } else {
+            arrWord.add(w);
+        }
+        Collections.sort(arrWord);
+    }
+
+    public void deleteWord(Word w) {
+        int id = this.findIndext(w.getWord_target());
+        arrWord.remove(id);
+    }
+
+    /**
      * Các hàm xử lý recentWorld.
      */
 
@@ -142,51 +170,6 @@ public class Dictionary {
         return arrWord;
     }
 
-    public void insertFromFile(String file) {
-        //  String file = "E:\\Java\\Dictonary_Assignment\\src\\main\\java\\dictionaries.txt";
-        try (FileInputStream fs = new FileInputStream(file)) {
-            Scanner scanner = new Scanner(fs);
-            while (scanner.hasNextLine()) {
-                Word word = new Word();
-                String a = scanner.nextLine();
-                String[] arr = a.split("\\*");
-                int i = 0;
-                for (String s : arr) {
-                    if (i == 0) {
-                        word.setWord_target(s);
-                    } else {
-                        word.setWord_explain(s);
-                    }
-                    i++;
-                }
-                arrWord.add(word);
-            }
-            scanner.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        Collections.sort(arrWord);
-    }
 
-    public void saveToFile(String file) {
-        File f = new File(file);
-        f.delete();
-        boolean newFile;
-        try{
-            newFile = f.createNewFile();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        try (FileWriter fw = new FileWriter(file)) {
-            for(Word w : arrWord) {
-                fw.write(w.getWord_target() + "*" + w.getWord_explain() + "\n");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }
 
