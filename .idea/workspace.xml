@@ -5,10 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56652bf8-6ec2-4d65-8061-c54bc98a146f" name="Changes" comment="ModifyDictionnay not CSS and imagine :)">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/graphic/css/ModifyDictionary.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/graphic/image/Cancel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/graphic/image/Delete.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/graphic/image/Detail.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/graphic/image/New.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/graphic/image/update.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/Dictionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/graphic/GraphicDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphic/GraphicDemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/graphic/ModifyDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphic/ModifyDetailController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/data/Sup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/Sup.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/recent-word.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/recent-word.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/graphic/fxml/ModifyDetail.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/graphic/fxml/ModifyDetail.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/graphic/fxml/ModifyDictionary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/graphic/fxml/ModifyDictionary.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/Dictionary.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/Dictionary.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/Sup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/Sup.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/graphic/ModifyDetailController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/graphic/ModifyDetailController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/graphic/fxml/ModifyDetail.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/graphic/fxml/ModifyDetail.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/graphic/fxml/ModifyDictionary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/graphic/fxml/ModifyDictionary.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +88,7 @@
     <property name="ChangesTree.GroupingKeys" value="directory" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HelloFx" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -165,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633924865901</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="ModifyDictionnay not CSS and imagine :)">
+      <created>1633927808415</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1633927808415</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

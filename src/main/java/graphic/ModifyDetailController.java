@@ -1,22 +1,13 @@
 package graphic;
 
 import data.Data;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.web.WebView;
-import javafx.stage.Stage;
-import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.net.URL;
@@ -43,6 +34,9 @@ public class ModifyDetailController implements Initializable {
     public void clickButtonUpdate() throws IOException {
         Data.word = textWord.getText();
         Data.explain = textAreaDefind.getText();
+        if(Data.word.equals("") || Data.explain.equals("")) {
+            return;
+        }
         Data.update = true;
         changePane();
     }
@@ -52,9 +46,6 @@ public class ModifyDetailController implements Initializable {
     }
 
     public void changePane() throws IOException {
-        if(Data.word.equals("") || Data.explain.equals("")) {
-            Data.update = false;
-        }
         if(!Data.update) {
             Data.word = "";
             Data.explain = "";

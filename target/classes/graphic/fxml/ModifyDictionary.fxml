@@ -9,38 +9,47 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="container" fx:id="myPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphic.ModifyController">
+<AnchorPane id="container" fx:id="myPane" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphic.ModifyController">
     <children>
-        <TableView id="table-view" fx:id="tableWord" layoutX="40.0" layoutY="80.0" prefHeight="280.0" prefWidth="400.0" AnchorPane.bottomAnchor="40.0" AnchorPane.topAnchor="80.0">
+        <TableView id="table-view" fx:id="tableWord" layoutX="40.0" layoutY="80.0" prefHeight="680.0" prefWidth="759.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="200.0">
             <columns>
-                <TableColumn id="search-box-find" fx:id="columnWord" prefWidth="400.0" />
+                <TableColumn id="search-box-find" fx:id="columnWord" prefWidth="859.1999931335449" />
             </columns>
         </TableView>
-        <Button id="search-button" fx:id="buttonSearch" layoutX="480.0" layoutY="40.0" mnemonicParsing="false" onAction="#clickButtonSearch" prefHeight="62.0" prefWidth="62.0" AnchorPane.bottomAnchor="298.0" AnchorPane.leftAnchor="480.0" AnchorPane.topAnchor="40.0" />
-        <Button id="new-button" fx:id="buttonNew" layoutX="480.0" layoutY="134.0" mnemonicParsing="false" onAction="#clickButtonNew" prefHeight="62.0" prefWidth="62.0" text="New" AnchorPane.leftAnchor="480.0" AnchorPane.topAnchor="120.0">
+        <Button id="search-button" fx:id="buttonSearch" layoutX="854.0" layoutY="45.0" mnemonicParsing="false" onAction="#clickButtonSearch" prefHeight="62.0" prefWidth="62.0" AnchorPane.bottomAnchor="650.0" AnchorPane.leftAnchor="1050.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0">
          <graphic>
-            <ImageView fitHeight="25.0" fitWidth="1.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="44.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../Dictionary_Assignment/src/main/resources/graphic/image/search.png" />
+                  <Image url="@../image/lookup.png" />
                </image>
             </ImageView>
          </graphic></Button>
-        <Button id="delete-button" fx:id="buttonDelete" layoutX="480.0" layoutY="220.0" mnemonicParsing="false" onAction="#clickButtonDelete" prefHeight="62.0" prefWidth="62.0" text="Delete" AnchorPane.leftAnchor="480.0" AnchorPane.topAnchor="220.0">
+        <Button id="new-button" fx:id="buttonNew" layoutX="851.0" layoutY="258.0" mnemonicParsing="false" onAction="#clickButtonNew" prefHeight="62.0" prefWidth="62.0" AnchorPane.bottomAnchor="450.0" AnchorPane.leftAnchor="1050.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="250.0">
          <graphic>
-            <ImageView fitHeight="44.0" fitWidth="1.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="51.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/New.png" />
+               </image>
+            </ImageView>
          </graphic></Button>
-        <Button id="detail-button" fx:id="buttonDetail" layoutX="486.0" layoutY="322.0" mnemonicParsing="false" onAction="#clickButtonDetail" prefHeight="62.0" prefWidth="62.0" text="Detail" AnchorPane.leftAnchor="480.0" AnchorPane.topAnchor="310.0">
+        <Button id="delete-button" fx:id="buttonDelete" layoutX="854.0" layoutY="477.0" mnemonicParsing="false" onAction="#clickButtonDelete" prefHeight="62.0" prefWidth="62.0" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="1050.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="450.0">
          <graphic>
-            <ImageView fitHeight="20.0" fitWidth="1.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="55.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/Delete.png" />
+               </image></ImageView>
          </graphic></Button>
-        <TextField id="word-button" fx:id="textSearch" layoutX="40.0" layoutY="40.0" prefHeight="36.0" prefWidth="400.0" promptText="Search World">
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+        <Button id="detail-button" fx:id="buttonDetail" layoutX="855.0" layoutY="697.0" mnemonicParsing="false" onAction="#clickButtonDetail" prefHeight="62.0" prefWidth="62.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="1050.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="650.0">
+         <graphic>
+            <ImageView fitHeight="56.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/Detail.png" />
+               </image></ImageView>
+         </graphic></Button>
+        <TextField id="word-button" fx:id="textSearch" layoutX="40.0" layoutY="40.0" prefHeight="36.0" prefWidth="759.0" promptText="Search World" AnchorPane.bottomAnchor="675.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="50.0">
          <font>
             <Font name="Times New Roman Bold" size="12.0" />
          </font></TextField>
-      <ImageView fx:id="imageView" fitHeight="46.0" fitWidth="46.0" layoutX="488.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../../../Dictionary_Assignment/src/main/resources/graphic/image/search.png" />
-         </image>
-      </ImageView>
     </children>
 </AnchorPane>

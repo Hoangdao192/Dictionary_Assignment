@@ -75,7 +75,6 @@ public class Dictionary {
         System.out.println();
     }
 
-
     /**
      * find indext of string : target.
      */
@@ -91,7 +90,6 @@ public class Dictionary {
             return mid;
         }
     }
-
 
     public int findIndext(String target) {
         return findIndext(0, arrWord.size()-1, target, arrWord);
@@ -109,8 +107,10 @@ public class Dictionary {
             return mid;
         } else {
             if (checkSup < 0) {
+//                if (mid - 1 == 0) return 0;
                 return searchWord(start, mid - 1, target);
             } else {
+//                if (mid + 1 == end) return end;
                 return searchWord(mid + 1, end, target);
             }
         }
@@ -122,13 +122,13 @@ public class Dictionary {
         if (id == arrWord.size()) return arr;
         int left = id;
         int right = id;
-        while (arrWord.get(left - 1).getWord_target().startsWith(target)) {
+        while (left >= 1 && arrWord.get(left - 1).getWord_target().startsWith(target)) {
             left--;
             if (left == 0) {
                 break;
             }
         }
-        while (arrWord.get(right + 1).getWord_target().startsWith(target)) {
+        while (right <= arrWord.size() - 2 && arrWord.get(right + 1).getWord_target().startsWith(target)) {
             right++;
             if (right == arrWord.size() - 1) {
                 break;
@@ -138,7 +138,7 @@ public class Dictionary {
         for(int i = left; i <= right; i++) {
             count ++;
             arr.add(arrWord.get(i));
-            if (count == 10) {
+            if (count == 20) {
                 break;
             }
         }
@@ -169,7 +169,4 @@ public class Dictionary {
     public ArrayList<Word> getArrWord() {
         return arrWord;
     }
-
-
 }
-
