@@ -52,6 +52,9 @@ public class ModifyDetailController implements Initializable {
     }
 
     public void changePane() throws IOException {
+        if(Data.word.equals("") || Data.explain.equals("")) {
+            Data.update = false;
+        }
         if(!Data.update) {
             Data.word = "";
             Data.explain = "";

@@ -1,0 +1,29 @@
+<changelist name="Uncommitted_changes_before_Update_at_08_10_2021_3_12_SA_[Changes]" date="1633637535003" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_10_2021_3_12_SA_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 08/10/2021 3:12 SA [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/temp/audio.mp3" />
+    <option name="AFTER_PATH" value="target/classes/temp/audio.mp3" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_10_2021_3_12_SA_[Changes]/audio.mp3" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/Play.class" />
+    <option name="AFTER_PATH" value="target/classes/Play.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_10_2021_3_12_SA_[Changes]/Play.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/data/Dictionary.class" />
+    <option name="AFTER_PATH" value="target/classes/data/Dictionary.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_10_2021_3_12_SA_[Changes]/Dictionary.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/data/DictionaryCommandLine.class" />
+    <option name="AFTER_PATH" value="target/classes/data/DictionaryCommandLine.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_10_2021_3_12_SA_[Changes]/DictionaryCommandLine.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="src/main/resources/temp/audio.mp3" />
+    <option name="AFTER_PATH" value="src/main/resources/temp/audio.mp3" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_10_2021_3_12_SA_[Changes]/audio1.mp3" />
+  </binary>
+</changelist>
