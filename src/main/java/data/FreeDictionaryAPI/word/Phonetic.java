@@ -9,12 +9,10 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class Phonetic {
-    String pronounce;
-    String audio;
+    String pronounce = "";
+    String audio = "";
 
     public Phonetic() {
-        this.pronounce = "";
-        this.audio = "";
     }
 
     public Phonetic(String pronounce, String audio) {

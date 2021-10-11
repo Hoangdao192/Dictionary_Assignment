@@ -1,11 +1,5 @@
 package data.FreeDictionaryAPI.word;
 
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import util.DownloadFile;
-
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 
@@ -52,24 +46,5 @@ public class FreeDictionaryWord extends data.Word{
         }
         stringBuilder.append("</ul>");
         return stringBuilder.toString();
-    }
-
-    public void pronounce(int phoneticIndex) {
-        final String tempFilePath = "src/main/resources/temp/audio.mp3";
-
-        if (phoneticIndex > phonetics.size()) {
-            System.out.println("phoneticIndex out of range.");
-        }
-        Phonetic[] phoneticArray = phonetics.toArray(new Phonetic[phonetics.size()]);
-        try {
-            DownloadFile.download(tempFilePath, "https:" + phoneticArray[phoneticIndex].getAudio());
-        } catch (IOException ioException) {
-            System.out.println("Cannot find this path " + tempFilePath);
-        }
-
-        File audioFile = new File(tempFilePath);
-        Media media = new Media(audioFile.toURI().toString());
-        MediaPlayer mediaPlayer = new MediaPlayer(media);
-        mediaPlayer.play();
     }
 }

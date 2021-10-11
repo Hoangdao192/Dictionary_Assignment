@@ -82,7 +82,11 @@ public class SearchPaneController implements Initializable {
         if (comboBox.getValue().equals(dictionaryList[0])) {
             ArrayList<Word> words = getSuggestedWord(hasTyped);
             if (words.size() > 0) {
-                return getSuggestedWord(hasTyped).get(0);
+                Word word = getSuggestedWord(hasTyped).get(0);
+                ArrayList<Phonetic> audios = new ArrayList<Phonetic>();
+                audios.add(new Phonetic(word.getSound(), ""));
+                updateAudioList(audios);
+                return word;
             }
         } else if (comboBox.getValue().equals(dictionaryList[1])) {
             ArrayList<FreeDictionaryWord> words = freeDictionaryAPI.getSuggestedWord(hasTyped);
@@ -126,6 +130,7 @@ public class SearchPaneController implements Initializable {
     public void showFoundWord(Word word) {
         hideListView();
         webView.getEngine().loadContent(word.getWord_explain());
+        System.out.println(word.getSound());
         if (word.getWord_explain().equals("Không tìm thấy từ này")) {
             audioLabel.setVisible(false);
             audioList.setVisible(false);
@@ -143,6 +148,9 @@ public class SearchPaneController implements Initializable {
      */
     public void listViewOnMouseClick(MouseEvent mouseEvent) {
         Word wordTarget = listView.getSelectionModel().getSelectedItem();
+        ArrayList<Phonetic> audios = new ArrayList<Phonetic>();
+        audios.add(new Phonetic(wordTarget.getSound(), ""));
+        updateAudioList(audios);
         showFoundWord(wordTarget);
         hideListView();
     }
