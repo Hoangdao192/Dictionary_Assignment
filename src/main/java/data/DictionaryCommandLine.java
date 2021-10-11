@@ -93,6 +93,7 @@ public class DictionaryCommandLine {
             }
             for (Word w : arr) {
                 System.out.printf("%-30s:%-50s\n", w.getWord_target(), w.getWord_explain());
+                System.out.println(w.getSound());
             }
         }
     }

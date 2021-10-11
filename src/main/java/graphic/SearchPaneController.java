@@ -62,7 +62,6 @@ public class SearchPaneController implements Initializable {
 
     public void reset() {
         searchBox.clear();
-        listView.getItems().clear();
         hideListView();
         webView.getEngine().loadContent("");
     }
@@ -72,8 +71,6 @@ public class SearchPaneController implements Initializable {
         if (comboBox.getValue().equals(dictionaryList[0])) {
             words = localDictionary.searchWord(hasTyped);
         }
-
-        //ArrayList<Word> words = new ArrayList<Word>();//localDictionary.searchWord(hasTyped);
 
         while (words.size() >= 10) {
             words.remove(words.size() - 1);
@@ -90,7 +87,7 @@ public class SearchPaneController implements Initializable {
         } else if (comboBox.getValue().equals(dictionaryList[1])) {
             ArrayList<FreeDictionaryWord> words = freeDictionaryAPI.getSuggestedWord(hasTyped);
             if (words.size() > 0) {
-                updateAudioList(words.get(0));
+                updateAudioList(words.get(0).getPhonetics());
                 return words.get(0);
             }
         }
@@ -117,9 +114,8 @@ public class SearchPaneController implements Initializable {
         showListView();
     }
 
-    public void updateAudioList(FreeDictionaryWord word) {
+    public void updateAudioList(ArrayList<Phonetic> phonetics ) {
         audioList.getItems().clear();
-        ArrayList<Phonetic> phonetics = word.getPhonetics();
         for (int i = 0; i < phonetics.size(); ++i) {
             System.out.println(phonetics.get(i).getPronounce());
             System.out.println(phonetics.get(i).getAudio());
@@ -129,7 +125,6 @@ public class SearchPaneController implements Initializable {
 
     public void showFoundWord(Word word) {
         hideListView();
-        webView.setFontScale(1.5);
         webView.getEngine().loadContent(word.getWord_explain());
         if (word.getWord_explain().equals("Không tìm thấy từ này")) {
             audioLabel.setVisible(false);
@@ -143,22 +138,13 @@ public class SearchPaneController implements Initializable {
     }
 
     /**
-     * Reset thanh search về trạng thái ban đầu.
-     */
-    public void resetSearchField() {
-        listView.getItems().clear();
-        hideListView();
-        searchBox.clear();
-    }
-
-    /**
      * Sự kiện người dùng click chuột chọn 1 từ trong danh sách gợi ý.
      * @param mouseEvent
      */
     public void listViewOnMouseClick(MouseEvent mouseEvent) {
         Word wordTarget = listView.getSelectionModel().getSelectedItem();
         showFoundWord(wordTarget);
-        resetSearchField();
+        hideListView();
     }
 
     public void audioListOnMouseClick(MouseEvent mouseEvent) {
@@ -202,11 +188,15 @@ public class SearchPaneController implements Initializable {
     }
 
     private void hideListView() {
+        listView.getItems().clear();
         listView.setVisible(false);
         searchBox.setStyle(SEARCH_BOX_STYLE_NORMAL);
         line.setVisible(false);
     }
 
+    /**
+     * set style và xử lý sự kiện cho các Label trong tab recent word.
+     */
     private void initRecentWordLabel(Label label) {
         final String NORMAL =
                 "-fx-text-fill: white;" +
@@ -240,6 +230,9 @@ public class SearchPaneController implements Initializable {
         });
     }
 
+    /**
+     * Khởi tạo dictionary list.
+     */
     private void initComboBox() {
         comboBox.getItems().addAll(dictionaryList);
         comboBox.setValue(dictionaryList[0]);
