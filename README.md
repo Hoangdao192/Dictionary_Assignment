@@ -1,6 +1,6 @@
 ### Thành viên
 * 20020366 - Trần Thị Kim Bắc
-* 20020376 - Trần Đình Cường - Leader
+* 20020376 - Trần Đình Cường
 * 20020390 - Nguyễn Đăng Hoàng Đạo
 
 ### Dữ liệu từ điển
