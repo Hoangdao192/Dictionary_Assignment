@@ -9,27 +9,27 @@
     <children>
         <AnchorPane id="side-bar" prefHeight="850.0" prefWidth="100.0">
          <children>
-              <Button id="sidebar_search_button" layoutX="20.0" layoutY="130.0" mnemonicParsing="false" onAction="#onSearchButtonClick" prefHeight="60.0" prefWidth="60.0" styleClass="sidebar-button">
+              <Button id="sidebar_search_button" fx:id="searchButton" layoutX="20.0" layoutY="130.0" mnemonicParsing="false" onAction="#onSearchButtonClick" prefHeight="60.0" prefWidth="60.0" styleClass="sidebar-button">
                   <graphic>
-                      <ImageView fitHeight="31.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                      <ImageView fx:id="searchButtonImage" fitHeight="31.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                           <image>
                               <Image url="@../image/search.png" />
                           </image>
                       </ImageView>
                   </graphic>
               </Button>
-            <Button id="sidebar_googletranslate_button" layoutX="20.0" layoutY="250.0" mnemonicParsing="false" onAction="#onGoogleTranslateButtonClick" prefHeight="60.0" prefWidth="60.0" styleClass="sidebar-button">
+            <Button id="sidebar_googletranslate_button" fx:id="translateButton" layoutX="20.0" layoutY="250.0" mnemonicParsing="false" onAction="#onGoogleTranslateButtonClick" prefHeight="60.0" prefWidth="60.0" styleClass="sidebar-button">
                <graphic>
-                  <ImageView fitHeight="31.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="translateButtonImage" fitHeight="31.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../image/google_translate.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
-            <Button id="sidebar_localdictionary_button" layoutX="20.0" layoutY="370.0" mnemonicParsing="false" onAction="#onModifyButtonClick" prefHeight="60.0" prefWidth="60.0" styleClass="sidebar-button">
+            <Button id="sidebar_localdictionary_button" fx:id="modifyButton" layoutX="20.0" layoutY="370.0" mnemonicParsing="false" onAction="#onModifyButtonClick" prefHeight="60.0" prefWidth="60.0" styleClass="sidebar-button">
                <graphic>
-                  <ImageView fitHeight="31.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="modifyButtonImage" fitHeight="31.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../image/local_dictionary.png" />
                      </image>

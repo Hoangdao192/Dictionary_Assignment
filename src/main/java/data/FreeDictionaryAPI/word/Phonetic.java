@@ -60,7 +60,7 @@ public class Phonetic {
         try {
             DownloadFile.download(tempFilePath, "https:" + audio);
         } catch (IOException ioException) {
-            System.out.println("Cannot find this path " + tempFilePath);
+            System.out.println("Cannot dowload this audio: " + audio);
         }
 
         File audioFile = new File(tempFilePath);

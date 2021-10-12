@@ -1,5 +1,7 @@
 package data.FreeDictionaryAPI.word;
 
+import data.Word;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 
@@ -39,6 +41,11 @@ public class FreeDictionaryWord extends data.Word{
 
     public String generateWordExplain() {
         StringBuilder stringBuilder = new StringBuilder();
+        String mainPronounce = "";
+        if (phonetics.size() > 0) {
+            mainPronounce = getPhonetics().get(0).getPronounce();
+        }
+        stringBuilder.append("<i>" + getWord_target() + " /" + mainPronounce + "/</i>");
         stringBuilder.append("<ul>");
         for (int i = 0; i < definitions.size(); ++i) {
             Definition definition = definitions.get(i);

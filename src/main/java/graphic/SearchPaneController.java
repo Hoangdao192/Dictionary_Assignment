@@ -61,6 +61,8 @@ public class SearchPaneController implements Initializable {
     String[] dictionaryList = {"Từ điển trên máy", "Từ điển online"};
 
     public void reset() {
+        audioList.getItems().clear();
+        audioList.setVisible(false);
         searchBox.clear();
         hideListView();
         webView.getEngine().loadContent("");
@@ -219,7 +221,11 @@ public class SearchPaneController implements Initializable {
         label.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-                showFoundWord(recentWords.getWord(label.getText()));
+                Word word = recentWords.getWord(label.getText());
+                System.out.println(word.getSound());
+                audioList.getItems().clear();
+                audioList.getItems().add(new Phonetic(word.getSound(), ""));
+                showFoundWord(word);
             }
         });
         label.setOnMouseEntered(new EventHandler<MouseEvent>() {

@@ -6,16 +6,9 @@
     -fx-background-radius: 100%;
 }
 
-.sidebar-button:hover {
-    -fx-border-radius: 100%;
-    -fx-border-insets: -3;
-    -fx-border-width: 3;
-    -fx-border-color: rgba(255,255,255,0.7);
-}
-
 .sidebar-button:focused {
     -fx-border-radius: 100%;
-    -fx-border-insets: -3;
+    -fx-border-insets: -2;
     -fx-border-width: 3;
     -fx-border-color: rgba(255,255,255,1);
 }
@@ -24,10 +17,22 @@
     -fx-background-color: #3949a5;
 }
 
+#sidebar_search_button:hover {
+    -fx-background-color: white;
+}
+
 #sidebar_googletranslate_button {
     -fx-background-color: #fc4769;
 }
 
+#sidebar_googletranslate_button:hover {
+    -fx-background-color: white;
+}
+
 #sidebar_localdictionary_button {
     -fx-background-color: #0e6ce9;
+}
+
+#sidebar_localdictionary_button:hover {
+    -fx-background-color: white;
 }

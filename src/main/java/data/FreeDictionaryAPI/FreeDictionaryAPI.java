@@ -72,6 +72,7 @@ public class FreeDictionaryAPI {
                 //  Link Âm thanh
                 String mp3 = (String) sound.get("audio");
                 newFreeDictionaryWord.getPhoneticsOrigin().add(new Phonetic(pronounce, mp3));
+                newFreeDictionaryWord.setSound(pronounce);
             }
 
             //  Các nghĩa của từ
@@ -107,6 +108,7 @@ public class FreeDictionaryAPI {
                     newDefinition.getAntonymsOrigin().addAll(antonymsSave);
                     newFreeDictionaryWord.getDefinitions().add(newDefinition);
                 }
+                String mainSound = "";
             }
             freeDictionaryWords.add(newFreeDictionaryWord);
         }
