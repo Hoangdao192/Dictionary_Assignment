@@ -6,9 +6,19 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.File;
+
 public class GraphicDemo extends Application {
+    public static void cleanTempFile() {
+        for(File file: new File("src/main/resources/temp").listFiles())
+            if (!file.isDirectory())
+                file.delete();
+    }
+
     public static void main(String[] args) {
+        cleanTempFile();
         launch(args);
+        cleanTempFile();
         System.exit(0);
     }
 

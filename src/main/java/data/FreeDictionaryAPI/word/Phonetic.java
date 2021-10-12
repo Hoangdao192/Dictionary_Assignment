@@ -24,6 +24,16 @@ public class Phonetic {
         }
         this.pronounce = pronounce;
         this.audio = audio;
+
+        if (audio.equals("")) {
+            return;
+        }
+        final String tempFilePath = "src/main/resources/temp/" + this.toString();
+        try {
+            DownloadFile.download(tempFilePath, "https:" + audio);
+        } catch (IOException ioException) {
+            System.out.println("Cannot dowload this audio: " + audio);
+        }
     }
 
     @Override
@@ -56,13 +66,7 @@ public class Phonetic {
         if (audio.equals("")) {
             return;
         }
-        final String tempFilePath = "src/main/resources/temp/audio.mp3";
-        try {
-            DownloadFile.download(tempFilePath, "https:" + audio);
-        } catch (IOException ioException) {
-            System.out.println("Cannot dowload this audio: " + audio);
-        }
-
+        String tempFilePath = "src/main/resources/temp/" + toString();
         File audioFile = new File(tempFilePath);
         Media media = new Media(audioFile.toURI().toString());
         MediaPlayer mediaPlayer = new MediaPlayer(media);
