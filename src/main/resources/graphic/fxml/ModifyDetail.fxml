@@ -7,11 +7,11 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="850.0" prefWidth="1200.0" stylesheets="@../css/ModifyDictionary.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphic.ModifyDetailController">
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" stylesheets="@../css/ModifyDictionary.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphic.ModifyDetailController">
    <children>
-      <AnchorPane fx:id="modifyPane" prefHeight="850.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0">
+      <AnchorPane fx:id="modifyPane" prefHeight="700.0" prefWidth="1200.0">
          <children>
-            <Button id="cancel-button" fx:id="buttonCancel" layoutX="1040.0" layoutY="699.0" mnemonicParsing="false" onAction="#clickButtonCancel" prefHeight="101.0" prefWidth="110.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="1040.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="699.0">
+            <Button id="cancel-button" fx:id="buttonCancel" layoutX="964.0" layoutY="572.0" mnemonicParsing="false" onAction="#clickButtonCancel" prefHeight="101.0" prefWidth="110.0">
                <graphic>
                   <ImageView fitHeight="59.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -19,7 +19,7 @@
                      </image>
                   </ImageView>
                </graphic></Button>
-            <Button id="update-button" fx:id="buttonUpdate" layoutX="44.0" layoutY="699.0" mnemonicParsing="false" onAction="#clickButtonUpdate" prefHeight="101.0" prefWidth="100.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="1050.0" AnchorPane.topAnchor="699.0">
+            <Button id="update-button" fx:id="buttonUpdate" layoutX="150.0" layoutY="572.0" mnemonicParsing="false" onAction="#clickButtonUpdate" prefHeight="101.0" prefWidth="100.0">
                <graphic>
                   <ImageView fitHeight="58.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -27,8 +27,8 @@
                      </image>
                   </ImageView>
                </graphic></Button>
-            <TextArea fx:id="textAreaDefind" layoutX="126.0" layoutY="176.0" prefHeight="465.0" prefWidth="948.0" promptText="Nghĩa của từ" />
-            <TextField id="word-button" fx:id="textWord" layoutX="250.0" layoutY="105.0" prefHeight="55.0" prefWidth="700.0" promptText="Word" />
+            <TextArea fx:id="textAreaDefind" layoutX="126.0" layoutY="149.0" prefHeight="402.0" prefWidth="948.0" promptText="Nghĩa của từ" />
+            <TextField id="word-button" fx:id="textWord" layoutX="250.0" layoutY="79.0" prefHeight="55.0" prefWidth="700.0" promptText="Word" />
          </children>
       </AnchorPane>
    </children>

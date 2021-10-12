@@ -5,9 +5,9 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="850.0" prefWidth="1300.0" stylesheets="@../css/ParentPane.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphic.MainController">
+<AnchorPane prefHeight="700.0" prefWidth="1300.0" stylesheets="@../css/ParentPane.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphic.MainController">
     <children>
-        <AnchorPane id="side-bar" prefHeight="850.0" prefWidth="100.0">
+        <AnchorPane id="side-bar" prefHeight="700.0" prefWidth="100.0">
          <children>
               <Button id="sidebar_search_button" fx:id="searchButton" layoutX="20.0" layoutY="130.0" mnemonicParsing="false" onAction="#onSearchButtonClick" prefHeight="60.0" prefWidth="60.0" styleClass="sidebar-button">
                   <graphic>
@@ -37,6 +37,6 @@
                </graphic>
             </Button>
          </children></AnchorPane>
-      <AnchorPane fx:id="mainPane" layoutX="100.0" prefHeight="850.0" prefWidth="1200.0" />
+      <AnchorPane fx:id="mainPane" layoutX="100.0" prefHeight="700.0" prefWidth="1200.0" />
     </children>
 </AnchorPane>
