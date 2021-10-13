@@ -1,5 +1,9 @@
 package data;
 
+import com.sun.speech.freetts.Voice;
+import com.sun.speech.freetts.VoiceManager;
+import data.FreeDictionaryAPI.word.Phonetic;
+
 public class Word implements Comparable {
     //word_target (từ mới), word_explain (giải nghĩa)
     private String word_target;
@@ -48,6 +52,17 @@ public class Word implements Comparable {
     public int compareTo(Word w) {
         return word_target.compareTo(w.getWord_target());
     }
+
+    Phonetic phonetic = new Phonetic("", "") {
+        @Override
+        public void playSound() {
+            System.setProperty("freetts.voices", "com.sun.speech.freetts.en.us.cmu_us_kal.KevinVoiceDirectory");
+            Voice voice = VoiceManager.getInstance().getVoice("kevin16");
+            voice.allocate();
+            voice.speak(word_target);
+            voice.deallocate();
+        }
+    };
 
     @Override
     public int compareTo(Object o) {
