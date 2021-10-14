@@ -40,7 +40,10 @@ public class RecentWord extends Dictionary{
                     i++;
                 }
                 String[] m = word.getWord_explain().split("/");
-                String sound = m[1];
+                String sound = "";
+                if(m.length > 1) {
+                    sound = m[1];
+                }
                 word.setSound(sound);
                 arrWord.add(word);
             }
