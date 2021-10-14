@@ -8,8 +8,14 @@ import java.util.Scanner;
 public class RecentWord extends Dictionary{
     final int MAX_WORD = 18;
     public void add(Word word) {
-        if (arrWord.contains(word)) {
-            arrWord.remove(word);
+        int i = 0;
+        while (i < arrWord.size()) {
+            if (arrWord.get(i).getWord_target().equals(word.getWord_target())) {
+                arrWord.remove(i);
+            }
+            else {
+                ++i;
+            }
         }
         this.arrWord.add(0, word);
         while (this.arrWord.size() > MAX_WORD) {

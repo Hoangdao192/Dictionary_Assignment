@@ -62,6 +62,7 @@ public class SearchPaneController implements Initializable {
 
     public void reset() {
         audioList.getItems().clear();
+        audioLabel.setVisible(false);
         audioList.setVisible(false);
         searchBox.clear();
         hideListView();
