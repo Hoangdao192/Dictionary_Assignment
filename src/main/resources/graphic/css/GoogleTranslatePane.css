@@ -42,3 +42,56 @@
     -fx-border-width: 3;
     -fx-border-radius: 30;
 }
+
+.language-list {
+    -fx-background-color: #3c4a7d;
+    -fx-background-radius: 30;
+}
+
+.language-list.combo-box-base {
+    -fx-alignment: center;
+    -fx-font-weight: bold;
+    -fx-font-family: Arial;
+    -fx-background-color: #3c4a7d;
+    -fx-background-radius: 30;
+
+}
+
+.language-list.combo-box-base>.list-cell {
+    -fx-background-radius: 30;
+    -fx-text-fill: white;
+}
+
+.language-list .list-cell{
+    -fx-background-color: #3c4a7d;
+    -fx-text-fill: white;
+    -fx-padding: 0 0 0 20;
+    -fx-cell-size: 1.66667em;
+    -fx-background-radius: 30;
+}
+
+.language-list .list-cell:filled:hover {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+}
+
+.language-list .list-view {
+    -fx-background-radius: 0 0 15 15;
+    -fx-background-color: #3c4a7d;
+}
+
+.language-list.combo-box-base:showing {
+    -fx-background-radius: 15 15 0 0;
+}
+
+#switch-button {
+    -fx-background-radius: 30;
+    -fx-background-color: #3c4a7d;
+}
+#switch-button:hover {
+    -fx-background-color: white;
+    -fx-border-radius: 30;
+    -fx-border-insets: -3;
+    -fx-border-width: 3;
+    -fx-border-color: #3c4a7d;
+}

@@ -10,6 +10,15 @@ public class Word implements Comparable {
     private String word_explain;
     private String sound = "";
 
+    Phonetic phonetic = new Phonetic("", "") {
+        @Override
+        public void playSound() {
+            Voice voice = VoiceManager.getInstance().getVoice("kevin16");
+            voice.allocate();
+            voice.speak(word_target);
+        }
+    };
+
     public void setWord_target(String w) {
         word_target = w;
     }
@@ -32,6 +41,7 @@ public class Word implements Comparable {
 
     public void setSound(String sound) {
         this.sound = sound;
+        phonetic.setPronounce(this.sound);
     }
 
     public Word() {
@@ -53,16 +63,9 @@ public class Word implements Comparable {
         return word_target.compareTo(w.getWord_target());
     }
 
-    Phonetic phonetic = new Phonetic("", "") {
-        @Override
-        public void playSound() {
-            System.setProperty("freetts.voices", "com.sun.speech.freetts.en.us.cmu_us_kal.KevinVoiceDirectory");
-            Voice voice = VoiceManager.getInstance().getVoice("kevin16");
-            voice.allocate();
-            voice.speak(word_target);
-            voice.deallocate();
-        }
-    };
+    public Phonetic getPhonetic() {
+        return phonetic;
+    }
 
     @Override
     public int compareTo(Object o) {

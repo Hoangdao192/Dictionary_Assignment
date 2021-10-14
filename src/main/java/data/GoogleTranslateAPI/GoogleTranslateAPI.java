@@ -2,21 +2,22 @@ package data.GoogleTranslateAPI;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.ResourceBundle;
 
-public class GoogleTranslateAPI {
+public class GoogleTranslateAPI{
     private StringBuilder translatedText = new StringBuilder();
     private String sourcesText;
     StringProperty stringProperty = new SimpleStringProperty("");
-    class Language {
-        public static final String ENGLISH = "en";
-        public static final String VIETNAMESE = "vi";
-    }
 
     public static final String GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbydiJhREoeyM7Z4DoBwCSvdO1dwhUoWEi6bVCqTBde0Nem_fA42hNRRhFiFCYyk35RXzg/exec";
 
@@ -32,14 +33,14 @@ public class GoogleTranslateAPI {
         return translatedText.toString();
     }
 
-    public void translate(String text) {
+    public void translate(String text, String sourceLanguge, String targetLanguage) {
         sourcesText = text;
         Thread thread = new Thread() {
             @Override
             public void run() {
                 super.run();
                 try {
-                    URL url = new URL(generateURL(GoogleTranslateAPI.Language.ENGLISH, GoogleTranslateAPI.Language.VIETNAMESE, sourcesText));
+                    URL url = new URL(generateURL(sourceLanguge, targetLanguage, sourcesText));
                     HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                     httpURLConnection.setRequestProperty("User-Agent", "Mozilla/5.0");
                     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream()));
@@ -48,8 +49,8 @@ public class GoogleTranslateAPI {
                     String inputLine;
                     while ((inputLine = bufferedReader.readLine()) != null) {
                         translatedText.append(inputLine);
-                        stringProperty.setValue(translatedText.toString());
                     }
+                    stringProperty.setValue(translatedText.toString());
                     bufferedReader.close();
                 } catch (Exception e) {
                     e.printStackTrace();

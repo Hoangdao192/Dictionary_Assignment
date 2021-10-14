@@ -58,7 +58,8 @@ public class SearchPaneController implements Initializable {
     FreeDictionaryAPI freeDictionaryAPI = new FreeDictionaryAPI();
     Dictionary localDictionary = new Dictionary();
     RecentWord recentWords = new RecentWord();
-    String[] dictionaryList = {"Từ điển trên máy", "Từ điển online"};
+    Dictionary personalDictionary = new Dictionary();
+    String[] dictionaryList = {"Từ điển trên máy", "Từ điển online", "Từ điển cá nhân"};
 
     public void reset() {
         audioList.getItems().clear();
@@ -73,6 +74,8 @@ public class SearchPaneController implements Initializable {
         ArrayList<Word> words = new ArrayList<Word>();
         if (comboBox.getValue().equals(dictionaryList[0])) {
             words = localDictionary.searchWord(hasTyped);
+        } else if (comboBox.getValue().equals(dictionaryList[2])) {
+            words = personalDictionary.searchWord(hasTyped);
         }
 
         while (words.size() >= 10) {
@@ -82,7 +85,13 @@ public class SearchPaneController implements Initializable {
     }
 
     public Word getExactlyWord(String hasTyped) {
-        if (comboBox.getValue().equals(dictionaryList[0])) {
+        if (comboBox.getValue().equals(dictionaryList[1])) {
+            ArrayList<FreeDictionaryWord> words = freeDictionaryAPI.getSuggestedWord(hasTyped);
+            if (words.size() > 0) {
+                updateAudioList(words.get(0).getPhonetics());
+                return words.get(0);
+            }
+        } else {
             ArrayList<Word> words = getSuggestedWord(hasTyped);
             if (words.size() > 0) {
                 Word word = getSuggestedWord(hasTyped).get(0);
@@ -90,12 +99,6 @@ public class SearchPaneController implements Initializable {
                 audios.add(new Phonetic(word.getSound(), ""));
                 updateAudioList(audios);
                 return word;
-            }
-        } else if (comboBox.getValue().equals(dictionaryList[1])) {
-            ArrayList<FreeDictionaryWord> words = freeDictionaryAPI.getSuggestedWord(hasTyped);
-            if (words.size() > 0) {
-                updateAudioList(words.get(0).getPhonetics());
-                return words.get(0);
             }
         }
         Word word = new Word();
@@ -152,13 +155,16 @@ public class SearchPaneController implements Initializable {
     public void listViewOnMouseClick(MouseEvent mouseEvent) {
         Word wordTarget = listView.getSelectionModel().getSelectedItem();
         ArrayList<Phonetic> audios = new ArrayList<Phonetic>();
-        audios.add(new Phonetic(wordTarget.getSound(), ""));
+        audios.add(wordTarget.getPhonetic());
         updateAudioList(audios);
         showFoundWord(wordTarget);
         hideListView();
     }
 
     public void audioListOnMouseClick(MouseEvent mouseEvent) {
+        if (audioList.getSelectionModel().getSelectedItem() == null) {
+            return;
+        }
         audioList.getSelectionModel().getSelectedItem().playSound();
     }
 
@@ -225,7 +231,7 @@ public class SearchPaneController implements Initializable {
                 Word word = recentWords.getWord(label.getText());
                 System.out.println(word.getSound());
                 audioList.getItems().clear();
-                audioList.getItems().add(new Phonetic(word.getSound(), ""));
+                audioList.getItems().add(word.getPhonetic());
                 showFoundWord(word);
             }
         });
@@ -329,6 +335,7 @@ public class SearchPaneController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         localDictionary.insertFromFile(Dictionary.MAIN_DICTIONARY);
         recentWords.loadFromFile(Dictionary.RECENT_WORD);
+        personalDictionary.insertFromFile(Dictionary.PERSONAL_DICTIONARY);
 
         reset();
         initComboBox();

@@ -11,17 +11,17 @@
    <children>
       <AnchorPane fx:id="modifyPane" prefHeight="700.0" prefWidth="1200.0">
          <children>
-            <Button id="cancel-button" fx:id="buttonCancel" layoutX="964.0" layoutY="572.0" mnemonicParsing="false" onAction="#clickButtonCancel" prefHeight="101.0" prefWidth="110.0">
+            <Button id="cancel-button" fx:id="buttonCancel" layoutX="1014.0" layoutY="572.0" mnemonicParsing="false" onAction="#clickButtonCancel" prefHeight="60.0" prefWidth="60.0">
                <graphic>
-                  <ImageView fitHeight="59.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../image/Cancel.png" />
                      </image>
                   </ImageView>
                </graphic></Button>
-            <Button id="update-button" fx:id="buttonUpdate" layoutX="150.0" layoutY="572.0" mnemonicParsing="false" onAction="#clickButtonUpdate" prefHeight="101.0" prefWidth="100.0">
+            <Button id="update-button" fx:id="buttonUpdate" layoutX="920.0" layoutY="572.0" mnemonicParsing="false" onAction="#clickButtonUpdate" prefHeight="60.0" prefWidth="60.0">
                <graphic>
-                  <ImageView fitHeight="58.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../image/update.png" />
                      </image>

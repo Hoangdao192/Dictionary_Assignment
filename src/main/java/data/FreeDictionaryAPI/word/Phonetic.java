@@ -62,6 +62,10 @@ public class Phonetic {
         return this.audio;
     }
 
+    public void setPronounce(String pronounce) {
+        this.pronounce = pronounce;
+    }
+
     public void playSound() {
         if (audio.equals("")) {
             return;

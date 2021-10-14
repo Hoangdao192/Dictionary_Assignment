@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class Dictionary {
     public static final String MAIN_DICTIONARY = "src/main/resources/data/English-Vietnamese.txt";
     public static final String RECENT_WORD = "src/main/resources/data/recent-word.txt";
+    public static final String PERSONAL_DICTIONARY = "src/main/resources/data/Sup.txt";
     ArrayList<Word> arrWord = new ArrayList<Word>(140000);
 
     /**
