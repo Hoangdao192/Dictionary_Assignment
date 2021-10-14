@@ -255,6 +255,7 @@ public class SearchPaneController implements Initializable {
      * Khởi tạo dictionary list.
      */
     private void initComboBox() {
+        comboBox.getCellFactory();
         comboBox.getItems().addAll(dictionaryList);
         comboBox.setValue(dictionaryList[0]);
     }
