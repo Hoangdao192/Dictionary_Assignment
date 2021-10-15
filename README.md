@@ -15,3 +15,4 @@
 - Javafx Scene Builder 8.5.0 của Gluon
 - JSON simple 1.1.1 : đọc file JSON lấy từ web
 - Fluent-hc 4.5.5 : download file từ web
+- FreeTTS: phát âm thanh
