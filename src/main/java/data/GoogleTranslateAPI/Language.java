@@ -118,6 +118,7 @@ public class Language {
 
     private static final String DEFAULT_LANGUAGE_PATH = "src/main/resources/data/Languages.txt";
 
+    //  Lấy danh sách tên các Language
     public static ArrayList<String> getLanguageList() {
         ArrayList<String> languages = new ArrayList<String>();
         try {

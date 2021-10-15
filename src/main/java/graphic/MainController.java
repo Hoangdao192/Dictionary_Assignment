@@ -36,6 +36,7 @@ public class MainController implements Initializable {
     AnchorPane googleTranslatePane;
     AnchorPane modifyPane;
     SearchPaneController searchPaneController;
+    GoogleTranslateController googleTranslateController;
 
     public void onSearchButtonClick() {
         if (currentPane == searchPane) {
@@ -46,6 +47,10 @@ public class MainController implements Initializable {
     }
 
     public void onGoogleTranslateButtonClick() {
+        if (currentPane == googleTranslatePane) {
+            return;
+        }
+        googleTranslateController.reset();
         setMainPane(googleTranslatePane);
     }
 
@@ -57,6 +62,7 @@ public class MainController implements Initializable {
         if (currentPane == pane) {
             return;
         }
+        currentPane = pane;
         mainPane.getChildren().clear();
         mainPane.getChildren().add(pane);
     }
@@ -109,6 +115,7 @@ public class MainController implements Initializable {
 
             loader = new FXMLLoader(getClass().getResource("fxml/GoogleTranslatePane.fxml"));
             googleTranslatePane = loader.load();
+            googleTranslateController = loader.getController();
 
             loader = new FXMLLoader(getClass().getResource("fxml/ModifyDictionary.fxml"));
             modifyPane = loader.load();

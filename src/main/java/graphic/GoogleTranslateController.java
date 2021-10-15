@@ -62,6 +62,8 @@ public class GoogleTranslateController implements Initializable {
     public void reset() {
         vietnameseTextArea.clear();
         englishTextArea.clear();
+        sourceLanguageList.setValue("English");
+        targetLanguageList.setValue("Vietnamese");
     }
 
     private void initButton() {

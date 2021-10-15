@@ -10,10 +10,21 @@ public class Dictionary {
     public static final String RECENT_WORD = "src/main/resources/data/recent-word.txt";
     public static final String PERSONAL_DICTIONARY = "src/main/resources/data/Sup.txt";
     ArrayList<Word> arrWord = new ArrayList<Word>(140000);
+    private String name = "";
 
-    /**
-     *
-     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String toString() {
+        return this.name;
+    }
+
     public void insertFromFile(String file) {
         DataFile data = new DataFile();
         arrWord = data.insertFromFile(file);
