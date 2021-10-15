@@ -92,6 +92,8 @@ public class ModifyController implements Initializable {
         if (tableWord.getSelectionModel().getSelectedItem() != null) {
             newWord.setWord(tableWord.getSelectionModel().getSelectedItem());
             Data.word = newWord.getWord_target();
+            Data.id = Data.dictionary.findIndext(Data.word);
+            System.out.println(Data.id);
             Data.explain = newWord.getWord_explain();
             changePane();
         } else {
@@ -108,12 +110,17 @@ public class ModifyController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        dictionary.insertFromFile(Dictionary.PERSONAL_DICTIONARY);
+        dictionary = Data.dictionary;
         if(Data.update) {
             Word w = newWord;
             w.setWord_target(Data.word);
             w.setWord_explain(Data.explain);
-            dictionary.addWord(w);
+            if(Data.id == -1) {
+                dictionary.addWord(w);
+            } else {
+                dictionary.getArrWord().get(Data.id).setWord(w);
+                Data.id = -1;
+            }
             dictionary.saveToFile(Dictionary.PERSONAL_DICTIONARY);
             Data.update = false;
             Data.word = "";

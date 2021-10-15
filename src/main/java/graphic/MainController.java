@@ -1,5 +1,7 @@
 package graphic;
 
+import data.Data;
+import data.Dictionary;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -59,6 +61,9 @@ public class MainController implements Initializable {
     }
 
     public void setMainPane(AnchorPane pane) {
+        if (currentPane == modifyPane) {
+            Data.dictionary.saveToFile(Dictionary.PERSONAL_DICTIONARY);
+        }
         if (currentPane == pane) {
             return;
         }
@@ -108,6 +113,9 @@ public class MainController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources){
+        Dictionary dictionarySup = new Dictionary();
+        dictionarySup.insertFromFile(Dictionary.PERSONAL_DICTIONARY);
+        Data.dictionary = dictionarySup;
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/SearchPane.fxml"));
             searchPane = loader.load();
@@ -122,7 +130,6 @@ public class MainController implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         initButton();
         setMainPane(searchPane);
     }
