@@ -46,8 +46,6 @@ public class ModifyController implements Initializable {
     @FXML
     private AnchorPane modifyPane;
 
-
-    private String fileSup = "src/main/resources/data/Sup.txt";
     private Dictionary dictionary = new Dictionary();
     public Word newWord = new Word();
 
@@ -82,7 +80,7 @@ public class ModifyController implements Initializable {
             Word word = tableWord.getSelectionModel().getSelectedItem();
             wordList.remove(word);
             dictionary.deleteWord(word);
-            dictionary.saveToFile(fileSup);
+            dictionary.saveToFile(Dictionary.PERSONAL_DICTIONARY);
         }
     }
 
@@ -110,13 +108,13 @@ public class ModifyController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        dictionary.insertFromFile(fileSup);
+        dictionary.insertFromFile(Dictionary.PERSONAL_DICTIONARY);
         if(Data.update) {
             Word w = newWord;
             w.setWord_target(Data.word);
             w.setWord_explain(Data.explain);
             dictionary.addWord(w);
-            dictionary.saveToFile(fileSup);
+            dictionary.saveToFile(Dictionary.PERSONAL_DICTIONARY);
             Data.update = false;
             Data.word = "";
             Data.explain = "";

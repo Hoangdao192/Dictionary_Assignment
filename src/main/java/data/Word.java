@@ -4,6 +4,8 @@ import com.sun.speech.freetts.Voice;
 import com.sun.speech.freetts.VoiceManager;
 import data.FreeDictionaryAPI.word.Phonetic;
 
+import java.util.ArrayList;
+
 public class Word implements Comparable {
     //word_target (từ mới), word_explain (giải nghĩa)
     private String word_target;
@@ -63,8 +65,10 @@ public class Word implements Comparable {
         return word_target.compareTo(w.getWord_target());
     }
 
-    public Phonetic getPhonetic() {
-        return phonetic;
+    public ArrayList<Phonetic> getPhonetics() {
+        ArrayList<Phonetic> phonetics = new ArrayList<Phonetic>();
+        phonetics.add(this.phonetic);
+        return phonetics;
     }
 
     @Override

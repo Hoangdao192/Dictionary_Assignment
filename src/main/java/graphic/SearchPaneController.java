@@ -1,7 +1,6 @@
 package graphic;
 
 import data.FreeDictionaryAPI.FreeDictionaryAPI;
-import data.FreeDictionaryAPI.word.FreeDictionaryWord;
 import data.FreeDictionaryAPI.word.Phonetic;
 import data.RecentWord;
 import data.Word;
@@ -44,10 +43,10 @@ public class SearchPaneController implements Initializable {
     @FXML
     Label audioLabel;
     @FXML
-    ComboBox<String> comboBox;
+    ComboBox<Dictionary> comboBox;
     @FXML
     ListView<Word> listView;
-    final double listCellHeight = 40;
+    final double LIST_CELL_HEIGHT = 40;
     @FXML
     Line line;
     @FXML
@@ -57,9 +56,8 @@ public class SearchPaneController implements Initializable {
 
     FreeDictionaryAPI freeDictionaryAPI = new FreeDictionaryAPI();
     Dictionary localDictionary = new Dictionary();
-    RecentWord recentWords = new RecentWord();
     Dictionary personalDictionary = new Dictionary();
-    String[] dictionaryList = {"Từ điển trên máy", "Từ điển online", "Từ điển cá nhân"};
+    RecentWord recentWords = new RecentWord();
 
     public void reset() {
         audioList.getItems().clear();
@@ -71,35 +69,19 @@ public class SearchPaneController implements Initializable {
     }
 
     public ArrayList<Word> getSuggestedWord(String hasTyped) {
-        ArrayList<Word> words = new ArrayList<Word>();
-        if (comboBox.getValue().equals(dictionaryList[0])) {
-            words = localDictionary.searchWord(hasTyped);
-        } else if (comboBox.getValue().equals(dictionaryList[2])) {
-            words = personalDictionary.searchWord(hasTyped);
-        }
-
+        ArrayList<Word> words = comboBox.getValue().searchWord(hasTyped);
         while (words.size() >= 10) {
             words.remove(words.size() - 1);
         }
         return words;
     }
 
+    //  Lấy từ ở đầu danh sách gợi ý.
     public Word getExactlyWord(String hasTyped) {
-        if (comboBox.getValue().equals(dictionaryList[1])) {
-            ArrayList<FreeDictionaryWord> words = freeDictionaryAPI.getSuggestedWord(hasTyped);
-            if (words.size() > 0) {
-                updateAudioList(words.get(0).getPhonetics());
-                return words.get(0);
-            }
-        } else {
-            ArrayList<Word> words = getSuggestedWord(hasTyped);
-            if (words.size() > 0) {
-                Word word = getSuggestedWord(hasTyped).get(0);
-                ArrayList<Phonetic> audios = new ArrayList<Phonetic>();
-                audios.add(new Phonetic(word.getSound(), ""));
-                updateAudioList(audios);
-                return word;
-            }
+        ArrayList<Word> words = getSuggestedWord(hasTyped);
+        if (words.size() > 0) {
+            updateAudioList(words.get(0).getPhonetics());
+            return words.get(0);
         }
         Word word = new Word();
         word.setWord_target("Không tìm thấy từ này");
@@ -120,23 +102,13 @@ public class SearchPaneController implements Initializable {
         }
         listView.getItems().clear();
         listView.getItems().addAll(suggestedWords);
-        listView.setPrefHeight(listCellHeight * suggestedWords.size());
+        listView.setPrefHeight(LIST_CELL_HEIGHT * suggestedWords.size());
         showListView();
-    }
-
-    public void updateAudioList(ArrayList<Phonetic> phonetics ) {
-        audioList.getItems().clear();
-        for (int i = 0; i < phonetics.size(); ++i) {
-            System.out.println(phonetics.get(i).getPronounce());
-            System.out.println(phonetics.get(i).getAudio());
-        }
-        audioList.getItems().addAll(phonetics);
     }
 
     public void showFoundWord(Word word) {
         hideListView();
         webView.getEngine().loadContent(word.getWord_explain());
-        System.out.println(word.getSound());
         if (word.getWord_explain().equals("Không tìm thấy từ này")) {
             audioLabel.setVisible(false);
             audioList.setVisible(false);
@@ -144,7 +116,7 @@ public class SearchPaneController implements Initializable {
             audioLabel.setVisible(true);
             audioList.setVisible(true);
             recentWords.add(word);
-            updateGridPane();
+            updateRecentWordPane();
         }
     }
 
@@ -154,9 +126,7 @@ public class SearchPaneController implements Initializable {
      */
     public void listViewOnMouseClick(MouseEvent mouseEvent) {
         Word wordTarget = listView.getSelectionModel().getSelectedItem();
-        ArrayList<Phonetic> audios = new ArrayList<Phonetic>();
-        audios.add(wordTarget.getPhonetic());
-        updateAudioList(audios);
+        updateAudioList(wordTarget.getPhonetics());
         showFoundWord(wordTarget);
         hideListView();
     }
@@ -168,25 +138,32 @@ public class SearchPaneController implements Initializable {
         audioList.getSelectionModel().getSelectedItem().playSound();
     }
 
-    public void searchBoxOnCharacterTyped(KeyEvent event) {
+    public void searchBoxOnCharacterTyped(KeyEvent keyEvent) {
         final char ENTER_CODE = (char) 13;
         final char BACKSPACE_CODE = (char) 8;
 
         String hasTyped = "";
 
-        if (event.getCharacter().charAt(0) == ENTER_CODE) {
+        if (keyEvent.getCharacter().charAt(0) == ENTER_CODE) {
             hasTyped = searchBox.getText();
             Word word = getExactlyWord(hasTyped);
             showFoundWord(word);
-        } else if (event.getCharacter().charAt(0) == BACKSPACE_CODE && searchBox.getText().isEmpty()) {
+        }
+        //  Khi người dùng xóa hết kí tự trong search box.
+        else if (keyEvent.getCharacter().charAt(0) == BACKSPACE_CODE && searchBox.getText().isEmpty()) {
             hideListView();
-        } else if (event.getCharacter().charAt(0) == BACKSPACE_CODE) {
+        }
+        else if (keyEvent.getCharacter().charAt(0) == BACKSPACE_CODE) {
             hasTyped = searchBox.getText();
-            System.out.println(hasTyped);
             showSuggestedWords(getSuggestedWord(hasTyped));
-        } else {
-            hasTyped = searchBox.getText() + event.getCharacter();
-            System.out.println(hasTyped);
+        }
+        /*
+        *   Không gợi ý từ khi đang dùng Từ điển online.
+        *   Vì quá trình kết nối mạng để tra từ tốn nhiều thời gian làm cho app bị lag
+        *   Việc gợi ý từ liên tục sẽ khiến cho app bị lag sau mỗi lần gõ 1 ký tự
+        */
+        else if (comboBox.getValue() != freeDictionaryAPI){
+            hasTyped = searchBox.getText() + keyEvent.getCharacter();
             showSuggestedWords(getSuggestedWord(hasTyped));
         }
     }
@@ -229,9 +206,8 @@ public class SearchPaneController implements Initializable {
             @Override
             public void handle(MouseEvent event) {
                 Word word = recentWords.getWord(label.getText());
-                System.out.println(word.getSound());
                 audioList.getItems().clear();
-                audioList.getItems().add(word.getPhonetic());
+                audioList.getItems().add(word.getPhonetics().get(0));
                 showFoundWord(word);
             }
         });
@@ -255,15 +231,14 @@ public class SearchPaneController implements Initializable {
      * Khởi tạo dictionary list.
      */
     private void initComboBox() {
-        comboBox.getCellFactory();
-        comboBox.getItems().addAll(dictionaryList);
-        comboBox.setValue(dictionaryList[0]);
+        comboBox.getItems().addAll(localDictionary, freeDictionaryAPI, personalDictionary);
+        comboBox.setValue(localDictionary);
     }
 
     /**
      * Khởi tạo thanh gridPane(recentWordPane).
      */
-    private void initGridPane() {
+    private void initRecentWordPane() {
         int gridCol = gridPane.getColumnConstraints().size();
         ArrayList<Word> words = recentWords.getArrWord();
         for (int i = 0; i < words.size(); ++i) {
@@ -274,6 +249,12 @@ public class SearchPaneController implements Initializable {
 
             gridPane.add(label, currentCol, currentRow);
         }
+    }
+
+    private void updateRecentWordPane() {
+        gridPane.getChildren().clear();
+        initRecentWordPane();
+        recentWords.saveToFile(Dictionary.RECENT_WORD);
     }
 
     private void initAudioList() {
@@ -293,8 +274,17 @@ public class SearchPaneController implements Initializable {
         });
     }
 
+    private void updateAudioList(ArrayList<Phonetic> phonetics ) {
+        audioList.getItems().clear();
+        for (int i = 0; i < phonetics.size(); ++i) {
+            System.out.println(phonetics.get(i).getPronounce());
+            System.out.println(phonetics.get(i).getAudio());
+        }
+        audioList.getItems().addAll(phonetics);
+    }
+
     private void initListView() {
-        listView.setFixedCellSize(listCellHeight);
+        listView.setFixedCellSize(LIST_CELL_HEIGHT);
         listView.setOnMouseEntered(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -326,21 +316,18 @@ public class SearchPaneController implements Initializable {
         });
     }
 
-    private void updateGridPane() {
-        gridPane.getChildren().clear();
-        initGridPane();
-        recentWords.saveToFile(Dictionary.RECENT_WORD);
-    }
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         localDictionary.insertFromFile(Dictionary.MAIN_DICTIONARY);
+        localDictionary.setName("Từ điển cá nhân");
         recentWords.loadFromFile(Dictionary.RECENT_WORD);
         personalDictionary.insertFromFile(Dictionary.PERSONAL_DICTIONARY);
+        personalDictionary.setName("Từ điển trên máy");
+        freeDictionaryAPI.setName("Từ điển online");
 
         reset();
         initComboBox();
-        initGridPane();
+        initRecentWordPane();
         initListView();
         initAudioList();
         webView.setFontScale(1.5);

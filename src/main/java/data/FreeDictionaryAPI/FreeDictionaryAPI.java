@@ -7,22 +7,26 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
+import data.Dictionary;
 import data.FreeDictionaryAPI.word.Definition;
 import data.FreeDictionaryAPI.word.Phonetic;
 import data.FreeDictionaryAPI.word.FreeDictionaryWord;
+import data.Word;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-public class FreeDictionaryAPI {
-    public URL generateAPIURL(String wordTarget) throws Exception{
+public class FreeDictionaryAPI extends Dictionary {
+    private URL generateAPIURL(String wordTarget) throws Exception{
         return new URL("https://api.dictionaryapi.dev/api/v2/entries/en/" + wordTarget);
     }
 
-    public String getJSONFromURL(URL url){
+    /**
+     * Lấy dữ liệu được trả về dưới dạng JSON
+     */
+    private String getJSONFromURL(URL url){
         try {
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-            urlConnection.setRequestMethod("GET");
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream(), "UTF-8"));
 
             String read;
@@ -42,9 +46,6 @@ public class FreeDictionaryAPI {
 
     /**
      * Lấy dữ liệu tất cả các từ được trả về từ json
-     * @param json
-     * @return
-     * @throws Exception
      */
     public ArrayList<FreeDictionaryWord> getDataFromJSON(String json) throws Exception{
         ArrayList<FreeDictionaryWord> freeDictionaryWords = new ArrayList<FreeDictionaryWord>(0);
@@ -119,51 +120,44 @@ public class FreeDictionaryAPI {
     /**
      * Kết quả mà getDataFromJSON có thể chứa các từ giống nhau nhưng khác nghĩa.
      * Hàm này sẽ hợp nhất các từ đó thành 1 từ với nhiều nghĩa khác nhau.
-     * @param freeDictionaryWords
-     * @return
      */
-    private ArrayList<FreeDictionaryWord> filterWord(ArrayList<FreeDictionaryWord> freeDictionaryWords) {
+    private ArrayList<FreeDictionaryWord> mergeDuplicateWords(ArrayList<FreeDictionaryWord> words) {
         int i = 0;
-        while (i < freeDictionaryWords.size() - 1) {
+        while (i < words.size() - 1) {
             int j = i + 1;
-            while (j < freeDictionaryWords.size()) {
-                if (freeDictionaryWords.get(i).sameWordTarget(freeDictionaryWords.get(j))) {
-                    FreeDictionaryWord mergeFreeDictionaryWord = freeDictionaryWords.get(i);
-                    mergeFreeDictionaryWord.getPhoneticsOrigin().addAll(freeDictionaryWords.get(j).getPhonetics());
-                    mergeFreeDictionaryWord.getDefinitions().addAll(freeDictionaryWords.get(j).getDefinitions());
-                    freeDictionaryWords.remove(j);
+            while (j < words.size()) {
+                if (words.get(i).sameWordTarget(words.get(j))) {
+                    FreeDictionaryWord mergeWord = words.get(i);
+                    mergeWord.getPhoneticsOrigin().addAll(words.get(j).getPhonetics());
+                    mergeWord.getDefinitions().addAll(words.get(j).getDefinitions());
+                    words.remove(j);
                 } else {
                     ++j;
                 }
             }
             ++i;
         }
-        return freeDictionaryWords;
+        return words;
     }
 
-    public ArrayList<FreeDictionaryWord> getSuggestedWord(String word) {
+    @Override
+    public ArrayList<Word> searchWord(String word) {
         ArrayList<FreeDictionaryWord> suggestedWord = new ArrayList<FreeDictionaryWord>();
         try {
             URL dictionaryURL = generateAPIURL(word);
             String json = getJSONFromURL(dictionaryURL);
             suggestedWord = getDataFromJSON(json);
-            suggestedWord = filterWord(suggestedWord);
+            suggestedWord = mergeDuplicateWords(suggestedWord);
+            //  Generate wordExplain theo định dạng của Word gốc
             for (int i = 0; i < suggestedWord.size(); ++i) {
                 suggestedWord.get(i).setWord_explain(suggestedWord.get(i).generateWordExplain());
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return suggestedWord;
-    }
 
-    public void testReadJson() {
-        try {
-            URL url = generateAPIURL("agriculture");
-            String json = getJSONFromURL(url);
-            System.out.println(json);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        ArrayList<Word> ret = new ArrayList<Word>();
+        ret.addAll(suggestedWord);
+        return ret;
     }
 }

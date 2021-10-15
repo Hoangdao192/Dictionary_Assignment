@@ -22,11 +22,20 @@ public class FreeDictionaryWord extends data.Word{
         return this.phonetics;
     }
 
+    @Override
     public ArrayList<Phonetic> getPhonetics() {
         ArrayList<Phonetic> ret = new ArrayList<Phonetic>();
         Phonetic[] phoneticArr = phonetics.toArray(new Phonetic[phonetics.size()]);
         for (int i = 0; i < phoneticArr.length; ++i) {
             ret.add(phoneticArr[i]);
+        }
+        int index = 0;
+        while (index < ret.size()) {
+            if (ret.get(index).getAudio().equals("")) {
+                ret.remove(index);
+            } else {
+                ++index;
+            }
         }
         return ret;
     }

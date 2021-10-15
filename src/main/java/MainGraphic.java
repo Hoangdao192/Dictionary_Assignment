@@ -2,15 +2,18 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.File;
 
 public class MainGraphic extends Application {
     public static void cleanTempFile() {
-        for(File file: new File("src/main/resources/temp").listFiles())
-            if (!file.isDirectory())
+        for(File file: new File("src/main/resources/temp").listFiles()) {
+            if (!file.isDirectory()) {
                 file.delete();
+            }
+        }
     }
 
     public static void main(String[] args) {
@@ -27,6 +30,8 @@ public class MainGraphic extends Application {
             Scene scene = new Scene(root);
             primaryStage.setResizable(false);
             primaryStage.setScene(scene);
+            primaryStage.setTitle("Từ điển");
+            primaryStage.getIcons().add(new Image("graphic/image/app-icon.png"));
             primaryStage.show();
         } catch (Exception e) {
             e.printStackTrace();
