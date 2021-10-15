@@ -1,7 +1,5 @@
 package data.FreeDictionaryAPI.word;
 
-import data.Word;
-
 import java.util.ArrayList;
 import java.util.HashSet;
 
@@ -30,6 +28,7 @@ public class FreeDictionaryWord extends data.Word{
             ret.add(phoneticArr[i]);
         }
         int index = 0;
+        //  Xóa các Phonetic không có link phát âm
         while (index < ret.size()) {
             if (ret.get(index).getAudio().equals("")) {
                 ret.remove(index);
@@ -51,7 +50,7 @@ public class FreeDictionaryWord extends data.Word{
     public String generateWordExplain() {
         StringBuilder stringBuilder = new StringBuilder();
         String mainPronounce = "";
-        if (phonetics.size() > 0) {
+        if (getPhonetics().size() > 0) {
             mainPronounce = getPhonetics().get(0).getPronounce();
         }
         stringBuilder.append("<i>" + getWord_target() + " /" + mainPronounce + "/</i>");
