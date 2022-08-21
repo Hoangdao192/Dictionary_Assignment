@@ -1,4 +1,4 @@
-#Bài tập lớn môn Lập trình hướng đối tượng (OOP) - Trường Đại học Công nghệ - Đại học Quốc gia Hà Nội (UET)
+# Bài tập lớn môn Lập trình hướng đối tượng (OOP) - Trường Đại học Công nghệ - Đại học Quốc gia Hà Nội (UET)
 
 ### Thành viên
 * 20020366 - Trần Thị Kim Bắc
